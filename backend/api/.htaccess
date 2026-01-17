@@ -1,0 +1,44 @@
+# BoatChecker API - Apache Configuration
+# Last opp denne til /api/ mappen på Domeneshop
+
+# Aktiver URL rewriting
+RewriteEngine On
+
+# HTTPS Enforcement - Redirect all HTTP to HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Sikkerhet: Blokker tilgang til config-filer
+<FilesMatch "^config\.php$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Sikkerhet: Blokker tilgang til .htaccess
+<Files .htaccess>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Send alle requests til index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Sikkerhetshoder
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    # HSTS - Force HTTPS for 1 year
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# Komprimering
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Disable directory listing
+Options -Indexes

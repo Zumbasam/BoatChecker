@@ -1,50 +1,22 @@
-import { Box, Heading, Button } from '@chakra-ui/react';
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import { useLiveQuery } from 'dexie-react-hooks';
-import { db } from '../db';
+// src/pages/ChecklistPage.tsx
+import React from 'react';
+import { Box, Text } from '@chakra-ui/react';
+import { ChecklistStepper } from '../components/ChecklistStepper';
+import { useInspectionData } from '../contexts/InspectionDataProvider';
 
-import checklist from '../data/checklist.json';        // krever "resolveJsonModule": true i tsconfig
-import { ChecklistCard } from '../components/ChecklistCard';
-import { CostBanner } from '../components/CostBanner';
-import { Report } from '../components/Report';
+export const ChecklistPage: React.FC = () => {
+  const checklistData = useInspectionData();
 
-export const ChecklistPage = () => {
-  // ⬇️ henter lagrede valg i sanntid
-  const states = useLiveQuery(() => db.items.toArray(), []);
+  const boatName = checklistData.displayBoatModel 
+    ? `${checklistData.displayBoatModel.name} — ${checklistData.displayBoatModel.manufacturer}` 
+    : "";
 
   return (
-    <Box>
-      {/* Banner med løpende kostnad */}
-      <CostBanner />
-
-      {/* Eksporter‑knapp (vises først når states er klar) */}
-      {states && (
-        <PDFDownloadLink
-          document={<Report states={states} />}
-          fileName="visningsrapport.pdf"
-        >
-          {({ loading }) => (
-            <Button mt={2} mx={4} colorScheme="blue" isLoading={loading}>
-              Eksporter PDF
-            </Button>
-          )}
-        </PDFDownloadLink>
-      )}
-
-      {/* Selve sjekklisten */}
-      <Box p={4}>
-        {checklist.areas.map(area => (
-          <Box key={area.id} mb={6}>
-            <Heading size="md" mb={2}>
-              {area.title}
-            </Heading>
-
-            {area.items.map(item => (
-              <ChecklistCard key={item.id} item={item} />
-            ))}
-          </Box>
-        ))}
-      </Box>
+    <Box p={4}>
+      <Text fontSize="xl" fontWeight="bold" mb={4}>
+        {boatName}
+      </Text>
+      <ChecklistStepper />
     </Box>
   );
 };

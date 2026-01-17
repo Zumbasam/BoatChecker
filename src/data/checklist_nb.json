@@ -1,0 +1,1095 @@
+{
+  "areas": [
+    {
+      "id": "hull_deck",
+      "title": "Skrog & dekk",
+      "items": [
+        {
+          "id": "gelcoat_cracks",
+          "title": "Sprekker i gelcoat",
+          "description": "**Hva:** Overfladiske og strukturelle sprekker.\n**Hvordan:** Inspiser skrogsider, dekk og hjørner visuelt.\n**Se etter:** Fine 'edderkoppsprekker' (crazing) vs. dype, rette sprekker ved lastpunkter.\n**Tolkning:** Crazing er ofte kosmetisk, men kan slippe inn fukt. Dype sprekker kan indikere strukturell svakhet.",
+          "tags": [
+            "fiberglass"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        },
+        {
+          "id": "osmosis_blisters",
+          "title": "Osmose (plastpest)",
+          "description": "**Hva:** Tegn til osmose under vannlinjen.\n**Hvordan:** Føl på skroget. Stikk hull på en mistenkelig blære for å sjekke væske og lukt.\n**Se etter:** Harde, væskefylte blemmer. En sur, eddik-lignende lukt bekrefter osmose.\n**Tolkning:** Krever kostbar utbedring. Myke blærer er som regel kun i bunnstoffet.\n💡 **Tips:** Krever at båten er på land. Innhent eiers samtykke før du stikker hull.",
+          "tags": [
+            "fiberglass"
+          ],
+          "criticality": 1,
+          "costIndicator": 4
+        },
+        {
+          "id": "hull_deck_joint",
+          "title": "Skrog-dekk-sammenføyning",
+          "description": "**Hva:** Integriteten i skjøten mellom skrog og dekk.\n**Hvordan:** Se etter sprekker i fugen utvendig. Sjekk for vannrenner innvendig.\n**Se etter:** Sprekker, misfarging eller tegn til bevegelse i skjøten.\n**Tolkning:** Kan tyde på lekkasje eller strukturell bevegelse som svekker båten.",
+          "tags": [
+            "fiberglass",
+            "steel",
+            "wood",
+            "aluminum"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "thru_hulls",
+          "title": "Skroggjennomføringer",
+          "description": "**Hva:** Tilstand på gjennomføringer og stengekraner under vannlinjen.\n**Hvordan:** Åpne og lukk alle kraner. Inspiser for korrosjon. Kjenn på slangeklemmer.\n**Se etter:** Grønn irr, fastsittende kraner, rustne klemmer. Det skal være to slangeklemmer per slange.\n**Tolkning:** Defekte kraner er en kritisk sikkerhetsrisiko og må byttes.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 2
+        },
+        {
+          "id": "keel_inspection",
+          "title": "Kjøl (utvendig)",
+          "description": "**Hva:** Tegn til grunnstøting, bevegelse eller korrosjon.\n**Hvordan:** Inspiser forkant, bunn og overgangen mellom kjøl og skrog.\n**Se etter:** Dype hakk, skraper, eller en buet sprekk ('kjøl-smil'). På jernkjøl, se etter rustblærer i malingen.\n**Tolkning:** Et 'kjøl-smil' indikerer strukturell skade. Rust på jernkjøl krever vedlikehold for å unngå utvikling.\n💡 **Tips:** Krever at båten er på land.",
+          "tags": [
+            "sailboat",
+            "fiberglass",
+            "steel",
+            "wood"
+          ],
+          "criticality": 1,
+          "costIndicator": 4
+        },
+        {
+          "id": "keel_bolts",
+          "title": "Kjølbolter (innvendig)",
+          "description": "**Hva:** Kjølboltenes tilstand og tegn til lekkasje.\n**Hvordan:** Inspiser muttere og skiver i kjølsvinet.\n**Se etter:** Rustrenner fra mutterne eller deformerte skiver.\n**Tolkning:** Rust betyr vanninntrenging. Deformasjon indikerer overbelastning. Begge krever fagvurdering.",
+          "tags": [
+            "sailboat",
+            "fiberglass"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "deck_core_delamination",
+          "title": "Mykt dekk (delaminering)",
+          "description": "**Hva:** Vanninntrenging og delaminering i dekkskjernen.\n**Hvordan:** Gå over dekket, spesielt rundt beslag. Bank lett med skaftet på en skrutrekker.\n**Se etter:** Myke, svampaktige områder. En hul, dump lyd ('dunk') i stedet for en skarp ('takk').\n**Tolkning:** Dump lyd indikerer delaminering. En alvorlig og kostbar reparasjon.\n💡 **Tips:** Krever skrutrekker eller lignende for å banke med.",
+          "tags": [
+            "fiberglass"
+          ],
+          "criticality": 1,
+          "costIndicator": 4
+        },
+        {
+          "id": "deck_hardware_leaks",
+          "title": "Lekkasjer ved dekksbeslag",
+          "description": "**Hva:** Tegn på lekkasjer fra beslag montert på dekk.\n**Hvordan:** Se innvendig i tak og på skott, under vinsjer, rekkestøtter, vinduer etc.\n**Se etter:** Vannskjolder, mørke flekker, saltrenner eller misfarget treverk.\n**Tolkning:** Klassiske tegn på lekkasjer som kan føre til delaminering eller råte.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "rudder_play",
+          "title": "Slark i ror",
+          "description": "**Hva:** Slark i rorlager.\n**Hvordan:** Ta et solid tak i nedre del av rorbladet. Beveg det kraftig sideveis og frem/tilbake.\n**Se etter:** Merkbar bevegelse eller 'klunke'-lyder.\n**Tolkning:** Betydelig slark indikerer slitte rorlager, en potensiell kostbar reparasjon.\n💡 **Tips:** Utføres best fra land, brygge eller badeplattform.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 3
+        },
+        {
+          "id": "steel_hull_rust",
+          "title": "Rustinspeksjon (stålskrog)",
+          "description": "**Hva:** Rustdannelse på skrog og sveiser.\n**Hvordan:** Se etter malingsblærer. Prikk på mistenkelige områder med en hammer. Sjekk kjølsvinet innvendig.\n**Se etter:** Blærer i maling og avskallende rust. Stående vann innvendig.\n**Tolkning:** Rust under maling må slipes ned og behandles for å unngå alvorlig tæring.\n💡 **Tips:** Krever en liten hammer.",
+          "tags": [
+            "steel"
+          ],
+          "criticality": 2,
+          "costIndicator": 3
+        },
+        {
+          "id": "wood_hull_rot",
+          "title": "Råteinspeksjon (treskrog)",
+          "description": "**Hva:** Råte i skrog og struktur.\n**Hvordan:** Bank med en plasthammer og lytt etter dump lyd. Stikk forsiktig i mistenkelige områder med en avrundet syl.\n**Se etter:** Mykt treverk der sylen synker lett inn, spesielt nær spant og kjøl.\n**Tolkning:** Mykt treverk er et sikkert tegn på råte som krever utskifting.\n💡 **Tips:** Krever plasthammer og en avrundet syl/skrutrekker.",
+          "tags": [
+            "wood"
+          ],
+          "criticality": 1,
+          "costIndicator": 4
+        },
+        {
+          "id": "aluminum_hull_corrosion",
+          "title": "Korrosjon (aluminiumskrog)",
+          "description": "**Hva:** Galvanisk korrosjon og groper (pitting).\n**Hvordan:** Se etter hvitt pulver (oksid), spesielt der vann samler seg eller der andre metaller er festet.\n**Se etter:** Hvitt pulver, groper i metallet og sprekker i sveiser.\n**Tolkning:** Korrosjon forårsaket av kontakt med andre metaller er alvorlig og må isoleres.",
+          "tags": [
+            "aluminum"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        }
+      ]
+    },
+    {
+      "id": "rig",
+      "title": "Rigg",
+      "items": [
+        {
+          "id": "standing_rig_wire",
+          "title": "Stående rigg - wire og terminaler",
+          "description": "**Hva:** Tilstand på wire og terminaler. Spør om alder (anbefalt levetid 10-15 år).\n**Hvordan:** Dra en bomullsdott langs wiren. Inspiser terminalene (endefestene) nøye.\n**Se etter:** Hekter i bomullsdotten (brukket kordel). Sprekker eller rust ved terminalene.\n**Tolkning:** Én brukket kordel eller sprekk i terminal er kritisk. Wiren må byttes.\n💡 **Tips:** En bomullsdott er et effektivt hjelpemiddel.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "turnbuckles",
+          "title": "Vantskruer",
+          "description": "**Hva:** Vantskruenes tilstand.\n**Hvordan:** Se etter skader. Sjekk at gjengene ikke sitter fast. Verifiser låsemekanisme (splinter/ringer).\n**Se etter:** Sprekker, bøyde deler, korrosjon eller manglende låsesplinter.\n**Tolkning:** En skadet vantskrue er en alvorlig svakhet i riggen og må byttes.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 2
+        },
+        {
+          "id": "chainplates",
+          "title": "Røstjern",
+          "description": "**Hva:** Røstjernenes innfesting og tegn til lekkasje.\n**Hvordan:** Sjekk for deformasjon utvendig. Se etter vannskjolder på skottet innvendig.\n**Se etter:** Bøyde beslag. Misfarging eller fuktskader på innsiden.\n**Tolkning:** Lekkasje ved røstjern kan føre til alvorlig strukturell skade (råte/delaminering).",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "mast_base",
+          "title": "Mastefot og mastekrage",
+          "description": "**Hva:** Tegn til kompresjon og korrosjon.\n**Hvordan:** Inspiser dekket under mastefoten (dekk-steget) eller foten i kjølsvinet (kjøl-steget).\n**Se etter:** Sprekker i gelcoat eller et nedsunket område. Korrosjon (hvitt pulver) på masten.\n**Tolkning:** Kompresjonsskader er alvorlig. Korrosjon svekker masten.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 4
+        },
+        {
+          "id": "spreader_fittings",
+          "title": "Salingshorn (spredere)",
+          "description": "**Hva:** Fester og vinkel på salingshorn.\n**Hvordan:** Se opp langs masten. Sjekk fester mot mast og beskyttelse på tuppene.\n**Se etter:** Sprekker ved roten. At de peker svakt oppover. Intakt slitasjebeskyttelse.\n**Tolkning:** Skade på fester eller feil vinkel kan føre til mastehavari.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 2
+        },
+        {
+          "id": "furling_system",
+          "title": "Rulleforstag",
+          "description": "**Hva:** Lager og profilens tilstand.\n**Hvordan:** Roter forstaget for hånd. Lytt etter ulyder. Inspiser profilen.\n**Se etter:** Rumlende eller hakkete lyd. Bulker eller korrosjon i profilen.\n**Tolkning:** Ulyder indikerer slitte lagre (kostbart). Skadet profil kan hindre seilet i å rulle.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 3
+        },
+        {
+          "id": "running_rigging",
+          "title": "Løpende rigg (fall og skjøter)",
+          "description": "**Hva:** Tauverkets tilstand.\n**Hvordan:** Klem på tauene og se etter slitasje, spesielt der de går gjennom blokker/avlastere.\n**Se etter:** Stivt, hardt tauverk. Tydelig slitasje på strømpen.\n**Tolkning:** Stivt tau har mistet styrke. Slitt tauverk er en betydelig utgiftspost.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        },
+        {
+          "id": "boom_gooseneck_vang",
+          "title": "Bom, svanehals og kick",
+          "description": "**Hva:** Skader på bom og fester. Funksjon på kick (vang).\n**Hvordan:** Inspiser bommen for bulker/sprekker. Rugg på svanehalsen. Sjekk kick for trykk/lekkasje.\n**Se etter:** Overdreven slark i svanehals. Oljelekkasje fra gass-kick.\n**Tolkning:** Slark eller sprekker er en sikkerhetsrisiko. Defekt kick gir dårlig seilkontroll.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "winches",
+          "title": "Vinsjer",
+          "description": "**Hva:** Vinsjenes funksjon og tilstand. Spør om servicehistorikk.\n**Hvordan:** Drei på alle vinsjer. Lytt etter ulyder. Rikk på trommelen.\n**Se etter:** 'Grusete' eller slipende lyder. Mye sideveis slark.\n**Tolkning:** Treg vinsj trenger service. Ulyder kan bety slitte lagre og større kostnad.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        }
+      ]
+    },
+    {
+      "id": "sails",
+      "title": "Seil",
+      "items": [
+        {
+          "id": "sail_cloth_condition",
+          "title": "Seildukens generelle tilstand",
+          "description": "**Hva:** Seildukens alder og slitasje.\n**Hvordan:** Kjenn på duken. Hold den mot lyset. Se etter jordslag (svarte prikker).\n**Se etter:** En myk og 'død' duk (utblåst) vs. en stiv og 'crispy'. Tynne områder eller små hull.\n**Tolkning:** Jordslag svekker duken. En utblåst duk gir dårlige seilegenskaper.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 3
+        },
+        {
+          "id": "sail_stitching",
+          "title": "Sømmer og tråd",
+          "description": "**Hva:** Tilstanden på tråden i sømmene.\n**Hvordan:** Gå nøye over sømmer i hjørner og langs kanter. Pirk forsiktig i tråden med en negl.\n**Se etter:** Tråd som pulveriseres eller ryker lett.\n**Tolkning:** Dårlig tråd er et sikkert tegn på UV-skade. Seilet må sys om, en betydelig kostnad.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "genoa_uv_cover",
+          "title": "UV-beskyttelse på rulleforseil",
+          "description": "**Hva:** Tilstanden på UV-duken og sømmene.\n**Hvordan:** Inspiser den fargede stripen på det innrullede seilet.\n**Se etter:** Slitt duk og spesielt dårlige sømmer.\n**Tolkning:** Dette er seilets viktigste beskyttelse. Hvis denne er dårlig, er selve seilet sannsynligvis også solskadet.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "sail_shape",
+          "title": "Seilfasong",
+          "description": "**Hva:** Seilets profil og effektivitet.\n**Hvordan:** Heis seilet og se på profilen. Observer hvor den dypeste delen (buken) er.\n**Se etter:** At buken har flyttet seg bakover. Et 'baggy' seil. Flagrende akterlik.\n**Tolkning:** Et utblåst seil er ineffektivt, gir mer krengning og mindre fremdrift.\n💡 **Tips:** Krever prøveseilas for å vurdere korrekt.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 3,
+          "costIndicator": 3
+        },
+        {
+          "id": "batten_pockets_battens",
+          "title": "Spilelommer og spiler",
+          "description": "**Hva:** Slitasje på spilelommer og skader på spiler.\n**Hvordan:** Inspiser endene på spilelommene. Ta ut en spile hvis mulig.\n**Se etter:** Hull der spilen presser mot duken. Sprekker i spilene.\n**Tolkning:** Slitte lommer må repareres for å unngå at spilen gnager hull i seilet.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        },
+        {
+          "id": "sail_hardware",
+          "title": "Beslag på seil",
+          "description": "**Hva:** Tilstanden på sleder, travere og festepunkter i hjørnene.\n**Hvordan:** Inspiser alle plast- og metalldeler festet til seilet.\n**Se etter:** Sprekker i plast. Deformasjon i pressede ringer. Korrosjon.\n**Tolkning:** Et ødelagt beslag kan gjøre seilet ubrukelig inntil reparert.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "reefing_points",
+          "title": "Reverader og rev",
+          "description": "**Hva:** Forsterkningene for revepunktene i storseilet.\n**Hvordan:** Finn maljene eller webbing-løkkene som brukes til å reve. Inspiser området rundt.\n**Se etter:** Tegn til at maljer rives ut. Løse eller skadede sømmer.\n**Tolkning:** Disse punktene er utsatt for enorme krefter. Skader her er alvorlige.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 2
+        },
+        {
+          "id": "downwind_sails",
+          "title": "Spinnaker / Gennaker",
+          "description": "**Hva:** Tilstand på lettvindsseil.\n**Hvordan:** Be om å få se seilene lagt ut. Hold duken opp mot lyset.\n**Se etter:** Små rifter, hull og lapper.\n**Tolkning:** Småskader er vanlig, men mange reparasjoner kan indikere et hardt liv.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 3,
+          "costIndicator": 3
+        },
+        {
+          "id": "sail_covers_lazy_bag",
+          "title": "Seiltrekk / Lazy bag",
+          "description": "**Hva:** Tilstanden på seilbeskyttelsen.\n**Hvordan:** Sjekk sømmer, glidelåser og fester.\n**Se etter:** Slitt og UV-skadet stoff og tråd.\n**Tolkning:** Dårlig beskyttelse indikerer at seilet kan ha fått mer solskade enn nødvendig.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        }
+      ]
+    },
+    {
+      "id": "interior",
+      "title": "Innredning & struktur",
+      "items": [
+        {
+          "id": "headliner_condition",
+          "title": "Himlingens tilstand (taket)",
+          "description": "**Hva:** Tegn på lekkasje fra dekk.\n**Hvordan:** Se etter misfarging eller mugg i taket. Press forsiktig oppover, spesielt rundt luker/beslag.\n**Se etter:** Vannskjolder, mørke flekker, eller at takplaten henger. Myke områder.\n**Tolkning:** Mykt tak er et alvorlig tegn på lekkasje og delaminering av dekket over.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "bulkhead_bonding",
+          "title": "Skottenes innfesting (struktur)",
+          "description": "**Hva:** Strukturell integritet.\n**Hvordan:** Inspiser der skottene (veggene) er festet til skrogsiden.\n**Se etter:** Sprekker i 'limfugen' (glassfiber/lim). Vannrenner nedover skottene.\n**Tolkning:** Sprekker tyder på at skroget flekser for mye, en mulig strukturell svakhet.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "bilge_condition",
+          "title": "Kjølsvinets tilstand",
+          "description": "**Hva:** Lekkasjer og generelt vedlikehold.\n**Hvordan:** Løft dørkplatene på laveste punkt. Sjekk for vann, olje, eller rusk.\n**Se etter:** Vann i kjølsvinet. Bruk tørkepapir for å sjekke om det er salt- eller ferskvann.\n**Tolkning:** Kilden til eventuelt vann må identifiseres. Saltvann er ofte mest alvorlig.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "trim_and_panels_moisture",
+          "title": "Fukt bak treverk og paneler",
+          "description": "**Hva:** Skjulte lekkasjer.\n**Hvordan:** Lys med lommelykt inn i skap og bak paneler. Bruk nesen.\n**Se etter:** Mørkt, misfarget treverk. En stikkende, muggen lukt.\n**Tolkning:** Sterke varselsignaler på vedvarende fuktproblemer.\n💡 **Tips:** Krever en god lommelykt.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "windows_and_hatches_leaks",
+          "title": "Lekkasjer og funksjon - vinduer og luker",
+          "description": "**Hva:** Tetthet og mekanisk funksjon.\n**Hvordan:** Se etter vannrenner på innsiden og test gummipakninger. Åpne, lukk og lås alle luker/vinduer.\n**Se etter:** Spor etter lekkasjer. Sprukne pakninger. Treg eller defekt mekanisme.\n**Tolkning:** Lekkasjer kan forårsake mye skade. Defekt luke er en sikkerhets- og kostnadsrisiko.\n💡 **Tips:** Test med vannslange (med eiers samtykke) for å bekrefte lekkasje.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "floor_structure",
+          "title": "Dørk og gulvstruktur",
+          "description": "**Hva:** Råte i underliggende gulvstruktur.\n**Hvordan:** Gå systematisk gjennom båten og tråkk bestemt på dørken.\n**Se etter:** Myke, sviktende eller 'svampete' områder.\n**Tolkning:** Indikerer ofte at støttestrukturen har råtnet pga. en lekkasje.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "interior_odor",
+          "title": "Generell lukt i båten",
+          "description": "**Hva:** Indikasjoner på underliggende problemer.\n**Hvordan:** Bruk nesen aktivt så snart du kommer ombord.\n**Se etter:** Muggen lukt (fukt), diesellukt (lekkasje), eller kloakklukt (septikproblem).\n**Tolkning:** Ikke ignorer det nesen din forteller deg.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "cushions_and_mattresses",
+          "title": "Puter og madrasser",
+          "description": "**Hva:** Tegn på fukt og dårlig ventilasjon.\n**Hvordan:** Løft opp puter og madrasser. Se og lukt på undersiden.\n**Se etter:** Svarte prikker (mugg) eller fuktig skumplast.\n**Tolkning:** Tydelig tegn på enten kondensproblem eller en direkte lekkasje.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        },
+        {
+          "id": "general_ventilation",
+          "title": "Ventilasjon",
+          "description": "**Hva:** Båtens evne til å lufte ut fukt og unngå kondens.\n**Hvordan:** Se etter dedikerte lufteventiler (dorader, soppventiler, vifter) i tillegg til luker.\n**Se etter:** Antall og plassering av ventiler. Er de åpne og funksjonelle?\n**Tolkning:** Dårlig ventilasjon er hovedårsak til mugg og dårlig inneklima.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        }
+      ]
+    },
+	{
+	  "id": "engine",
+	  "title": "Motor",
+	  "items": [
+		{
+		  "id": "engine_oil_check",
+		  "title": "Motorolje - nivå og farge",
+		  "description": "**Hva:** Tegn på vann i oljen eller dårlig vedlikehold.\n**Hvordan:** Sjekk peilepinnen og innsiden av påfyllingslokket før kaldstart.\n**Se etter:** Oljenivå. Grå/melkeaktig olje ('majones'). Tykk, tjæreaktig olje.\n**Tolkning:** Grå olje betyr vanninntrenging - svært alvorlig. Tjæreaktig olje tyder på forsømt service.",
+		  "tags": [
+			"motorboat",
+			"sailboat"
+		  ],
+		  "engineTypes": [
+			"inboard",
+			"outboard",
+			"saildrive"
+		  ],
+		  "criticality": 1,
+		  "costIndicator": 4
+		},
+		{
+		  "id": "general_engine_condition",
+		  "title": "Generell tilstand - rust og renhet",
+		  "description": "**Hva:** Generelt inntrykk av vedlikehold.\n**Hvordan:** Vurder renslighet. Se etter overflaterust og nymalte områder.\n**Se etter:** En ren motor vs. en dekket av olje/sot. Dyp, skjellende rust. Maling som skjuler problemer.\n**Tolkning:** En velholdt motor er ofte et tegn på en samvittighetsfull eier.",
+		  "tags": [
+			"motorboat",
+			"sailboat"
+		  ],
+		  "engineTypes": [
+			"inboard",
+			"outboard",
+			"saildrive",
+			"jet"
+		  ],
+		  "criticality": 3,
+		  "costIndicator": 1
+		},
+		{
+		  "id": "oil_leak_block",
+		  "title": "Oljelekkasjer",
+		  "description": "**Hva:** Aktive oljelekkasjer.\n**Hvordan:** Lys systematisk nedover motorblokken. Sjekk kjølsvinet under motoren.\n**Se etter:** Ferske, våte oljeflekker. En 'svett' motor kan være ok, men tydelige drypp er ikke det.\n**Tolkning:** Lekkasjer må lokaliseres og utbedres.\n💡 **Tips:** Krever en god lommelykt.",
+		  "tags": [
+			"motorboat",
+			"sailboat"
+		  ],
+		  "engineTypes": [
+			"inboard",
+			"outboard",
+			"saildrive",
+			"jet"
+		  ],
+		  "criticality": 2,
+		  "costIndicator": 2
+		},
+		{
+		  "id": "belts_and_pulleys",
+		  "title": "Drivreimer",
+		  "description": "**Hva:** Drivreimenes tilstand og stramming (f.eks. for dynamo, vannpumpe).\n**Hvordan:** Se etter sprekker. Klem på reimen for å sjekke spensten (ca 1 cm nedtrykk).\n**Se etter:** Sprekker i gummien. Svart støv rundt reimhjulene.\n**Tolkning:** Sprekker eller slapp reim krever umiddelbar utskifting.",
+		  "tags": [
+			"motorboat",
+			"sailboat"
+		  ],
+		  "engineTypes": [
+			"inboard",
+			"saildrive"
+		  ],
+		  "criticality": 2,
+		  "costIndicator": 1
+		},
+		{
+		  "id": "cooling_hoses_clamps",
+		  "title": "Kjøleslanger og klemmer",
+		  "description": "**Hva:** Tilstand på slanger for sjøvann og ferskvann.\n**Hvordan:** Klem på slangene. Se etter lekkasjespor (saltkrystaller, irr) ved klemmene.\n**Se etter:** Myke, svampaktige eller bulende slanger.\n**Tolkning:** Dårlige slanger kan kollapse og forårsake overoppheting.",
+		  "tags": [
+			"motorboat",
+			"sailboat"
+		  ],
+		  "engineTypes": [
+			"inboard",
+			"saildrive"
+		  ],
+		  "criticality": 2,
+		  "costIndicator": 1
+		},
+		{
+		  "id": "exhaust_manifold_riser",
+		  "title": "Eksosmanifold og bend",
+		  "description": "**Hva:** Tegn på gjennomrusting, som kan slippe vann inn i motoren.\n**Hvordan:** Se etter rustrenner på utsiden, spesielt på skjøten mellom manifold og bend.\n**Se etter:** Tydelige spor etter rustent vann.\n**Tolkning:** En intern lekkasje her er kritisk og kostbar. Må ofte byttes etter 10-15 år.",
+		  "tags": [
+			"motorboat",
+			"sailboat"
+		  ],
+		  "engineTypes": [
+			"inboard",
+			"saildrive"
+		  ],
+		  "criticality": 1,
+		  "costIndicator": 3
+		},
+		{
+		  "id": "cold_start_and_exhaust_smoke",
+		  "title": "Kaldstart og eksosfarge",
+		  "description": "**Hva:** Motorens helsetilstand basert på eksos.\n**Hvordan:** Observer eksosrøyken rett etter en kaldstart.\n**Se etter:** Blå røyk (oljeforbruk), tykk hvit røyk (vann/toppakning), eller svart røyk (dårlig forbrenning).\n**Tolkning:** Fargen på røyken er en viktig diagnostisk indikator for motorens indre tilstand.",
+		  "tags": [
+			"motorboat",
+			"sailboat"
+		  ],
+		  "engineTypes": [
+			"inboard",
+			"outboard",
+			"saildrive",
+			"jet"
+		  ],
+		  "criticality": 1,
+		  "costIndicator": 4
+		},
+		{
+		  "id": "cooling_flow",
+		  "title": "Kjølevannsstrøm",
+		  "description": "**Hva:** Sjøvannspumpens effektivitet.\n**Hvordan:** Se på utløpet for kjølevann på skutesiden eller 'sladrestrålen' (telltale) umiddelbart etter motorstart.\n**Se etter:** En jevn, kraftig vannstråle.\n**Tolkning:** Svak eller 'spyttende' stråle indikerer slitt impeller eller tette inntak.",
+		  "tags": [
+			"motorboat",
+			"sailboat"
+		  ],
+		  "engineTypes": [
+			"inboard",
+			"outboard",
+			"saildrive",
+			"jet"
+		  ],
+		  "criticality": 2,
+		  "costIndicator": 1
+		},
+		{
+		  "id": "engine_mounts",
+		  "title": "Motorfester",
+		  "description": "**Hva:** Tilstanden på motorfestenes gummi og metall.\n**Hvordan:** Se etter sprekker i gummien. Observer motoren når den settes i gir.\n**Se etter:** Sprekker, sammentrykt gummi. Overdreven bevegelse/klunking ved girskift.\n**Tolkning:** Slitte fester gir vibrasjoner og kan skade aksel/drev.\n💡 **Tips:** Krever prøvekjøring for fullverdig sjekk.",
+		  "tags": [
+			"motorboat",
+			"sailboat"
+		  ],
+		  "engineTypes": [
+			"inboard",
+			"saildrive"
+		  ],
+		  "criticality": 2,
+		  "costIndicator": 2
+		},
+		{
+		  "id": "saildrive_check",
+		  "title": "Seilbåtdrev - Membran",
+		  "description": "**Hva:** Alder og tilstand på gummimembranen mellom drev og skrog.\n**Hvordan:** Spør eier om membranens alder og dokumentasjon på bytte. Inspiser synlige deler for sprekker.\n**Se etter:** At membranen er innenfor bytteintervallet (typisk 7-10 år).\n**Tolkning:** En gammel membran er en kritisk sikkerhetsrisiko for vanninntrenging.",
+		  "tags": [
+			"sailboat"
+		  ],
+		  "engineTypes": [
+			"saildrive"
+		  ],
+		  "criticality": 1,
+		  "costIndicator": 3
+		},
+		{
+		  "id": "shaft_seal",
+		  "title": "Akseltetning (pakkboks)",
+		  "description": "**Hva:** Lekkasje fra akseltetning der propellakselen kommer inn i båten.\n**Hvordan:** Inspiser der propellakselen kommer inn i båten.\n**Se etter:** Drypp fra tetningen. Tradisjonell pakkboks kan dryppe litt under fart, men skal være tett stille. Dryppfri tetning skal være helt tørr.\n**Tolkning:** Overdreven lekkasje krever justering eller bytte.",
+		  "tags": [
+			"motorboat",
+			"sailboat"
+		  ],
+		  "engineTypes": [
+			"inboard"
+		  ],
+		  "criticality": 2,
+		  "costIndicator": 2
+		},
+		{
+		  "id": "outboard_tilt_trim",
+		  "title": "Tilt/Trim-system (Utenbords)",
+		  "description": "**Hva:** Funksjon og tilstand på motorens tilt- og trim-mekanisme.\n**Hvordan:** Kjør motoren helt opp og ned med knappene. Se etter oljelekkasjer fra sylinderne.\n**Se etter:** Ujevn gange, ulyder eller lekkasjer av hydraulikkolje.\n**Tolkning:** Reparasjoner på hydraulikksystemet kan være kostbart.",
+		  "tags": [
+			"motorboat"
+		  ],
+		  "engineTypes": [
+			"outboard"
+		  ],
+		  "criticality": 2,
+		  "costIndicator": 3
+		},
+		{
+		  "id": "outboard_propeller_skeg",
+		  "title": "Propell og Finne (Utenbords)",
+		  "description": "**Hva:** Skader på propell og den beskyttende finnen (skeg).\n**Hvordan:** Inspiser propellbladene for hakk og deformasjoner. Sjekk om finnen er rett og uten store skader.\n**Se etter:** Hakk, bøyde blader, fiskesnøre rundt akselen. Sprukket eller avbrekt finne.\n**Tolkning:** En skadet propell gir vibrasjon og dårlig ytelse. En skadet finne tyder på grunnstøting.",
+		  "tags": [
+			"motorboat"
+		  ],
+		  "engineTypes": [
+			"outboard"
+		  ],
+		  "criticality": 2,
+		  "costIndicator": 2
+		},
+		{
+		  "id": "outboard_steering",
+		  "title": "Styring (Utenbords)",
+		  "description": "**Hva:** Slark og friksjon i motorens styresystem.\n**Hvordan:** Sving motoren manuelt fra side til side (når den står på land). Vri på rattet og kjenn etter slark.\n**Se etter:** Treghet, ulyder eller 'dødgang' i styringen.\n**Tolkning:** Treg styring kan skyldes gamle kabler eller dårlig smøring, og kan være en sikkerhetsrisiko.",
+		  "tags": [
+			"motorboat"
+		  ],
+		  "engineTypes": [
+			"outboard"
+		  ],
+		  "criticality": 2,
+		  "costIndicator": 2
+		},
+		{
+		  "id": "jet_drive_check",
+		  "title": "Vannjet - Impeller og Slitasjering",
+		  "description": "**Hva:** Skader og slitasje i vannjet-pumpen som reduserer ytelsen.\n**Hvordan:** Lys inn i inntaksgrinden og utløpsdysen. Se etter hakk, bøyde blader på impelleren og slark mellom impeller og slitasjering (wear ring).\n**Tolkning:** Skader på impelleren eller for stor klaring til slitasjeringen fører til kavitasjon og tap av skyvekraft.",
+		  "tags": [
+			"motorboat"
+		  ],
+		  "engineTypes": [
+			"jet"
+		  ],
+		  "criticality": 2,
+		  "costIndicator": 3
+		}
+	  ]
+	},
+    {
+      "id": "electrical",
+      "title": "El-system",
+      "items": [
+        {
+          "id": "battery_bank_condition",
+          "title": "Batteribank - alder og tilstand",
+          "description": "**Hva:** Batterienes helse, alder og sikkerhet.\n**Hvordan:** Se etter korrosjon, buler i sidene og produksjonsdato. Sjekk at de er forsvarlig festet.\n**Se etter:** Hvitt/grønt pulver på polene. Utbulende sider. At batteriene er under 7 år gamle.\n**Tolkning:** Bulende batterier er ødelagte. Løse batterier er farlig i sjøgang.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 3
+        },
+        {
+          "id": "wiring_and_connections",
+          "title": "Ledningsnett og koblinger",
+          "description": "**Hva:** Kvaliteten på det elektriske anlegget.\n**Hvordan:** Se bak paneler og i motorrom. Vurder ryddighet og kvalitet på koblinger.\n**Se etter:** 'Fuglerede' med umerkede kabler. Bruk av elektrikertape eller 'sukkerbiter'.\n**Tolkning:** Dårlig kabling er en alvorlig brannfare og indikerer amatørarbeid.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "main_switches",
+          "title": "Hovedstrømbrytere",
+          "description": "**Hva:** Tilstanden til hovedbryterne.\n**Hvordan:** Operer bryterne. Kjenn på dem etter at de har vært under belastning (motorstart/landstrøm).\n**Se etter:** En kontant 'klikk'-følelse. At bryterne ikke blir varme.\n**Tolkning:** En varm bryter indikerer dårlig kontakt og brannfare.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 1
+        },
+        {
+          "id": "alternator_charging",
+          "title": "Ladespenning fra dynamo",
+          "description": "**Hva:** Dynamoens funksjon.\n**Hvordan:** Mål spenningen på batteripolene mens motoren går på forhøyet turtall (ca 1500 RPM).\n**Se etter:** Ladespenning mellom 14.2V og 14.8V.\n**Tolkning:** Spenning under 14V betyr dårlig lading. Over 15V kan ødelegge batteriene.\n💡 **Tips:** Krever et multimeter.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "shorepower_safety",
+          "title": "Landstrøm og jordfeilbryter",
+          "description": "**Hva:** Sikkerheten på landstrømsanlegget.\n**Hvordan:** Inspiser inntaket for varmgang. Trykk på testknappen til jordfeilbryteren ombord.\n**Se etter:** Misfarget/smeltet plast på inntaket. At strømmen kuttes umiddelbart ved test.\n**Tolkning:** En jordfeilbryter som ikke fungerer er en livsfarlig mangel.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 2
+        },
+        {
+          "id": "switch_and_fuse_panel",
+          "title": "Bryter- og sikringspanel",
+          "description": "**Hva:** Funksjonen til alle brytere og utstyr.\n**Hvordan:** Slå på alle brytere systematisk og verifiser at lys, pumper etc. fungerer.\n**Se etter:** Tydelig merking av brytere. Tegn til varmgang.\n**Tolkning:** Gir en god oversikt over tilstanden til det elektriske utstyret.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        },
+        {
+          "id": "navigation_lights",
+          "title": "Navigasjonslys",
+          "description": "**Hva:** Funksjon på alle lanterner.\n**Hvordan:** Test alle lys separat (babord, styrbord, akter, topp, motor).\n**Se etter:** At riktig farge lyser på riktig sted og at de er hele.\n**Tolkning:** Feil kan skyldes pære, korrosjon eller ledningsbrudd.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "anodes_and_galvanic_protection",
+          "title": "Anoder (tærezink)",
+          "description": "**Hva:** Anodenes tilstand og funksjon.\n**Hvordan:** Finn alle offeranodene på drev, aksel, ror etc.\n**Se etter:** At de er ca. 50% oppbrukt. Hvis de ser helt nye ut etter en sesong, har de dårlig kontakt.\n**Tolkning:** En 'perfekt' anode beskytter ikke båten. Bør byttes årlig.\n💡 **Tips:** Krever at båten er på land.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        }
+      ]
+    },
+    {
+      "id": "plumbing",
+      "title": "VVS",
+      "items": [
+        {
+          "id": "freshwater_system",
+          "title": "Trykkvannsystem (pumpe & kvalitet)",
+          "description": "**Hva:** Lekkasje i systemet og vannkvalitet.\n**Hvordan:** Tapp et glass vann, lukt og smak. Lytt så til pumpen med alle kraner stengt.\n**Se etter:** Sur eller innestengt lukt i vannet. At pumpen starter periodisk uten at vann brukes.\n**Tolkning:** Periodisk pumping indikerer lekkasje. Dårlig vannkvalitet krever rens av tank/slanger.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        },
+        {
+          "id": "holding_hose_smell",
+          "title": "Septikslanger - lukt",
+          "description": "**Hva:** Om lukt trenger gjennom septikslangene.\n**Hvordan:** Legg en varm, fuktig klut rundt en septikslange i et par minutter. Lukt på kluten.\n**Se etter:** En klar kloakklukt på kluten.\n**Tolkning:** Lukt betyr at slangene er 'permeatert' og må byttes. En ubehagelig og kostbar jobb.\n💡 **Tips:** Krever en varm, fuktig klut.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "toilet_operation",
+          "title": "Toalett - funksjon og lekkasjer",
+          "description": "**Hva:** Toalettets pumpefunksjon og tetthet.\n**Hvordan:** Operer pumpen (manuell/elektrisk). Se rundt basen og koblinger.\n**Se etter:** Jevn pumpedrift. Tegn til lekkasjer (fukt eller saltkrystaller).\n**Tolkning:** Lekkasjer fra septiksystemet er uhygienisk og må utbedres.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        },
+        {
+          "id": "water_heater",
+          "title": "Varmtvannsbereder",
+          "description": "**Hva:** Berederens funksjon på motor og landstrøm.\n**Hvordan:** Sjekk for varmtvann etter prøvetur (motorvarme) og ved landstrømstilkobling (230V).\n**Se etter:** At vannet blir varmt i begge tilfeller. Lekkasjer fra selve berederen.\n**Tolkning:** Gir indikasjon på tilstand for både bereder og kjølesystem/el-system.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        },
+        {
+          "id": "heater_function_and_smoke",
+          "title": "Dieselvarmer",
+          "description": "**Hva:** Dieselvarmerens funksjon.\n**Hvordan:** Start varmeren. Lytt til vifter og drivstoffpumpe. Observer eksosutslippet ute.\n**Se etter:** Uvanlige lyder. Vedvarende hvit eller svart røyk etter oppstartsfasen.\n**Tolkning:** Røyk indikerer behov for service (rens/glødeplugg).",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        },
+        {
+          "id": "sink_drainage",
+          "title": "Avløp fra vasker",
+          "description": "**Hva:** Om avløp er tette.\n**Hvordan:** Fyll vaskene med vann og se hvor raskt det renner ut.\n**Se etter:** Tregt avløp.\n**Tolkning:** Tregt avløp tyder på delvis tette slanger eller skroggjennomføringer.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        }
+      ]
+    },
+    {
+      "id": "steering",
+      "title": "Styresystem",
+      "items": [
+        {
+          "id": "wheel_steering_play",
+          "title": "Rattstyring - slark og friksjon",
+          "description": "**Hva:** Slitasje i styresystemet.\n**Hvordan:** Beveg rattet forsiktig for å sjekke 'dødgang'. Drei fra borde til borde for å kjenne etter motstand.\n**Se etter:** Tydelig 'klunk' eller mye dødgang. Tunge eller ujevne punkter.\n**Tolkning:** Indikerer slitasje i pidestall, wire eller rorlagre.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "steering_cables_sheaves",
+          "title": "Styrekabler og trinser (wire)",
+          "description": "**Hva:** Tilstand på styrekabler og trinser.\n**Hvordan:** Følg wiren fra pidestall til rorkvadrant. Dra en klut langs wiren. Sjekk at trinsene roterer fritt.\n**Se etter:** Rust eller brutte kordeler ('kroker'). Slappe kabler. Tregre trinser.\n**Tolkning:** Skadet wire eller trege trinser er en sikkerhetsrisiko.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 2
+        },
+        {
+          "id": "rudder_quadrant_arm",
+          "title": "Rorkvadrant / Rorarm",
+          "description": "**Hva:** Sprekker eller slark i rorkvadranten.\n**Hvordan:** Inspiser metallet visuelt. Rugg på kvadranten for å kjenne etter slark mot rorstammen.\n**Se etter:** Sprekker, spesielt rundt festet til rorstammen. Løse bolter.\n**Tolkning:** Sprekker i dette kritiske punktet kan føre til totalt tap av styring.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "rudder_bearings_inside",
+          "title": "Rorlager - innvendig sjekk",
+          "description": "**Hva:** Slark i øvre rorlager.\n**Hvordan:** Én person beveger roret ute, mens en annen ser/lytter ved toppen av rorstammen inne.\n**Se etter:** Synlig bevegelse av stammen i forhold til lageret. 'Klunke'-lyder.\n**Tolkning:** Den beste måten å bekrefte slark i det øvre lageret.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 3
+        },
+        {
+          "id": "emergency_tiller",
+          "title": "Nødrorkult - funksjonstest",
+          "description": "**Hva:** Om nødstyringen er funksjonell.\n**Hvordan:** Finn nødrorkulten og prøv å montere den på toppen av rorstammen.\n**Se etter:** At den passer lett og sikkert på plass.\n**Tolkning:** Mange nødløsninger er kun teoretiske. Sjekk at den fungerer i praksis.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "hydraulic_steering_check",
+          "title": "Hydraulisk styring",
+          "description": "**Hva:** Lekkasjer eller luft i hydraulikksystemet.\n**Hvordan:** Sjekk oljenivå i reservoaret. Se etter oljesøl på styresylinderen. Vri rattet fra borde til borde.\n**Se etter:** Lavt oljenivå. Tegn til lekkasje. Myk eller 'svampete' følelse i rattet.\n**Tolkning:** Svampete styring betyr luft i systemet, sannsynligvis fra en lekkasje.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "tiller_steering_check",
+          "title": "Rorkult",
+          "description": "**Hva:** Skader på rorkulten.\n**Hvordan:** Inspiser for sprekker (tre/metall). Rikk hardt for å sjekke innfestingen.\n**Se etter:** Sprekker, delaminering (tre), eller bøyninger. Slark i festet til rorstammen.\n**Tolkning:** En svak rorkult er en sikkerhetsrisiko.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 2
+        },
+        {
+          "id": "autopilot_drive_unit",
+          "title": "Autopilot - drivenhet",
+          "description": "**Hva:** Tilstanden til autopilotens motor/pumpe.\n**Hvordan:** Aktiver autopiloten. Lytt til drivenheten mens den jobber. Se etter lekkasjer (hydraulisk).\n**Se etter:** Uvanlig mye støy (skraping, during).\n**Tolkning:** Støy kan indikere slitasje. Sjekk at den styrer korrekt under prøvetur.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "criticality": 3,
+          "costIndicator": 3
+        }
+      ]
+    },
+    {
+      "id": "safety",
+      "title": "Sikkerhet",
+      "items": [
+        {
+          "id": "fire_extinguishers",
+          "title": "Brannslukningsapparater",
+          "description": "**Hva:** Apparatenes tilstand og alder.\n**Hvordan:** Finn alle apparater. Sjekk trykkmåleren og produksjons-/servicedato.\n**Se etter:** At nålen er på det grønne feltet. At de er under 10 år gamle (pulver).\n**Tolkning:** Apparat uten trykk eller som er for gammelt, er ubrukelig.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 1
+        },
+        {
+          "id": "bilge_pumps_operation",
+          "title": "Lensepumper",
+          "description": "**Hva:** Lensepumpenes funksjon.\n**Hvordan:** Test elektrisk pumpe med manuell bryter. Løft flottørbryteren for å teste automatikk. Test manuell pumpe med håndtaket.\n**Se etter:** At pumpene starter og pumper vann effektivt.\n**Tolkning:** Kritisk sikkerhetsutstyr som må fungere feilfritt.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 1
+        },
+        {
+          "id": "gas_install_leak_test",
+          "title": "Gassanlegg",
+          "description": "**Hva:** Gasslangens alder og systemets tetthet.\n**Hvordan:** Sjekk dato på slangen. Utfør lekkasjetest ved å trykksette og vente i 5 minutter.\n**Se etter:** At slangen er under 5 år gammel. At trykket holder seg.\n**Tolkning:** Gasslekkasje er ekstremt farlig. Eldre slanger bør byttes uansett.\n💡 **Tips:** Krever såpevann eller lekkasjespray for å finne små lekkasjer.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 1
+        },
+        {
+          "id": "guardrails_lifelines",
+          "title": "Rekkestøtter og livliner",
+          "description": "**Hva:** Styrken i rekkestøttenes innfesting.\n**Hvordan:** Rugg kraftig på hver enkelt rekkestøtte.\n**Se etter:** Bevegelse i basen av rekkestøttene.\n**Tolkning:** Bevegelse er et alvorlig tegn på vanninntrenging og delaminering i dekket.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "anchor_and_windlass",
+          "title": "Anker og ankerspill",
+          "description": "**Hva:** Funksjonen til ankerspillet.\n**Hvordan:** Test at spillet kjører kjetting/tau jevnt både ut og inn.\n**Se etter:** Ujevne eller anstrengte lyder fra motoren. At ankeret er forsvarlig sikret.\n**Tolkning:** Et ankerspill som ikke virker når du trenger det, er et stort problem.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "liferaft_service_date",
+          "title": "Redningsflåte - Servicedato",
+          "description": "**Hva:** Om redningsflåten har gyldig service.\n**Hvordan:** Finn servicelappen på flåten.\n**Se etter:** Dato for siste godkjente service.\n**Tolkning:** En flåte som har gått ut på dato representerer en betydelig kostnad for ny service.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "flares_and_pyrotechnics",
+          "title": "Nødbluss - Utløpsdato",
+          "description": "**Hva:** Gyldigheten på pyroteknisk utstyr.\n**Hvordan:** Gå gjennom alle nødbluss, raketter og røyksignaler.\n**Se etter:** Utløpsdatoen på hver enhet.\n**Tolkning:** Utgått utstyr er upålitelig og må erstattes.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        }
+      ]
+    },
+    {
+      "id": "docs_trial",
+      "title": "Dokumentasjon & Prøvetur",
+      "items": [
+        {
+          "id": "service_records",
+          "title": "Servicehistorikk og kvitteringer",
+          "description": "**Hva:** Dokumentasjon på vedlikehold og større arbeider.\n**Hvordan:** Be om å få se en perm med kvitteringer og dokumentasjon.\n**Se etter:** Servicehistorikk på motor, rigg, drevbelg, seil etc.\n**Tolkning:** God historikk er et sterkt positivt tegn. Mangel på historikk øker din risiko.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "registration_papers",
+          "title": "Papirer (eierskap, CE-merking)",
+          "description": "**Hva:** At båtens papirer er i orden og eierskap er korrekt.\n**Hvordan:** Sammenlign skrognummer (HIN/CIN) med papirer. Se etter CE-merke (krav etter 1998).\n**Se etter:** Samsvar mellom papirer og båt. At selger er registrert eier. Sjekk for heftelser.\n**Tolkning:** Kritisk for en lovlig og trygg handel.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 1
+        },
+        {
+          "id": "manuals_and_docs",
+          "title": "Manualer og instruksjonsbøker",
+          "description": "**Hva:** Tilstedeværelse av teknisk dokumentasjon.\n**Hvordan:** Spør etter permen med manualer til motor, elektronikk etc.\n**Se etter:** En komplett og ryddig samling.\n**Tolkning:** Et tegn på en samvittighetsfull eier. Gull verdt for fremtidig vedlikehold.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        },
+        {
+          "id": "sea_trial",
+          "title": "Prøvekjøring / Prøveseilas",
+          "description": "**Hva:** Ytelse og funksjon under reell belastning.\n**Hvordan:** Varm opp motor, gi full gass i noen minutter. Heis seil og seil på ulike kurser. Aktiver autopilot.\n**Se etter:** Motor oppnår maks turtall uten overoppheting. Båten er balansert på roret. Autopilot holder jevn kurs.\n**Tolkning:** Den eneste måten å vurdere motor, rigg og seil på under reell belastning.\n💡 **Tips:** Dette er det viktigste punktet i hele sjekken. Sett av god tid.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 1
+        },
+        {
+          "id": "owner_interview",
+          "title": "Spørsmål til eier",
+          "description": "**Hva:** Eierens kunnskap og innsikt om båten.\n**Hvordan:** Still åpne spørsmål om historikk, kjente feil, skader og hvorfor de selger.\n**Se etter:** Konsistente og troverdige svar.\n**Tolkning:** Kan gi verdifull innsikt du ikke finner andre steder.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        }
+      ]
+    },
+    {
+      "id": "ancillary_equipment",
+      "title": "Ekstrautstyr & Løsøre",
+      "items": [
+        {
+          "id": "mooring_lines_fenders",
+          "title": "Fortøyninger og fendere",
+          "description": "**Hva:** Tilstand på tauverk og fendere.\n**Hvordan:** Klem på tauene. Se etter slitasje. Sjekk at fenderne holder på luften.\n**Se etter:** Myke og smidige tau. Harde, stive tau er gamle og svake.\n**Tolkning:** Et komplett sett med nye fortøyninger er en betydelig utgift.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        },
+        {
+          "id": "vhf_radio_check",
+          "title": "VHF-radio",
+          "description": "**Hva:** VHF-ens grunnleggende funksjon.\n**Hvordan:** Slå på, lytt etter aktivitet for å bekrefte mottak. Spør om MMSI er programmert.\n**Se etter:** Klart display og lyd. Funksjonell squelch.\n**Tolkning:** MMSI må omregistreres på ny eier. Bekrefter at viktig sikkerhetsutstyr virker.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "gps_chartplotter_check",
+          "title": "Kartplotter / GPS",
+          "description": "**Hva:** Kartplotterens funksjon og kartverkets alder.\n**Hvordan:** Slå på. Sjekk oppstartstid og om den får satellitt-lås. Test zoom/panorering. Spør om kartalder.\n**Se etter:** Fuktskader i skjermen. Treg respons.\n**Tolkning:** Oppdatering av kartbrikker kan være kostbart.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        },
+        {
+          "id": "galley_stove_check",
+          "title": "Kokeapparat",
+          "description": "**Hva:** Kokeapparatets funksjon og sikkerhet.\n**Hvordan:** Tenn alle bluss og evt. stekeovn. Test opphenget (gimbal) ved å bevege det sideveis.\n**Se etter:** Jevn, blå flamme. Fri bevegelse i opphenget.\n**Tolkning:** Gul/sotete flamme krever service. Fastlåst oppheng er en sikkerhetsrisiko.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "refrigerator_check",
+          "title": "Kjøleskap / Kjøleboks",
+          "description": "**Hva:** Kompressorens funksjon og kjøleevne.\n**Hvordan:** Slå på og la det gå i 15-20 min. Lytt etter om kompressoren går kontinuerlig eller tar pauser.\n**Se etter:** At det blir kaldt. At kompressoren stopper innimellom.\n**Tolkning:** En kompressor som aldri stopper vil tappe batteriene raskt.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        },
+        {
+          "id": "dinghy_and_outboard",
+          "title": "Jolle med påhengsmotor",
+          "description": "**Hva:** Jollens og påhengsmotorens tilstand.\n**Hvordan:** Se etter lapper på jolla, sjekk liming i skjøter. Start motoren og se etter kontrollstrålen for kjølevann.\n**Se etter:** Mange reparasjoner på jolla. At motoren starter greit og har en jevn vannstråle.\n**Tolkning:** Svak kontrollstråle betyr at impeller må byttes. Dårlige limskjøter er et vanlig problem.\n💡 **Tips:** For å teste motor kreves en tønne med vann eller prøvekjøring.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        }
+      ]
+    }
+  ]
+}

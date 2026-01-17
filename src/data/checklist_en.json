@@ -1,0 +1,1095 @@
+{
+  "areas": [
+    {
+      "id": "hull_deck",
+      "title": "Hull & Deck",
+      "items": [
+        {
+          "id": "gelcoat_cracks",
+          "title": "Gelcoat Cracks",
+          "description": "**What:** Superficial and structural cracks.\n**How:** Visually inspect hull sides, deck, and corners.\n**Look for:** Fine 'spiderweb' cracks (crazing) vs. deep, straight cracks at load-bearing points.\n**Interpretation:** Crazing is often cosmetic but can allow moisture ingress. Deep cracks may indicate structural weakness.",
+          "tags": [
+            "fiberglass"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        },
+        {
+          "id": "osmosis_blisters",
+          "title": "Osmosis (Blisters)",
+          "description": "**What:** Signs of osmosis below the waterline.\n**How:** Feel the hull. Puncture a suspicious blister to check the fluid and smell.\n**Look for:** Hard, fluid-filled blisters. A sour, vinegar-like smell confirms osmosis.\n**Interpretation:** Requires costly repairs. Soft blisters are usually only in the antifouling paint.\n💡 **Tip:** Requires the boat to be on land. Obtain the owner's consent before puncturing.",
+          "tags": [
+            "fiberglass"
+          ],
+          "criticality": 1,
+          "costIndicator": 4
+        },
+        {
+          "id": "hull_deck_joint",
+          "title": "Hull-to-Deck Joint",
+          "description": "**What:** The integrity of the seam between the hull and deck.\n**How:** Look for cracks in the sealant externally. Check for water stains internally.\n**Look for:** Cracks, discoloration, or signs of movement in the joint.\n**Interpretation:** Can indicate a leak or structural movement that weakens the boat.",
+          "tags": [
+            "fiberglass",
+            "steel",
+            "wood",
+            "aluminum"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "thru_hulls",
+          "title": "Thru-hulls",
+          "description": "**What:** Condition of thru-hulls and seacocks below the waterline.\n**How:** Open and close all valves. Inspect for corrosion. Check hose clamps.\n**Look for:** Green corrosion (verdigris), seized valves, rusty clamps. There should be two hose clamps per hose.\n**Interpretation:** Defective seacocks are a critical safety risk and must be replaced.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 2
+        },
+        {
+          "id": "keel_inspection",
+          "title": "Keel (Exterior)",
+          "description": "**What:** Signs of grounding, movement, or corrosion.\n**How:** Inspect the leading edge, bottom, and the joint between the keel and hull.\n**Look for:** Deep nicks, scrapes, or a curved crack ('keel smile'). On iron keels, look for rust blisters in the paint.\n**Interpretation:** A 'keel smile' indicates structural damage. Rust on an iron keel requires maintenance to prevent progression.\n💡 **Tip:** Requires the boat to be on land.",
+          "tags": [
+            "sailboat",
+            "fiberglass",
+            "steel",
+            "wood"
+          ],
+          "criticality": 1,
+          "costIndicator": 4
+        },
+        {
+          "id": "keel_bolts",
+          "title": "Keel Bolts (Interior)",
+          "description": "**What:** The condition of the keel bolts and signs of leaks.\n**How:** Inspect the nuts and washers in the bilge.\n**Look for:** Rust stains from the nuts or deformed washers.\n**Interpretation:** Rust means water ingress. Deformation indicates overload. Both require professional assessment.",
+          "tags": [
+            "sailboat",
+            "fiberglass"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "deck_core_delamination",
+          "title": "Soft Deck (Delamination)",
+          "description": "**What:** Water ingress and delamination in the deck core.\n**How:** Walk over the deck, especially around fittings. Tap lightly with the handle of a screwdriver.\n**Look for:** Soft, spongy areas. A dull, hollow sound ('thud') instead of a sharp ('tap').\n**Interpretation:** A dull sound indicates delamination. A serious and costly repair.\n💡 **Tip:** Requires a screwdriver or similar to tap with.",
+          "tags": [
+            "fiberglass"
+          ],
+          "criticality": 1,
+          "costIndicator": 4
+        },
+        {
+          "id": "deck_hardware_leaks",
+          "title": "Deck Hardware Leaks",
+          "description": "**What:** Signs of leaks from fittings mounted on the deck.\n**How:** Look inside at the ceiling and bulkheads, under winches, stanchions, windows, etc.\n**Look for:** Water stains, dark spots, salt trails, or discolored woodwork.\n**Interpretation:** Classic signs of leaks that can lead to delamination or rot.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "rudder_play",
+          "title": "Rudder Play",
+          "description": "**What:** Play in the rudder bearings.\n**How:** Take a firm grip on the lower part of the rudder blade. Move it forcefully side-to-side and fore-and-aft.\n**Look for:** Noticeable movement or 'clunking' sounds.\n**Interpretation:** Significant play indicates worn rudder bearings, a potentially costly repair.\n💡 **Tip:** Best performed from land, a dock, or a swim platform.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 3
+        },
+        {
+          "id": "steel_hull_rust",
+          "title": "Rust Inspection (Steel Hull)",
+          "description": "**What:** Rust formation on the hull and welds.\n**How:** Look for paint blisters. Tap suspicious areas with a hammer. Check the bilge internally.\n**Look for:** Blisters in the paint and flaking rust. Standing water inside.\n**Interpretation:** Rust under the paint must be ground down and treated to avoid severe corrosion.\n💡 **Tip:** Requires a small hammer.",
+          "tags": [
+            "steel"
+          ],
+          "criticality": 2,
+          "costIndicator": 3
+        },
+        {
+          "id": "wood_hull_rot",
+          "title": "Rot Inspection (Wood Hull)",
+          "description": "**What:** Rot in the hull and structure.\n**How:** Tap with a plastic mallet and listen for a dull sound. Gently poke suspicious areas with a rounded awl.\n**Look for:** Soft wood where the awl sinks in easily, especially near frames and the keel.\n**Interpretation:** Soft wood is a sure sign of rot that requires replacement.\n💡 **Tip:** Requires a plastic mallet and a rounded awl/screwdriver.",
+          "tags": [
+            "wood"
+          ],
+          "criticality": 1,
+          "costIndicator": 4
+        },
+        {
+          "id": "aluminum_hull_corrosion",
+          "title": "Corrosion (Aluminum Hull)",
+          "description": "**What:** Galvanic corrosion and pitting.\n**How:** Look for white powder (oxide), especially where water collects or where other metals are attached.\n**Look for:** White powder, pits in the metal, and cracks in welds.\n**Interpretation:** Corrosion caused by contact with other metals is serious and must be isolated.",
+          "tags": [
+            "aluminum"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        }
+      ]
+    },
+    {
+      "id": "rig",
+      "title": "Rigging",
+      "items": [
+        {
+          "id": "standing_rig_wire",
+          "title": "Standing Rigging - Wire & Terminals",
+          "description": "**What:** Condition of the wire and terminals. Ask about age (recommended lifespan 10-15 years).\n**How:** Run a cotton ball along the wire. Inspect the terminals (end fittings) closely.\n**Look for:** Snags in the cotton ball (broken strand). Cracks or rust at the terminals.\n**Interpretation:** A single broken strand or a crack in a terminal is critical. The wire must be replaced.\n💡 **Tip:** A cotton ball is an effective tool.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "turnbuckles",
+          "title": "Turnbuckles",
+          "description": "**What:** The condition of the turnbuckles.\n**How:** Look for damage. Check that the threads are not seized. Verify the locking mechanism (cotter pins/rings).\n**Look for:** Cracks, bent parts, corrosion, or missing locking pins.\n**Interpretation:** A damaged turnbuckle is a serious weakness in the rig and must be replaced.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 2
+        },
+        {
+          "id": "chainplates",
+          "title": "Chainplates",
+          "description": "**What:** Chainplate attachment and signs of leaks.\n**How:** Check for deformation externally. Look for water stains on the bulkhead internally.\n**Look for:** Bent fittings. Discoloration or moisture damage on the inside.\n**Interpretation:** Leaks at the chainplates can lead to serious structural damage (rot/delamination).",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "mast_base",
+          "title": "Mast Step & Collar",
+          "description": "**What:** Signs of compression and corrosion.\n**How:** Inspect the deck under the mast step (deck-stepped) or the base in the bilge (keel-stepped).\n**Look for:** Cracks in the gelcoat or a sunken area. Corrosion (white powder) on the mast.\n**Interpretation:** Compression damage is serious. Corrosion weakens the mast.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 4
+        },
+        {
+          "id": "spreader_fittings",
+          "title": "Spreaders",
+          "description": "**What:** The attachment and angle of the spreaders.\n**How:** Look up along the mast. Check the fittings against the mast and the protection on the tips.\n**Look for:** Cracks at the root. That they angle slightly upwards. Intact chafe protection.\n**Interpretation:** Damage to the fittings or incorrect angle can lead to mast failure.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 2
+        },
+        {
+          "id": "furling_system",
+          "title": "Furling System",
+          "description": "**What:** The condition of the bearings and foil.\n**How:** Rotate the furler by hand. Listen for unusual noises. Inspect the foil.\n**Look for:** Rumbling or grinding sounds. Dents or corrosion in the foil.\n**Interpretation:** Noises indicate worn bearings (costly). A damaged foil can prevent the sail from furling.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 3
+        },
+        {
+          "id": "running_rigging",
+          "title": "Running Rigging (Halyards & Sheets)",
+          "description": "**What:** The condition of the ropes.\n**How:** Squeeze the ropes and look for wear, especially where they run through blocks/clutches.\n**Look for:** Stiff, hard ropes. Obvious wear on the cover.\n**Interpretation:** Stiff rope has lost strength. Worn-out running rigging is a significant expense.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        },
+        {
+          "id": "boom_gooseneck_vang",
+          "title": "Boom, Gooseneck & Vang",
+          "description": "**What:** Damage to the boom and its fittings. Function of the vang.\n**How:** Inspect the boom for dents/cracks. Wiggle the gooseneck. Check the vang for pressure/leaks.\n**Look for:** Excessive play in the gooseneck. Oil leaks from a gas-strut vang.\n**Interpretation:** Play or cracks are a safety risk. A faulty vang provides poor sail control.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "winches",
+          "title": "Winches",
+          "description": "**What:** The function and condition of the winches. Ask about service history.\n**How:** Turn all winches. Listen for unusual noises. Wiggle the drum.\n**Look for:** 'Gritty' or grinding sounds. A lot of sideways play.\n**Interpretation:** A stiff winch needs servicing. Noises may mean worn bearings and a larger cost.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        }
+      ]
+    },
+    {
+      "id": "sails",
+      "title": "Sails",
+      "items": [
+        {
+          "id": "sail_cloth_condition",
+          "title": "Sailcloth General Condition",
+          "description": "**What:** The age and wear of the sailcloth.\n**How:** Feel the cloth. Hold it up to the light. Look for mildew (black dots).\n**Look for:** A soft and 'dead' cloth (blown out) vs. a stiff and 'crispy' one. Thin areas or small holes.\n**Interpretation:** Mildew weakens the cloth. A blown-out sail provides poor performance.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 3
+        },
+        {
+          "id": "sail_stitching",
+          "title": "Stitching and Thread",
+          "description": "**What:** The condition of the thread in the seams.\n**How:** Carefully go over seams in corners and along edges. Gently pick at the thread with a fingernail.\n**Look for:** Thread that disintegrates or breaks easily.\n**Interpretation:** Bad thread is a sure sign of UV damage. The sail needs re-stitching, a significant cost.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "genoa_uv_cover",
+          "title": "UV Protection on Furling Headsail",
+          "description": "**What:** The condition of the UV cover and its stitching.\n**How:** Inspect the colored strip on the furled sail.\n**Look for:** Worn fabric and especially bad stitching.\n**Interpretation:** This is the sail's most important protection. If this is poor, the sail itself is likely also sun-damaged.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "sail_shape",
+          "title": "Sail Shape",
+          "description": "**What:** The sail's profile and efficiency.\n**How:** Hoist the sail and look at its profile. Observe where the deepest part (the draft) is.\n**Look for:** The draft has moved aft. A 'baggy' sail. A fluttering leech.\n**Interpretation:** A blown-out sail is inefficient, causing more heel and less forward drive.\n💡 **Tip:** Requires a sea trial to assess correctly.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 3,
+          "costIndicator": 3
+        },
+        {
+          "id": "batten_pockets_battens",
+          "title": "Batten Pockets & Battens",
+          "description": "**What:** Wear on batten pockets and damage to battens.\n**How:** Inspect the ends of the batten pockets. Remove a batten if possible.\n**Look for:** Holes where the batten presses against the cloth. Cracks in the battens.\n**Interpretation:** Worn pockets must be repaired to prevent the batten from chafing a hole in the sail.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        },
+        {
+          "id": "sail_hardware",
+          "title": "Sail Hardware",
+          "description": "**What:** The condition of slides, slugs, and attachment points in the corners.\n**How:** Inspect all plastic and metal parts attached to the sail.\n**Look for:** Cracks in plastic. Deformation in pressed rings. Corrosion.\n**Interpretation:** Broken hardware can render the sail unusable until repaired.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "reefing_points",
+          "title": "Reefing Points",
+          "description": "**What:** The reinforcements for the reefing points in the mainsail.\n**How:** Find the cringles or webbing loops used for reefing. Inspect the surrounding area.\n**Look for:** Signs of cringles tearing out. Loose or damaged stitching.\n**Interpretation:** These points are subjected to enormous forces. Damage here is serious.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 2
+        },
+        {
+          "id": "downwind_sails",
+          "title": "Downwind Sails (Spinnaker / Gennaker)",
+          "description": "**What:** The condition of light-wind sails.\n**How:** Ask to see the sails laid out. Hold the cloth up to the light.\n**Look for:** Small tears, holes, and patches.\n**Interpretation:** Minor damage is common, but many repairs can indicate a hard life.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 3,
+          "costIndicator": 3
+        },
+        {
+          "id": "sail_covers_lazy_bag",
+          "title": "Sail Covers / Lazy Bag",
+          "description": "**What:** The condition of the sail protection.\n**How:** Check seams, zippers, and fasteners.\n**Look for:** Worn and UV-damaged fabric and thread.\n**Interpretation:** Poor protection indicates the sail may have suffered more sun damage than necessary.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        }
+      ]
+    },
+    {
+      "id": "interior",
+      "title": "Interior & Structure",
+      "items": [
+        {
+          "id": "headliner_condition",
+          "title": "Headliner Condition",
+          "description": "**What:** Signs of leaks from the deck.\n**How:** Look for discoloration or mold on the ceiling. Press gently upwards, especially around hatches/fittings.\n**Look for:** Water stains, dark spots, or a sagging headliner. Soft areas.\n**Interpretation:** A soft ceiling is a serious sign of a leak and delamination of the deck above.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "bulkhead_bonding",
+          "title": "Bulkhead Bonding (Structure)",
+          "description": "**What:** Structural integrity.\n**How:** Inspect where the bulkheads (walls) are attached to the hull sides.\n**Look for:** Cracks in the 'tabbing' (fiberglass/adhesive joint). Water stains running down the bulkheads.\n**Interpretation:** Cracks suggest the hull is flexing too much, a potential structural weakness.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "bilge_condition",
+          "title": "Bilge Condition",
+          "description": "**What:** Leaks and general maintenance.\n**How:** Lift the floorboards at the lowest point. Check for water, oil, or debris.\n**Look for:** Water in the bilge. Use a paper towel to check if it's saltwater or freshwater.\n**Interpretation:** The source of any water must be identified. Saltwater is often the most serious.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "trim_and_panels_moisture",
+          "title": "Moisture behind Woodwork & Panels",
+          "description": "**What:** Hidden leaks.\n**How:** Shine a flashlight into lockers and behind panels. Use your nose.\n**Look for:** Dark, discolored wood. A pungent, musty smell.\n**Interpretation:** Strong warning signs of persistent moisture problems.\n💡 **Tip:** Requires a good flashlight.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "windows_and_hatches_leaks",
+          "title": "Leaks & Function - Windows & Hatches",
+          "description": "**What:** Sealing and mechanical function.\n**How:** Look for water stains on the inside and test the rubber gaskets. Open, close, and lock all hatches/windows.\n**Look for:** Traces of leaks. Cracked gaskets. Stiff or defective mechanism.\n**Interpretation:** Leaks can cause a lot of damage. A defective hatch is a safety and cost risk.\n💡 **Tip:** Test with a water hose (with owner's consent) to confirm leaks.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "floor_structure",
+          "title": "Floorboards & Sole Structure",
+          "description": "**What:** Rot in the underlying floor structure.\n**How:** Walk systematically through the boat and step firmly on the floorboards (sole).\n**Look for:** Soft, flexing, or 'spongy' areas.\n**Interpretation:** Often indicates that the support structure has rotted due to a leak.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "interior_odor",
+          "title": "General Odor in the Boat",
+          "description": "**What:** Indications of underlying problems.\n**How:** Use your nose actively as soon as you come aboard.\n**Look for:** A musty smell (moisture), diesel smell (leak), or sewage smell (holding tank problem).\n**Interpretation:** Don't ignore what your nose is telling you.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "cushions_and_mattresses",
+          "title": "Cushions & Mattresses",
+          "description": "**What:** Signs of moisture and poor ventilation.\n**How:** Lift up cushions and mattresses. Look at and smell the underside.\n**Look for:** Black dots (mildew) or damp foam.\n**Interpretation:** A clear sign of either a condensation problem or a direct leak.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        },
+        {
+          "id": "general_ventilation",
+          "title": "Ventilation",
+          "description": "**What:** The boat's ability to air out moisture and avoid condensation.\n**How:** Look for dedicated air vents (dorades, mushroom vents, fans) in addition to hatches.\n**Look for:** The number and placement of vents. Are they open and functional?\n**Interpretation:** Poor ventilation is the main cause of mildew and a poor indoor climate.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        }
+      ]
+    },
+    {
+      "id": "engine",
+      "title": "Engine",
+      "items": [
+        {
+          "id": "engine_oil_check",
+          "title": "Engine Oil - Level & Color",
+          "description": "**What:** Signs of water in the oil or poor maintenance.\n**How:** Check the dipstick and the inside of the oil filler cap before a cold start.\n**Look for:** Oil level. Gray/milky oil ('mayonnaise'). Thick, tar-like oil.\n**Interpretation:** Gray oil means water ingress - very serious. Tar-like oil suggests neglected service.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "engineTypes": [
+            "inboard",
+            "outboard",
+            "saildrive"
+          ],
+          "criticality": 1,
+          "costIndicator": 4
+        },
+        {
+          "id": "general_engine_condition",
+          "title": "General Condition - Rust & Cleanliness",
+          "description": "**What:** General impression of maintenance.\n**How:** Assess cleanliness. Look for surface rust and freshly painted areas.\n**Look for:** A clean engine vs. one covered in oil/soot. Deep, flaking rust. Paint hiding problems.\n**Interpretation:** A well-maintained engine is often a sign of a conscientious owner.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "engineTypes": [
+            "inboard",
+            "outboard",
+            "saildrive",
+            "jet"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        },
+        {
+          "id": "oil_leak_block",
+          "title": "Oil Leaks",
+          "description": "**What:** Active oil leaks.\n**How:** Systematically shine a light down the engine block. Check the bilge under the engine.\n**Look for:** Fresh, wet oil spots. A 'sweaty' engine might be okay, but clear drips are not.\n**Interpretation:** Leaks must be located and repaired.\n💡 **Tip:** Requires a good flashlight.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "engineTypes": [
+            "inboard",
+            "outboard",
+            "saildrive",
+            "jet"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "belts_and_pulleys",
+          "title": "Belts & Pulleys",
+          "description": "**What:** The condition and tension of drive belts (e.g., for alternator, water pump).\n**How:** Look for cracks. Squeeze the belt to check its tension (approx. 1 cm / 0.5 inch give).\n**Look for:** Cracks in the rubber. Black dust around the pulleys.\n**Interpretation:** Cracks or a loose belt require immediate replacement.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "engineTypes": [
+            "inboard",
+            "saildrive"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "cooling_hoses_clamps",
+          "title": "Cooling Hoses & Clamps",
+          "description": "**What:** Condition of raw water and freshwater hoses.\n**How:** Squeeze the hoses. Look for signs of leaks (salt crystals, corrosion) at the clamps.\n**Look for:** Soft, spongy, or bulging hoses.\n**Interpretation:** Bad hoses can collapse and cause overheating.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "engineTypes": [
+            "inboard",
+            "saildrive"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "exhaust_manifold_riser",
+          "title": "Exhaust Manifold & Riser",
+          "description": "**What:** Signs of rust-through, which can let water into the engine.\n**How:** Look for rust stains on the outside, especially at the joint between the manifold and riser.\n**Look for:** Clear traces of rusty water.\n**Interpretation:** An internal leak here is critical and costly. Often needs replacement after 10-15 years.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "engineTypes": [
+            "inboard",
+            "saildrive"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "cold_start_and_exhaust_smoke",
+          "title": "Cold Start & Exhaust Smoke Color",
+          "description": "**What:** The engine's health based on its exhaust.\n**How:** Observe the exhaust smoke right after a cold start.\n**Look for:** Blue smoke (oil consumption), thick white smoke (water/head gasket), or black smoke (poor combustion).\n**Interpretation:** The color of the smoke is an important diagnostic indicator of the engine's internal condition.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "engineTypes": [
+            "inboard",
+            "outboard",
+            "saildrive",
+            "jet"
+          ],
+          "criticality": 1,
+          "costIndicator": 4
+        },
+        {
+          "id": "cooling_flow",
+          "title": "Cooling Water Flow",
+          "description": "**What:** The efficiency of the raw water pump.\n**How:** Look at the cooling water outlet on the hull side or the 'telltale' stream immediately after starting the engine.\n**Look for:** A steady, strong stream of water.\n**Interpretation:** A weak or 'spitting' stream indicates a worn impeller or clogged intake.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "engineTypes": [
+            "inboard",
+            "outboard",
+            "saildrive",
+            "jet"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "engine_mounts",
+          "title": "Engine Mounts",
+          "description": "**What:** The condition of the engine mounts' rubber and metal.\n**How:** Look for cracks in the rubber. Observe the engine when it's put into gear.\n**Look for:** Cracks, compressed rubber. Excessive movement/clunking when shifting gears.\n**Interpretation:** Worn mounts cause vibrations and can damage the shaft/drive.\n💡 **Tip:** Requires a sea trial for a full check.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "engineTypes": [
+            "inboard",
+            "saildrive"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "saildrive_check",
+          "title": "Saildrive - Diaphragm",
+          "description": "**What:** Age and condition of the rubber diaphragm between the drive and the hull.\n**How:** Ask the owner for the diaphragm's age and documentation of replacement. Inspect visible parts for cracks.\n**Look for:** That the diaphragm is within its replacement interval (typically 7-10 years).\n**Interpretation:** An old diaphragm is a critical safety risk for water ingress.",
+          "tags": [
+            "sailboat"
+          ],
+          "engineTypes": [
+            "saildrive"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "shaft_seal",
+          "title": "Shaft Seal (Stuffing Box)",
+          "description": "**What:** Leakage from the shaft seal where the propeller shaft enters the boat.\n**How:** Inspect where the propeller shaft enters the boat.\n**Look for:** Drips from the seal. A traditional stuffing box may drip slightly when running, but should be tight when stationary. A dripless seal should be completely dry.\n**Interpretation:** Excessive leakage requires adjustment or replacement.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "engineTypes": [
+            "inboard"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "outboard_tilt_trim",
+          "title": "Tilt/Trim System (Outboard)",
+          "description": "**What:** Function and condition of the engine's tilt and trim mechanism.\n**How:** Run the engine all the way up and down using the buttons. Look for oil leaks from the cylinders.\n**Look for:** Jerky movement, unusual noises, or leaks of hydraulic fluid.\n**Interpretation:** Repairs to the hydraulic system can be costly.",
+          "tags": [
+            "motorboat"
+          ],
+          "engineTypes": [
+            "outboard"
+          ],
+          "criticality": 2,
+          "costIndicator": 3
+        },
+        {
+          "id": "outboard_propeller_skeg",
+          "title": "Propeller & Skeg (Outboard)",
+          "description": "**What:** Damage to the propeller and the protective fin (skeg) below it.\n**How:** Inspect the propeller blades for nicks and deformation. Check if the skeg is straight and without major damage.\n**Look for:** Nicks, bent blades, fishing line around the shaft. A cracked or broken skeg.\n**Interpretation:** A damaged propeller causes vibration and poor performance. A damaged skeg suggests a grounding.",
+          "tags": [
+            "motorboat"
+          ],
+          "engineTypes": [
+            "outboard"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "outboard_steering",
+          "title": "Steering (Outboard)",
+          "description": "**What:** Play and friction in the engine's steering system.\n**How:** Manually turn the engine from side to side (when on land). Turn the wheel and feel for play.\n**Look for:** Stiffness, unusual noises, or 'dead play' in the steering.\n**Interpretation:** Stiff steering can be caused by old cables or poor lubrication and can be a safety hazard.",
+          "tags": [
+            "motorboat"
+          ],
+          "engineTypes": [
+            "outboard"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "jet_drive_check",
+          "title": "Jet Drive - Impeller & Wear Ring",
+          "description": "**What:** Damage and wear in the jet pump that reduces performance.\n**How:** Shine a light into the intake grate and outlet nozzle. Look for nicks, bent blades on the impeller, and clearance between the impeller and the wear ring.\n**Interpretation:** Damage to the impeller or excessive clearance to the wear ring leads to cavitation and loss of thrust.",
+          "tags": [
+            "motorboat"
+          ],
+          "engineTypes": [
+            "jet"
+          ],
+          "criticality": 2,
+          "costIndicator": 3
+        }
+      ]
+    },
+    {
+      "id": "electrical",
+      "title": "Electrical System",
+      "items": [
+        {
+          "id": "battery_bank_condition",
+          "title": "Battery Bank - Age & Condition",
+          "description": "**What:** The health, age, and safety of the batteries.\n**How:** Look for corrosion, bulging sides, and the production date. Check that they are securely fastened.\n**Look for:** White/green powder on the terminals. Bulging sides. That the batteries are less than 7 years old.\n**Interpretation:** Bulging batteries are ruined. Loose batteries are dangerous in rough seas.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 3
+        },
+        {
+          "id": "wiring_and_connections",
+          "title": "Wiring & Connections",
+          "description": "**What:** The quality of the electrical installation.\n**How:** Look behind panels and in the engine room. Assess the tidiness and quality of connections.\n**Look for:** A 'rat's nest' of unlabeled cables. Use of electrical tape or household-style terminal blocks.\n**Interpretation:** Poor wiring is a serious fire hazard and indicates amateur work.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "main_switches",
+          "title": "Main Switches",
+          "description": "**What:** The condition of the main switches.\n**How:** Operate the switches. Feel them after they have been under load (engine start/shore power).\n**Look for:** A firm 'click' feel. That the switches do not get hot.\n**Interpretation:** A hot switch indicates a bad connection and a fire hazard.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 1
+        },
+        {
+          "id": "alternator_charging",
+          "title": "Charging Voltage from Alternator",
+          "description": "**What:** The function of the alternator.\n**How:** Measure the voltage at the battery terminals while the engine is running at increased RPM (approx. 1500 RPM).\n**Look for:** A charging voltage between 14.2V and 14.8V.\n**Interpretation:** Voltage below 14V means poor charging. Above 15V can destroy the batteries.\n💡 **Tip:** Requires a multimeter.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "shorepower_safety",
+          "title": "Shore Power & RCD/GFCI",
+          "description": "**What:** The safety of the shore power system.\n**How:** Inspect the inlet for signs of overheating. Press the test button on the RCD/GFCI breaker onboard.\n**Look for:** Discolored/melted plastic on the inlet. That the power cuts off immediately when tested.\n**Interpretation:** A non-functioning RCD/GFCI is a life-threatening defect.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 2
+        },
+        {
+          "id": "switch_and_fuse_panel",
+          "title": "Switch & Fuse Panel",
+          "description": "**What:** The function of all switches and equipment.\n**How:** Systematically turn on all switches and verify that lights, pumps, etc., are working.\n**Look for:** Clear labeling of switches. Signs of overheating.\n**Interpretation:** Provides a good overview of the condition of the electrical equipment.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        },
+        {
+          "id": "navigation_lights",
+          "title": "Navigation Lights",
+          "description": "**What:** Function of all navigation lights.\n**How:** Test all lights separately (port, starboard, stern, steaming, masthead).\n**Look for:** That the correct color lights up in the correct place and that they are intact.\n**Interpretation:** Faults can be due to a bulb, corrosion, or a wiring break.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "anodes_and_galvanic_protection",
+          "title": "Anodes (Sacrificial Zincs)",
+          "description": "**What:** The condition and function of the anodes.\n**How:** Find all sacrificial anodes on the drive, shaft, rudder, etc.\n**Look for:** That they are about 50% depleted. If they look brand new after a season, they have poor contact.\n**Interpretation:** A 'perfect' anode is not protecting the boat. Should be replaced annually.\n💡 **Tip:** Requires the boat to be on land.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        }
+      ]
+    },
+    {
+      "id": "plumbing",
+      "title": "Plumbing & HVAC",
+      "items": [
+        {
+          "id": "freshwater_system",
+          "title": "Freshwater System (Pump & Quality)",
+          "description": "**What:** Leaks in the system and water quality.\n**How:** Pour a glass of water, smell and taste it. Then listen to the pump with all faucets closed.\n**Look for:** A sour or stale smell in the water. The pump cycling periodically without water being used.\n**Interpretation:** Periodic pumping indicates a leak. Poor water quality requires cleaning the tank/hoses.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        },
+        {
+          "id": "holding_hose_smell",
+          "title": "Holding Tank Hoses - Odor",
+          "description": "**What:** If odor is permeating through the sanitation hoses.\n**How:** Place a warm, damp cloth around a sanitation hose for a few minutes. Smell the cloth.\n**Look for:** A distinct sewage smell on the cloth.\n**Interpretation:** Odor means the hoses are permeated and must be replaced. An unpleasant and costly job.\n💡 **Tip:** Requires a warm, damp cloth.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "toilet_operation",
+          "title": "Toilet - Operation & Leaks",
+          "description": "**What:** The toilet's pump function and seals.\n**How:** Operate the pump (manual/electric). Look around the base and connections.\n**Look for:** Smooth pump operation. Signs of leaks (moisture or salt crystals).\n**Interpretation:** Leaks from the sanitation system are unhygienic and must be fixed.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        },
+        {
+          "id": "water_heater",
+          "title": "Water Heater",
+          "description": "**What:** The heater's function on engine heat and shore power.\n**How:** Check for hot water after a sea trial (engine heat) and when connected to shore power (230V/120V).\n**Look for:** That the water gets hot in both cases. Leaks from the heater itself.\n**Interpretation:** Indicates the condition of both the heater and the cooling/electrical system.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        },
+        {
+          "id": "heater_function_and_smoke",
+          "title": "Diesel Heater",
+          "description": "**What:** The function of the diesel-fired forced-air heater.\n**How:** Start the heater. Listen to the fans and fuel pump. Observe the exhaust outlet outside.\n**Look for:** Unusual noises. Persistent white or black smoke after the startup phase.\n**Interpretation:** Smoke indicates a need for service (cleaning/glow plug).",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        },
+        {
+          "id": "sink_drainage",
+          "title": "Sink Drainage",
+          "description": "**What:** If the drains are clogged.\n**How:** Fill the sinks with water and see how quickly it drains.\n**Look for:** Slow drainage.\n**Interpretation:** Slow drainage suggests partially clogged hoses or thru-hulls.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        }
+      ]
+    },
+    {
+      "id": "steering",
+      "title": "Steering System",
+      "items": [
+        {
+          "id": "wheel_steering_play",
+          "title": "Wheel Steering - Play & Friction",
+          "description": "**What:** Wear in the steering system.\n**How:** Gently move the wheel to check for 'dead play'. Turn from lock to lock to feel for resistance.\n**Look for:** A distinct 'clunk' or a lot of dead play. Stiff or uneven spots.\n**Interpretation:** Indicates wear in the pedestal, wires, or rudder bearings.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "steering_cables_sheaves",
+          "title": "Steering Cables & Sheaves (Wire)",
+          "description": "**What:** Condition of steering cables and sheaves.\n**How:** Follow the wire from the pedestal to the rudder quadrant. Run a cloth along the wire. Check that the sheaves rotate freely.\n**Look for:** Rust or broken strands ('hooks'). Slack cables. Stiff sheaves.\n**Interpretation:** Damaged wire or stiff sheaves are a safety risk.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 2
+        },
+        {
+          "id": "rudder_quadrant_arm",
+          "title": "Rudder Quadrant / Tiller Arm",
+          "description": "**What:** Cracks or play in the rudder quadrant.\n**How:** Visually inspect the metal. Wiggle the quadrant to feel for play against the rudder stock.\n**Look for:** Cracks, especially around the attachment to the rudder stock. Loose bolts.\n**Interpretation:** Cracks in this critical point can lead to a total loss of steering.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "rudder_bearings_inside",
+          "title": "Rudder Bearings - Internal Check",
+          "description": "**What:** Play in the upper rudder bearing.\n**How:** One person moves the rudder outside, while another looks/listens at the top of the rudder stock inside.\n**Look for:** Visible movement of the stock relative to the bearing. 'Clunking' sounds.\n**Interpretation:** The best way to confirm play in the upper bearing.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 3
+        },
+        {
+          "id": "emergency_tiller",
+          "title": "Emergency Tiller - Function Test",
+          "description": "**What:** If the emergency steering is functional.\n**How:** Find the emergency tiller and try to fit it onto the top of the rudder stock.\n**Look for:** That it fits easily and securely in place.\n**Interpretation:** Many emergency solutions are only theoretical. Check that it works in practice.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "hydraulic_steering_check",
+          "title": "Hydraulic Steering",
+          "description": "**What:** Leaks or air in the hydraulic system.\n**How:** Check the oil level in the reservoir. Look for oil spills on the steering cylinder. Turn the wheel from lock to lock.\n**Look for:** Low oil level. Signs of leakage. A soft or 'spongy' feel in the wheel.\n**Interpretation:** Spongy steering means air in the system, likely from a leak.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "tiller_steering_check",
+          "title": "Tiller",
+          "description": "**What:** Damage to the tiller.\n**How:** Inspect for cracks (wood/metal). Wiggle it hard to check the fitting.\n**Look for:** Cracks, delamination (wood), or bends. Play in the fitting to the rudder stock.\n**Interpretation:** A weak tiller is a safety risk.",
+          "tags": [
+            "sailboat"
+          ],
+          "criticality": 1,
+          "costIndicator": 2
+        },
+        {
+          "id": "autopilot_drive_unit",
+          "title": "Autopilot - Drive Unit",
+          "description": "**What:** The condition of the autopilot's motor/pump.\n**How:** Engage the autopilot. Listen to the drive unit as it works. Look for leaks (hydraulic).\n**Look for:** Unusually loud noise (grinding, humming).\n**Interpretation:** Noise can indicate wear. Check that it steers correctly during the sea trial.",
+          "tags": [
+            "motorboat",
+            "sailboat"
+          ],
+          "criticality": 3,
+          "costIndicator": 3
+        }
+      ]
+    },
+    {
+      "id": "safety",
+      "title": "Safety",
+      "items": [
+        {
+          "id": "fire_extinguishers",
+          "title": "Fire Extinguishers",
+          "description": "**What:** The condition and age of the extinguishers.\n**How:** Find all extinguishers. Check the pressure gauge and the production/service date.\n**Look for:** The needle is in the green zone. They are less than 10 years old (dry powder).\n**Interpretation:** An extinguisher without pressure or that is too old is useless.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 1
+        },
+        {
+          "id": "bilge_pumps_operation",
+          "title": "Bilge Pumps",
+          "description": "**What:** The function of the bilge pumps.\n**How:** Test the electric pump with the manual switch. Lift the float switch to test the automatic function. Test the manual pump with its handle.\n**Look for:** That the pumps start and pump water effectively.\n**Interpretation:** Critical safety equipment that must function flawlessly.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 1
+        },
+        {
+          "id": "gas_install_leak_test",
+          "title": "LPG/Gas System",
+          "description": "**What:** The age of the gas hose and the system's integrity.\n**How:** Check the date on the hose. Perform a leak test by pressurizing and waiting for 5 minutes.\n**Look for:** The hose is less than 5 years old. The pressure holds steady.\n**Interpretation:** A gas leak is extremely dangerous. Older hoses should be replaced regardless.\n💡 **Tip:** Requires soapy water or leak detection spray to find small leaks.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 1
+        },
+        {
+          "id": "guardrails_lifelines",
+          "title": "Stanchions & Lifelines",
+          "description": "**What:** The strength of the stanchion bases.\n**How:** Vigorously wiggle each individual stanchion.\n**Look for:** Movement at the base of the stanchions.\n**Interpretation:** Movement is a serious sign of water ingress and delamination in the deck.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 3
+        },
+        {
+          "id": "anchor_and_windlass",
+          "title": "Anchor & Windlass",
+          "description": "**What:** The function of the windlass.\n**How:** Test that the windlass runs the chain/rode smoothly both out and in.\n**Look for:** Uneven or strained sounds from the motor. That the anchor is securely stowed.\n**Interpretation:** A windlass that doesn't work when you need it is a major problem.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "liferaft_service_date",
+          "title": "Liferaft - Service Date",
+          "description": "**What:** If the liferaft has a valid service.\n**How:** Find the service sticker on the raft's container.\n**Look for:** The date of the last certified service.\n**Interpretation:** An out-of-date raft represents a significant cost for a new service.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 2
+        },
+        {
+          "id": "flares_and_pyrotechnics",
+          "title": "Flares & Pyrotechnics - Expiry Date",
+          "description": "**What:** The validity of the pyrotechnic equipment.\n**How:** Go through all flares, rockets, and smoke signals.\n**Look for:** The expiry date on each unit.\n**Interpretation:** Expired equipment is unreliable and must be replaced.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        }
+      ]
+    },
+    {
+      "id": "docs_trial",
+      "title": "Documents & Sea Trial",
+      "items": [
+        {
+          "id": "service_records",
+          "title": "Service Records & Receipts",
+          "description": "**What:** Documentation of maintenance and major work.\n**How:** Ask to see a binder with receipts and documentation.\n**Look for:** Service history for the engine, rigging, saildrive diaphragm, sails, etc.\n**Interpretation:** A good history is a strong positive sign. Lack of history increases your risk.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "registration_papers",
+          "title": "Registration Papers (Ownership, CE-mark)",
+          "description": "**What:** That the boat's papers are in order and ownership is correct.\n**How:** Compare the hull number (HIN/CIN) with the papers. Look for a CE mark (required after 1998).\n**Look for:** Consistency between papers and the boat. That the seller is the registered owner. Check for liens.\n**Interpretation:** Critical for a legal and safe transaction.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 1
+        },
+        {
+          "id": "manuals_and_docs",
+          "title": "Manuals & Instruction Books",
+          "description": "**What:** The presence of technical documentation.\n**How:** Ask for the binder with manuals for the engine, electronics, etc.\n**Look for:** A complete and tidy collection.\n**Interpretation:** A sign of a conscientious owner. Invaluable for future maintenance.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        },
+        {
+          "id": "sea_trial",
+          "title": "Sea Trial",
+          "description": "**What:** Performance and function under real load.\n**How:** Warm up the engine, go to full throttle for a few minutes. Hoist the sails and sail on different points of sail. Engage the autopilot.\n**Look for:** The engine reaches max RPM without overheating. The boat is balanced on the helm. The autopilot holds a steady course.\n**Interpretation:** The only way to assess the engine, rig, and sails under real load.\n💡 **Tip:** This is the most important item in the entire check. Allow plenty of time.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 1,
+          "costIndicator": 1
+        },
+        {
+          "id": "owner_interview",
+          "title": "Questions for the Owner",
+          "description": "**What:** The owner's knowledge and insight about the boat.\n**How:** Ask open-ended questions about its history, known faults, damages, and why they are selling.\n**Look for:** Consistent and credible answers.\n**Interpretation:** Can provide valuable insight you won't find elsewhere.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        }
+      ]
+    },
+    {
+      "id": "ancillary_equipment",
+      "title": "Ancillary Equipment",
+      "items": [
+        {
+          "id": "mooring_lines_fenders",
+          "title": "Mooring Lines & Fenders",
+          "description": "**What:** The condition of ropes and fenders.\n**How:** Squeeze the ropes. Look for chafe. Check that the fenders hold air.\n**Look for:** Soft and supple ropes. Hard, stiff ropes are old and weak.\n**Interpretation:** A complete set of new mooring lines is a significant expense.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 1
+        },
+        {
+          "id": "vhf_radio_check",
+          "title": "VHF Radio",
+          "description": "**What:** The VHF's basic function.\n**How:** Turn it on, listen for activity to confirm reception. Ask if an MMSI is programmed.\n**Look for:** A clear display and sound. Functional squelch.\n**Interpretation:** The MMSI must be re-registered to the new owner. Confirms that important safety equipment works.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "gps_chartplotter_check",
+          "title": "Chartplotter / GPS",
+          "description": "**What:** The chartplotter's function and the age of the charts.\n**How:** Turn it on. Check startup time and if it gets a satellite lock. Test zoom/pan. Ask about the chart's age.\n**Look for:** Moisture damage in the screen. Slow response.\n**Interpretation:** Updating chart cards can be costly.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        },
+        {
+          "id": "galley_stove_check",
+          "title": "Galley Stove",
+          "description": "**What:** The stove's function and safety.\n**How:** Light all burners and the oven, if applicable. Test the gimbal by moving it side to side.\n**Look for:** A steady, blue flame. Free movement in the gimbals.\n**Interpretation:** A yellow/sooty flame requires service. A seized gimbal is a safety hazard.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 2,
+          "costIndicator": 1
+        },
+        {
+          "id": "refrigerator_check",
+          "title": "Refrigerator / Cooler",
+          "description": "**What:** The compressor's function and cooling ability.\n**How:** Turn it on and let it run for 15-20 minutes. Listen to see if the compressor runs continuously or cycles.\n**Look for:** That it gets cold. That the compressor cycles on and off.\n**Interpretation:** A compressor that never stops will drain the batteries quickly.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        },
+        {
+          "id": "dinghy_and_outboard",
+          "title": "Dinghy & Outboard",
+          "description": "**What:** The condition of the dinghy and its outboard motor.\n**How:** Look for patches on the dinghy, check the seams. Start the motor and look for the cooling water telltale stream.\n**Look for:** Many repairs on the dinghy. That the engine starts easily and has a steady water stream.\n**Interpretation:** A weak telltale stream means the impeller needs replacing. Failing seams are a common problem.\n💡 **Tip:** Testing the motor requires a barrel of water or a test run.",
+          "tags": [
+            "all"
+          ],
+          "criticality": 3,
+          "costIndicator": 2
+        }
+      ]
+    }
+  ]
+}

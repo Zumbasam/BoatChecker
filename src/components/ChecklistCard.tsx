@@ -1,94 +1,143 @@
+// src/components/ChecklistCard.tsx
 import {
-  Box, Heading, Text, HStack, RadioGroup,
-  Radio, IconButton, useToast, Textarea
+  Box, Heading, Text, HStack, IconButton, Textarea, useColorModeValue, Image as ChakraImage, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, Button, VStack, Menu, MenuButton, MenuList, MenuItem, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon,
 } from '@chakra-ui/react';
-import { Camera, Check } from 'lucide-react';
-import { useState } from 'react';
-import { db } from '../db';
-import type { CheckItemState } from '../db';
+import { Camera, X, FileImage, MessageSquarePlus, Paperclip, HelpCircle, Lock } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import { useTranslation } from 'react-i18next';
+import { useChecklistItem } from '../hooks/useChecklistItem';
+import { useUserStatus } from '../hooks/useUserStatus';
+import { chooseFromLibrary, takePhoto } from '../utils/imageUtils';
+import { useState, useEffect } from 'react';
 
 interface Props {
   item: {
     id: string;
-    label: string;
-    desc: string;
-    cost: { ok: number; obs: number; kritisk: number };
+    title: string;
+    description: string;
+    imageUrl?: string;
+    tags: string[];
+    criticality?: number;
   };
 }
 
-export const ChecklistCard = ({ item }: Props) => {
-  const [value, setValue] = useState<'ok' | 'obs' | 'kritisk' | ''>('');
-  const [note, setNote] = useState('');
-  const toast = useToast();
+export const ChecklistCard: React.FC<Props> = ({ item }) => {
+  const { t } = useTranslation();
+  const { itemState, handlers } = useChecklistItem(item.id);
+  const { isPro } = useUserStatus();
+  const { handleNoteSave, handleImageSelection } = handlers;
 
-  const save = async (state: 'ok' | 'obs' | 'kritisk') => {
-    setValue(state);
-    const rec: CheckItemState = { id: item.id, state, note };
-    await db.items.put(rec);
-    toast({ title: `Lagret som ${state}`, status: 'success', duration: 1000 });
-  };
+  const [note, setNote] = useState(itemState?.note || '');
+
+  useEffect(() => {
+    setNote(itemState?.note || '');
+  }, [itemState?.note]);
+
+  const { isOpen: isPreviewOpen, onOpen: onPreviewOpen, onClose: onPreviewClose } = useDisclosure();
+  const { isOpen: isChoiceOpen, onOpen: onChoiceOpen, onClose: onChoiceClose } = useDisclosure();
+  const { isOpen: isNoteOpen, onOpen: onNoteOpen, onClose: onNoteClose } = useDisclosure();
+
+  const isLocked = !isPro && (item.criticality ?? 0) > 1;
+
+  const value = itemState?.state;
+  const thumb = itemState?.thumb;
+  const full = itemState?.photoFull;
+
+  const scheme = isLocked ? 'gray' : (value === 'ok' ? 'green' : value === 'obs' ? 'yellow' : value === 'kritisk' ? 'red' : 'gray');
+  const bg = useColorModeValue(isLocked ? 'gray.100' : `${scheme}.50`, isLocked ? 'gray.800' : `gray.700`);
+  const border = useColorModeValue(isLocked ? 'gray.200' : `${scheme}.200`, isLocked ? 'gray.700' : `${scheme}.600`);
+  
+  const textColor = useColorModeValue('gray.600', 'gray.300');
+  const previewBorderColor = useColorModeValue('gray.300', 'gray.600');
+  const accordionButtonBg = useColorModeValue('blue.50', 'blue.900');
+  const accordionButtonHoverBg = useColorModeValue('blue.100', 'blue.800');
 
   return (
-    <Box p={4} borderWidth="1px" rounded="xl" shadow="sm" mb={4}>
-      <Heading size="sm">{item.label}</Heading>
-      <Text fontSize="sm" mb={2}>{item.desc}</Text>
+    <Box p={4} bg={bg} borderWidth="1px" borderColor={border} rounded="xl" shadow="sm" opacity={isLocked ? 0.6 : 1}>
+      <HStack justify="space-between">
+        <Heading size="md" mb={3}>{item.title}</Heading>
+        {isLocked && <Lock size={20} />}
+      </HStack>
 
-      <RadioGroup onChange={save} value={value}>
-        <HStack spacing={4}>
-          <Radio value="ok">OK</Radio>
-          <Radio value="obs">Obs</Radio>
-          <Radio value="kritisk">Kritisk</Radio>
-        </HStack>
-      </RadioGroup>
+      <Accordion allowToggle index={isLocked ? [-1] : undefined}>
+        <AccordionItem border="none">
+          <h2>
+            <AccordionButton
+              as={Button}
+              variant="ghost"
+              bg={accordionButtonBg}
+              _hover={{ bg: accordionButtonHoverBg }}
+              rounded="md"
+              p={2}
+              w="100%"
+              justifyContent="space-between"
+              isDisabled={isLocked}
+            >
+              <HStack as="span" flex="1" textAlign="left">
+                <HelpCircle size={18} />
+                <Text fontWeight="medium">{t('checklist.card.show_guidance')}</Text>
+              </HStack>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pt={4} pb={2} px={1}>
+            <Box fontSize="md" color={textColor} sx={{ 'p': { mb: '0.5rem' } }} whiteSpace="pre-wrap">
+              <ReactMarkdown>{item.description}</ReactMarkdown>
+            </Box>
+            {item.imageUrl && ( <ChakraImage src={item.imageUrl} alt={`Eksempelbilde for ${item.title}`} rounded="md" mt={4} /> )}
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
 
-      <Textarea
-        mt={2}
-        placeholder="Notat …"
-        size="sm"
-        value={note}
-        onChange={e => setNote(e.target.value)}
-        onBlur={() => db.items.update(item.id, { note })}
-      />
+      <HStack mt={4} spacing={3} align="center">
+        <Menu placement="top-start">
+          <MenuButton as={IconButton} aria-label={t('checklist.card.attachments_label')} icon={<Paperclip size={18} />} size="sm" variant="outline" colorScheme={note || thumb ? 'blue' : 'gray'} isDisabled={isLocked} />
+          <MenuList>
+            <MenuItem icon={<MessageSquarePlus size={16} />} onClick={onNoteOpen}>{note ? t('checklist.card.edit_note') : t('checklist.card.add_note')}</MenuItem>
+            <MenuItem icon={<Camera size={16} />} onClick={onChoiceOpen}>{thumb ? t('checklist.card.change_image') : t('checklist.card.add_image')}</MenuItem>
+          </MenuList>
+        </Menu>
 
-      <HStack mt={2}>
-        <IconButton
-          aria-label="Legg til bilde"
-          icon={<Camera size={18} />}
-          size="sm"
-          onClick={async () => {
-            const file = await selectImage();
-            if (!file) return;
-            const dataUrl = await fileToDataURL(file);
-            await db.items.update(item.id, { photo: dataUrl });
-            toast({ title: 'Bilde lagret', status: 'success', duration: 800 });
-          }}
-        />
-        {value && (
-          <IconButton
-            aria-label="Lagret"
-            icon={<Check size={18} />}
-            size="sm"
-            isDisabled
-          />
+        {thumb && (
+          <ChakraImage src={thumb} boxSize="40px" objectFit="cover" rounded="md" cursor="pointer" onClick={onPreviewOpen} borderWidth="1px" borderColor={previewBorderColor} />
+        )}
+        {note && (
+          <Box p={2} h="40px" flex="1" borderWidth="1px" borderColor={previewBorderColor} rounded="md" overflow="hidden" cursor="pointer" onClick={onNoteOpen}>
+            <Text fontSize="sm" fontStyle="italic" noOfLines={2}>{note}</Text>
+          </Box>
         )}
       </HStack>
+
+      <Modal isOpen={isPreviewOpen} onClose={onPreviewClose} size="xl" isCentered>
+        <ModalOverlay />
+        <ModalContent bg="transparent" boxShadow="none">
+          <ChakraImage src={full} maxH="80vh" mx="auto" rounded="md" />
+          <IconButton aria-label={t('checklist.card.close_button_label')} icon={<X />} position="absolute" top="8px" right="8px" onClick={onPreviewClose} isRound colorScheme="blackAlpha" />
+        </ModalContent>
+      </Modal>
+      <Modal isOpen={isChoiceOpen} onClose={onChoiceClose} isCentered>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>{t('checklist.card.add_image_modal_title')}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <VStack spacing={4} my={4}>
+              <Button leftIcon={<Camera />} w="100%" onClick={async () => { onChoiceClose(); const file = await takePhoto(); if (file) handleImageSelection(file); }}>{t('checklist.card.take_photo_button')}</Button>
+              <Button leftIcon={<FileImage />} w="100%" onClick={async () => { onChoiceClose(); const file = await chooseFromLibrary(); if (file) handleImageSelection(file); }}>{t('checklist.card.choose_from_library_button')}</Button>
+            </VStack>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+      <Modal isOpen={isNoteOpen} onClose={() => { handleNoteSave(note); onNoteClose(); }} isCentered size="full">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>{t('checklist.card.note_modal_title', { title: item.title })}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody pb={6}>
+            <Textarea placeholder={t('checklist.card.note_placeholder')} value={note} onChange={(e) => setNote(e.target.value)} autoFocus h="80vh"/>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Box>
   );
 };
-
-// hjelpefunksjoner
-const selectImage = (): Promise<File | null> =>
-  new Promise(res => {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = 'image/*';
-    input.onchange = () => res(input.files ? input.files[0] : null);
-    input.click();
-  });
-
-const fileToDataURL = (file: File): Promise<string> =>
-  new Promise(res => {
-    const reader = new FileReader();
-    reader.onload = e => res(e.target!.result as string);
-    reader.readAsDataURL(file);
-  });

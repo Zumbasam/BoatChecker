@@ -1,36 +1,103 @@
-import { Badge, HStack, Text } from '@chakra-ui/react';
-import { useLiveQuery } from 'dexie-react-hooks';
-import { db } from '../db';
-import checklist from '../data/checklist.json';
+// src/components/CostBanner.tsx
+import React from 'react';
+import {
+  Box,
+  useColorMode,
+  useColorModeValue,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuDivider,
+  Grid,
+  GridItem,
+  useDisclosure
+} from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
+import { Home, Menu as MenuIcon, Sun, Moon, MessageCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { SettingsModal } from "./SettingsModal";
+import Logo from '../assets/boatchecker-logo.svg?react';
 
-export const CostBanner = () => {
-  // hent alle lagrede tilstander i sanntid
-  const states = useLiveQuery(() => db.items.toArray(), []);
+export const CostBanner: React.FC = () => {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { colorMode, toggleColorMode } = useColorMode();
+  const menu = useDisclosure();
 
-  // summer kostnader basert på checklist.json & lagrede states
-  const total = states?.reduce((sum, s) => {
-    // finn tilhørende item i checklisten
-    const item = checklist.areas
-      .flatMap(a => a.items)
-      .find(i => i.id === s.id);
-    if (!item) return sum;
-    const cost = item.cost[s.state];
-    return sum + cost;
-  }, 0) ?? 0;
+  const bg = useColorModeValue('gray.100', 'gray.800');
+  const border = useColorModeValue('gray.200', 'gray.700');
+  const logoColor = useColorModeValue('gray.800', 'white');
 
   return (
-    <HStack
+    <Grid
+      w="100%"
+      px={4}
+      py={2}
+      bg={bg}
+      borderBottom="1px solid"
+      borderColor={border}
       position="sticky"
       top="0"
-      zIndex="docked"
-      p={3}
-      bg="white"
-      shadow="sm"
+      zIndex={1000}
+      alignItems="center"
+      templateColumns="1fr auto 1fr"
     >
-      <Text fontWeight="bold">Estimert kostnad:</Text>
-      <Badge colorScheme={total === 0 ? 'green' : total < 50000 ? 'yellow' : 'red'}>
-        {total.toLocaleString('nb-NO')} kr
-      </Badge>
-    </HStack>
+      <GridItem justifySelf="start">
+        <Box id="costbanner-status-slot" display="inline-block" />
+      </GridItem>
+
+      <GridItem justifySelf="center">
+        <Logo style={{ height: '20px', fill: logoColor }} />
+      </GridItem>
+
+      <GridItem justifySelf="end">
+        <Menu isOpen={menu.isOpen} onClose={menu.onClose}>
+          <MenuButton
+            as={IconButton}
+            aria-label="Options"
+            icon={<MenuIcon />}
+            variant="ghost"
+            isRound
+            onClick={() => (menu.isOpen ? menu.onClose() : menu.onOpen())}
+          />
+          <MenuList minW="220px" p={2}>
+            <MenuItem
+              icon={<Home size={18} />}
+              onClick={() => {
+                menu.onClose();
+                navigate('/home');
+              }}
+              borderRadius="md"
+            >
+              {t('home_page.home_button_label')}
+            </MenuItem>
+            <MenuItem
+              icon={colorMode === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+              onClick={() => {
+                menu.onClose();
+                toggleColorMode();
+              }}
+              borderRadius="md"
+            >
+              {t('common.toggle_dark_mode')}
+            </MenuItem>
+            <MenuDivider />
+            <MenuItem
+              icon={<MessageCircle size={18} />}
+              borderRadius="md"
+              onClick={() => {
+                menu.onClose();
+                setTimeout(() => window.dispatchEvent(new Event('open-feedback-drawer')), 0);
+              }}
+            >
+              {t('modals.feedback.button_text')}
+            </MenuItem>
+            <SettingsModal />
+          </MenuList>
+        </Menu>
+      </GridItem>
+    </Grid>
   );
 };

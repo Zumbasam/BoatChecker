@@ -1,0 +1,281 @@
+{
+  "gelcoat_cracks": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2000, "kritisk": 25000 }
+  },
+  "osmosis_blisters": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 5000, "kritisk": 200000 }
+  },
+  "hull_deck_joint": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 4000, "kritisk": 60000 }
+  },
+  "thru_hulls": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 3500, "kritisk": 15000 }
+  },
+  "keel_inspection": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 8000, "kritisk": 150000 }
+  },
+  "keel_bolts": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2000, "kritisk": 120000 }
+  },
+  "deck_core_delamination": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 6000, "kritisk": 50000 }
+  },
+  "deck_hardware_leaks": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2500, "kritisk": 30000 }
+  },
+  "rudder_play": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2000, "kritisk": 25000 }
+  },
+  "steel_hull_rust": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 8000, "kritisk": 100000 }
+  },
+  "wood_hull_rot": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 10000, "kritisk": 200000 }
+  },
+  "aluminum_hull_corrosion": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 4000, "kritisk": 60000 }
+  },
+  "standing_rig_wire": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 8000, "kritisk": 80000 }
+  },
+  "turnbuckles": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2500, "kritisk": 20000 }
+  },
+  "chainplates": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 4000, "kritisk": 35000 }
+  },
+  "mast_base": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2000, "kritisk": 30000 }
+  },
+  "spreader_fittings": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1500, "kritisk": 15000 }
+  },
+  "furling_system": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 4000, "kritisk": 40000 }
+  },
+  "running_rigging": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2500, "kritisk": 15000 }
+  },
+  "boom_gooseneck_vang": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1500, "kritisk": 12000 }
+  },
+  "winches": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2500, "kritisk": 15000 }
+  },
+  "sail_cloth_condition": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 3000, "kritisk": 80000 }
+  },
+  "sail_stitching": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2500, "kritisk": 16000 }
+  },
+  "genoa_uv_cover": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 3000, "kritisk": 7000 }
+  },
+  "sail_shape": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 0, "kritisk": 80000 }
+  },
+  "batten_pockets_battens": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2000, "kritisk": 5000 }
+  },
+  "sail_hardware": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 500, "kritisk": 3000 }
+  },
+  "reefing_points": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1500, "kritisk": 4000 }
+  },
+  "downwind_sails": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2000, "kritisk": 15000 }
+  },
+  "sail_covers_lazy_bag": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2000, "kritisk": 8000 }
+  },
+  "engine_oil_check": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2000, "kritisk": 40000 }
+  },
+  "general_engine_condition": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1000, "kritisk": 20000 }
+  },
+  "oil_leak_block": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 3000, "kritisk": 35000 }
+  },
+  "belts_and_pulleys": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1500, "kritisk": 5000 }
+  },
+  "cooling_hoses_clamps": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2000, "kritisk": 6000 }
+  },
+  "exhaust_manifold_riser": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 4000, "kritisk": 20000 }
+  },
+  "cold_start_and_exhaust_smoke": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 8000, "kritisk": 60000 }
+  },
+  "cooling_flow": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1500, "kritisk": 7000 }
+  },
+  "engine_mounts": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 0, "kritisk": 12000 }
+  },
+  "saildrive_check": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 3000, "kritisk": 25000 }
+  },
+  "shaft_seal": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1500, "kritisk": 8000 }
+  },
+  "battery_bank_condition": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 3500, "kritisk": 12000 }
+  },
+  "wiring_and_connections": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 4000, "kritisk": 25000 }
+  },
+  "main_switches": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2000, "kritisk": 2000 }
+  },
+  "alternator_charging": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 3000, "kritisk": 8000 }
+  },
+  "shorepower_safety": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2500, "kritisk": 4000 }
+  },
+  "switch_and_fuse_panel": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 800, "kritisk": 7000 }
+  },
+  "navigation_lights": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 200, "kritisk": 4000 }
+  },
+  "anodes_and_galvanic_protection": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1500, "kritisk": 2000 }
+  },
+  "freshwater_pump_cycle": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1000, "kritisk": 2500 }
+  },
+  "freshwater_quality": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1500, "kritisk": 6000 }
+  },
+  "holding_hose_smell": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 500, "kritisk": 10000 }
+  },
+  "toilet_operation": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1500, "kritisk": 5000 }
+  },
+  "water_heater": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2500, "kritisk": 9000 }
+  },
+  "heater_function_and_smoke": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2500, "kritisk": 18000 }
+  },
+  "sink_drainage": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 500, "kritisk": 3000 }
+  },
+  "wheel_steering_play": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1000, "kritisk": 9000 }
+  },
+  "steering_cables_sheaves": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2000, "kritisk": 7000 }
+  },
+  "rudder_quadrant_arm": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 500, "kritisk": 20000 }
+  },
+  "rudder_bearings_inside": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2000, "kritisk": 25000 }
+  },
+  "emergency_tiller": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1000, "kritisk": 4000 }
+  },
+  "hydraulic_steering_check": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1500, "kritisk": 8000 }
+  },
+  "tiller_steering_check": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1500, "kritisk": 5000 }
+  },
+  "autopilot_drive_unit": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2000, "kritisk": 15000 }
+  },
+  "headliner_condition": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1000, "kritisk": 30000 }
+  },
+  "bulkhead_bonding": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 4000, "kritisk": 50000 }
+  },
+  "bilge_condition": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2500, "kritisk": 5000 }
+  },
+  "trim_and_panels_moisture": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2500, "kritisk": 15000 }
+  },
+  "windows_and_hatches_leaks": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 4000, "kritisk": 24000 }
+  },
+  "floor_structure": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 5000, "kritisk": 40000 }
+  },
+  "interior_odor": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 5000, "kritisk": 10000 }
+  },
+  "cushions_and_mattresses": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2500, "kritisk": 40000 }
+  },
+  "fire_extinguishers": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1000, "kritisk": 2000 }
+  },
+  "bilge_pumps_operation": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1000, "kritisk": 3000 }
+  },
+  "gas_install_leak_test": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1500, "kritisk": 4000 }
+  },
+  "guardrails_lifelines": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 4000, "kritisk": 15000 }
+  },
+  "anchor_and_windlass": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2500, "kritisk": 20000 }
+  },
+  "liferaft_service_date": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 7000, "kritisk": 20000 }
+  },
+  "flares_and_pyrotechnics": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 0, "kritisk": 2500 }
+  },
+  "service_records": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 0, "kritisk": 0 }
+  },
+  "registration_papers": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 0, "kritisk": 0 }
+  },
+  "manuals_and_docs": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 0, "kritisk": 0 }
+  },
+  "sea_trial_engine_performance": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 0, "kritisk": 0 }
+  },
+  "sea_trial_sailing_performance": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 0, "kritisk": 0 }
+  },
+  "autopilot_nav_equipment_test": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 0, "kritisk": 0 }
+  },
+  "owner_interview": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 0, "kritisk": 0 }
+  },
+  "mooring_lines_fenders": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1000, "kritisk": 6000 }
+  },
+  "vhf_radio_check": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 3000, "kritisk": 5000 }
+  },
+  "gps_chartplotter_check": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2500, "kritisk": 15000 }
+  },
+  "galley_stove_check": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 1000, "kritisk": 12000 }
+  },
+  "refrigerator_check": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 3000, "kritisk": 8000 }
+  },
+  "dinghy_condition": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 500, "kritisk": 8000 }
+  },
+  "outboard_motor_check": {
+    "no": { "currency": "NOK", "ok": 0, "obs": 2000, "kritisk": 12000 }
+  }
+}
