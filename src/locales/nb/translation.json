@@ -143,6 +143,9 @@
       "ungrouped": "Andre",
       "no_cost": "Ingen kostnadsindikasjon"
     },
+    "not_assessed_count": "{{count}} punkter ikke vurdert",
+    "not_assessed_label": "Ikke vurdert",
+    "not_assessed_hint": "Disse punktene er kun tilgjengelig med Pro",
     "no_results": "Ingen funn matcher filtrene.",
     "show_more": "Vis mer",
     "show_less": "Vis mindre",
@@ -191,7 +194,9 @@
       "fast": "Uten store bilder (rask nedlasting)",
       "full": "Med store bilder (full rapport)",
       "tender": "For anbud/innhenting (uten kostnader)"
-    }
+    },
+    "not_assessed_title": "Ikke vurderte punkter",
+    "not_assessed_explanation": "Følgende punkter er ikke vurdert i denne inspeksjonen og inngår ikke i konklusjonen. For en fullstendig inspeksjon, vurder å oppgradere til Pro."
   },
   "modals": {
     "settings": {

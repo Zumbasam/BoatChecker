@@ -4,7 +4,7 @@ import { useColorModeValue } from '@chakra-ui/react';
 export type Row = {
   id: string;
   label: string;
-  state: 'ok' | 'obs' | 'kritisk';
+  state: 'ok' | 'obs' | 'kritisk' | 'not_assessed';
   criticality?: number;
   costIndicator?: number;
   note?: string;

@@ -29,7 +29,7 @@ export type ChecklistData = {
 export type Row = {
   id: string;
   label: string;
-  state: "ok" | "obs" | "kritisk";
+  state: "ok" | "obs" | "kritisk" | "not_assessed";
   criticality?: number;
   costIndicator?: number;
   note?: string;
@@ -143,7 +143,7 @@ export const useChecklistData = (inspectionId?: number) => {
     const sourceItems = Array.from(merged.values());
     if (!sourceItems || !checklistItems) return [];
     
-    const stateOrder = { 'kritisk': 1, 'obs': 2, 'ok': 3 } as const;
+    const stateOrder = { 'kritisk': 1, 'obs': 2, 'ok': 3, 'not_assessed': 4 } as const;
 
     return sourceItems
       .map((s) => {

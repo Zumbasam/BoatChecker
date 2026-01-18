@@ -143,6 +143,9 @@
       "ungrouped": "Other",
       "no_cost": "No cost indication"
     },
+    "not_assessed_count": "{{count}} items not assessed",
+    "not_assessed_label": "Not Assessed",
+    "not_assessed_hint": "These items are only available with Pro",
     "no_results": "No findings match the filters.",
     "show_more": "Show more",
     "show_less": "Show less",
@@ -191,7 +194,9 @@
       "fast": "Without large images (fast download)",
       "full": "With large images (full report)",
       "tender": "For tender/bidding (no costs)"
-    }
+    },
+    "not_assessed_title": "Not Assessed Items",
+    "not_assessed_explanation": "The following items were not assessed in this inspection and are not included in the conclusion. For a complete inspection, consider upgrading to Pro."
   },
   "modals": {
     "settings": {

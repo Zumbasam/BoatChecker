@@ -99,9 +99,9 @@ class AnalyticsService {
     // Debug: sjekk hva vi har
     console.log('[AnalyticsService] Inspection items:', inspection.items?.length ?? 0, 'items');
     
-    // Filtrer ut items som faktisk har en tilstand (ikke bare standardverdier)
+    // Filtrer ut items som faktisk har en tilstand (ekskluder not_assessed)
     const findings: AnonymousFinding[] = (inspection.items || [])
-      .filter(item => item.state && ['ok', 'obs', 'kritisk'].includes(item.state))
+      .filter(item => item.state && ['ok', 'obs', 'kritisk'].includes(item.state) && item.state !== 'not_assessed')
       .map(item => ({
         id: item.id,
         state: item.state as 'ok' | 'obs' | 'kritisk',

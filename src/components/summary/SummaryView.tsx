@@ -57,7 +57,10 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
         import('../Report')
       ]);
 
-      const reportRows = rows.filter(r => r.state !== 'ok');
+      // Filtrer ut OK og not_assessed fra hovedtabellen
+      const reportRows = rows.filter(r => r.state !== 'ok' && r.state !== 'not_assessed');
+      // Samle ikke-vurderte punkter for egen seksjon
+      const notAssessedRows = rows.filter(r => r.state === 'not_assessed');
       await savePdfStream({
         pdfDocument: (
           <Report
@@ -66,6 +69,7 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
             inspectionMetadata={currentMetadata}
             inspectionDate={inspection.createdAt}
             rows={reportRows}
+            notAssessedRows={notAssessedRows}
             fullImages={variant === 'full'}
             hideCosts={false}
             t_summary_of_inspection={t('pdf_report.title_full')}
@@ -105,6 +109,10 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
               with_reservations: t('modals.inspection_metadata.assessment_reservations'),
               not_recommended: t('modals.inspection_metadata.assessment_not_recommended'),
               notes: t('modals.inspection_metadata.assessment_notes_label')
+            }}
+            t_not_assessed={{
+              section_title: t('pdf_report.not_assessed_title'),
+              explanation: t('pdf_report.not_assessed_explanation')
             }}
           />
         ),

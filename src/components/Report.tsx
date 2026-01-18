@@ -12,6 +12,7 @@ type UserContact = {
 
 type Props = {
   rows: Row[];
+  notAssessedRows?: Row[];  // Ikke-vurderte punkter
   boatModel: BoatModel;
   customBoatDetails?: CustomBoatDetails;
   inspectionMetadata?: InspectionMetadata;
@@ -58,6 +59,10 @@ type Props = {
     with_reservations: string;
     not_recommended: string;
     notes: string;
+  };
+  t_not_assessed?: {
+    section_title: string;
+    explanation: string;
   };
 };
 
@@ -128,6 +133,7 @@ function hasText(str?: string | null): boolean {
 
 export const Report: React.FC<Props> = ({
   rows,
+  notAssessedRows,
   boatModel,
   customBoatDetails,
   inspectionMetadata,
@@ -150,6 +156,7 @@ export const Report: React.FC<Props> = ({
   t_boat_details,
   t_inspection_details,
   t_assessment,
+  t_not_assessed,
 }) => {
   const isWorkshop = !!(user && (user.name || user.email || user.phone));
 
@@ -464,6 +471,24 @@ export const Report: React.FC<Props> = ({
               ))}
             </View>
           ))
+        )}
+
+        {/* Ikke vurderte punkter - ny seksjon */}
+        {notAssessedRows && notAssessedRows.length > 0 && (
+          <View style={{ marginTop: 16 }}>
+            <Text style={styles.subTitle}>
+              {t_not_assessed?.section_title || 'Ikke vurderte punkter'}
+            </Text>
+            <View style={styles.box}>
+              <Text style={{ marginBottom: 8, fontStyle: 'italic', color: '#4A5568', fontSize: 9 }}>
+                {t_not_assessed?.explanation || 
+                  'Følgende punkter er ikke vurdert i denne inspeksjonen og inngår ikke i konklusjonen.'}
+              </Text>
+              {notAssessedRows.map(r => (
+                <Text key={r.id} style={{ marginBottom: 2, fontSize: 9 }}>• {r.label}</Text>
+              ))}
+            </View>
+          </View>
         )}
 
         <Text style={styles.footer} fixed>

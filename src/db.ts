@@ -32,7 +32,7 @@ export interface Settings {
 
 export interface InspectionItem {
   id: string;
-  state: 'ok' | 'obs' | 'kritisk';
+  state: 'ok' | 'obs' | 'kritisk' | 'not_assessed';
   note?: string;
   photoThumb?: string;
   photoFull?: string;

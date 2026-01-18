@@ -170,15 +170,18 @@ const ChecklistStepperContent: React.FC<{
         isClosable: true,
       });
     } else {
-      // Auto-sett "ok" hvis brukeren ikke har markert noe
+      // Auto-sett state hvis brukeren ikke har markert noe
       const currentItem = checklistItems[activeStep];
       if (currentItem) {
         const existingItem = await db.items.get(currentItem.id);
         if (!existingItem) {
-          // Ingen markering satt - auto-lagre som "ok"
+          // Sjekk om punktet er låst (Pro-only)
+          const isItemLocked = !isPro && (currentItem.criticality ?? 0) > 1;
+          
+          // Låste punkter = "not_assessed", åpne punkter = "ok"
           await db.items.put({
             id: currentItem.id,
-            state: 'ok',
+            state: isItemLocked ? 'not_assessed' : 'ok',
           });
         }
       }
