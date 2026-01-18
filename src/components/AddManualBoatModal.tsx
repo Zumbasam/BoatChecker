@@ -4,7 +4,7 @@ import {
   Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton,
   Button, FormControl, FormLabel, Input, VStack, Select, useToast, HStack, 
   InputGroup, InputRightAddon, InputRightElement, Divider, Text, Collapse, useDisclosure,
-  Spinner, Badge, Tooltip, Alert, AlertIcon, Box
+  Badge, Tooltip, Alert, AlertIcon, Box
 } from '@chakra-ui/react';
 import { ChevronDownIcon, ChevronUpIcon, ExternalLinkIcon, CheckIcon } from '@chakra-ui/icons';
 import { useTranslation } from 'react-i18next';

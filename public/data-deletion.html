@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sletting av data - BoatChecker</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #1a365d; margin-bottom: 20px; }
+        h2 { color: #2c5282; margin-top: 30px; margin-bottom: 15px; font-size: 1.2em; }
+        p { margin-bottom: 15px; }
+        .box {
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .box-blue { background: #ebf8ff; border-left: 4px solid #3182ce; }
+        .box-green { background: #f0fff4; border-left: 4px solid #38a169; }
+        .box-gray { background: #f7fafc; border-left: 4px solid #718096; }
+        ul { margin-left: 25px; margin-bottom: 15px; }
+        li { margin-bottom: 8px; }
+        .step { 
+            display: flex; 
+            align-items: flex-start; 
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 8px;
+        }
+        .step-number {
+            background: #3182ce;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        a { color: #3182ce; }
+        footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗑️ Sletting av data</h1>
+        <p>Denne siden forklarer hvordan du kan slette data knyttet til din bruk av BoatChecker.</p>
+
+        <h2>1. Lokale data (på din enhet)</h2>
+        <div class="box box-green">
+            <p><strong>Dine inspeksjoner, notater og bilder lagres kun på din enhet.</strong></p>
+            <p>Denne dataen forlater aldri telefonen din med mindre du eksplisitt deler en rapport.</p>
+        </div>
+
+        <p><strong>Slik sletter du lokale data:</strong></p>
+        
+        <div class="step">
+            <div class="step-number">1</div>
+            <div>
+                <strong>Android:</strong> Innstillinger → Apper → BoatChecker → Lagring → Tøm data
+            </div>
+        </div>
+        
+        <div class="step">
+            <div class="step-number">2</div>
+            <div>
+                <strong>Alternativt:</strong> Avinstaller appen for å slette all lokal data
+            </div>
+        </div>
+
+        <h2>2. Anonyme fellesskapsdata</h2>
+        <div class="box box-blue">
+            <p><strong>Hvis du har aktivert "Bidra til fellesskapet"</strong>, sendes anonymiserte data om inspeksjonsfunn til vår server for å lage fellesskapsstatistikk.</p>
+        </div>
+
+        <p><strong>Viktig om denne dataen:</strong></p>
+        <ul>
+            <li>Dataen er <strong>fullstendig anonymisert</strong></li>
+            <li>Vi lagrer ingen bruker-ID, enhets-ID, eller annen identifikator</li>
+            <li>Vi lagrer ingen IP-adresser</li>
+            <li>Årstall anonymiseres til tiår (f.eks. 2020 → "2020-2029")</li>
+            <li><strong>Det er umulig å spore dataen tilbake til deg</strong></li>
+        </ul>
+
+        <div class="box box-gray">
+            <p><strong>Hva dette betyr:</strong></p>
+            <p>Fordi dataen er fullstendig anonymisert og ikke kan kobles til noen enkeltperson, er det teknisk umulig for oss å identifisere eller slette "dine" data fra fellesskapsstatistikken.</p>
+            <p>Dette er i tråd med GDPR, som kun gjelder personopplysninger – data som kan identifisere deg.</p>
+        </div>
+
+        <h2>3. Stopp fremtidig datainnsamling</h2>
+        <p>Du kan når som helst stoppe at nye data sendes:</p>
+        <div class="step">
+            <div class="step-number">1</div>
+            <div>Åpne BoatChecker-appen</div>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <div>På hjemmesiden, skru av bryteren "Bidra til fellesskapet"</div>
+        </div>
+
+        <h2>4. Kjøpsinformasjon</h2>
+        <p>Hvis du har kjøpt BoatChecker Pro:</p>
+        <ul>
+            <li>Betalingsinformasjon håndteres av Google Play / Apple</li>
+            <li>Vi har ikke tilgang til dine betalingsdetaljer</li>
+            <li>For spørsmål om kjøp, kontakt Google Play / Apple support</li>
+        </ul>
+
+        <h2>5. Kontakt oss</h2>
+        <div class="box box-green">
+            <p>Har du spørsmål om personvern eller data?</p>
+            <p><strong>E-post:</strong> <a href="mailto:personvern@boatchecker.no">personvern@boatchecker.no</a></p>
+            <p>Vi svarer normalt innen 2-3 virkedager.</p>
+        </div>
+
+        <footer>
+            <p><a href="/privacy-policy.html">← Tilbake til personvernerklæring</a></p>
+            <p>Sist oppdatert: Januar 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
