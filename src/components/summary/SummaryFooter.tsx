@@ -23,6 +23,8 @@ type Props = {
   onDownload: (variant: PdfVariant) => void;
   onSend: () => void;
   onStartNew: () => void;
+  isPro?: boolean;
+  onUpgrade?: () => void;
 };
 
 export const SummaryFooter: React.FC<Props> = ({
@@ -31,10 +33,20 @@ export const SummaryFooter: React.FC<Props> = ({
   onDownload,
   onSend,
   onStartNew,
+  isPro = false,
+  onUpgrade,
 }) => {
   const { t } = useTranslation();
   const bg = useColorModeValue('whiteAlpha.900', 'gray.900');
   const border = useColorModeValue('gray.200', 'gray.700');
+
+  const handleDownloadClick = (variant: PdfVariant) => {
+    if (isPro) {
+      onDownload(variant);
+    } else if (onUpgrade) {
+      onUpgrade();
+    }
+  };
 
   return (
     <Box
@@ -52,36 +64,42 @@ export const SummaryFooter: React.FC<Props> = ({
       <VStack spacing={3} p={3} maxW="md" mx="auto">
         <HStack w="100%" spacing={3}>
           <Button flex="1" colorScheme="blue" onClick={onSend}>
-            {t('summary.send_to_vendors_button')}
+            {isPro ? t('summary.send_to_vendors_button') : t('summary.upgrade_for_offers_button')}
           </Button>
 
-          <Menu>
-            <MenuButton as={Button} flex="1" variant="outline" isDisabled={downloading !== null || !inspectionId}>
-              {downloading ? t('pdf_report.creating_pdf') : t('summary.download_button')}
-            </MenuButton>
-            <MenuList p={0}>
-              <MenuItem isDisabled={downloading !== null} onClick={() => onDownload('fast')}>
-                {downloading === 'fast' ? (
-                  <HStack>
-                    <Spinner size="xs" />
-                    <Text ml={2}>{t('pdf_report.creating_pdf')}</Text>
-                  </HStack>
-                ) : (
-                  t('pdf_report.download_options.fast')
-                )}
-              </MenuItem>
-              <MenuItem isDisabled={downloading !== null} onClick={() => onDownload('full')}>
-                {downloading === 'full' ? (
-                  <HStack>
-                    <Spinner size="xs" />
-                    <Text ml={2}>{t('pdf_report.creating_pdf')}</Text>
-                  </HStack>
-                ) : (
-                  t('pdf_report.download_options.full')
-                )}
-              </MenuItem>
-            </MenuList>
-          </Menu>
+          {isPro ? (
+            <Menu>
+              <MenuButton as={Button} flex="1" variant="outline" isDisabled={downloading !== null || !inspectionId}>
+                {downloading ? t('pdf_report.creating_pdf') : t('summary.download_button')}
+              </MenuButton>
+              <MenuList p={0}>
+                <MenuItem isDisabled={downloading !== null} onClick={() => handleDownloadClick('fast')}>
+                  {downloading === 'fast' ? (
+                    <HStack>
+                      <Spinner size="xs" />
+                      <Text ml={2}>{t('pdf_report.creating_pdf')}</Text>
+                    </HStack>
+                  ) : (
+                    t('pdf_report.download_options.fast')
+                  )}
+                </MenuItem>
+                <MenuItem isDisabled={downloading !== null} onClick={() => handleDownloadClick('full')}>
+                  {downloading === 'full' ? (
+                    <HStack>
+                      <Spinner size="xs" />
+                      <Text ml={2}>{t('pdf_report.creating_pdf')}</Text>
+                    </HStack>
+                  ) : (
+                    t('pdf_report.download_options.full')
+                  )}
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          ) : (
+            <Button flex="1" variant="outline" onClick={onUpgrade}>
+              {t('summary.download_report_button')}
+            </Button>
+          )}
         </HStack>
 
         <Button w="100%" colorScheme="red" variant="outline" onClick={onStartNew}>

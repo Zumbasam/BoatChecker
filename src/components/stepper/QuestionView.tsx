@@ -85,8 +85,9 @@ export const QuestionView: React.FC<Props> = ({ item, activeStep, totalSteps, is
           <HStack spacing={5}>
             {statusOptions.map(opt => {
               // OK er "default" - vises som valgt når ingenting er eksplisitt valgt
+              // MEN: Ikke vis OK som default for låste punkter
               const isSelected = value === opt.value;
-              const isDefaultOk = opt.value === 'ok' && !value;
+              const isDefaultOk = opt.value === 'ok' && !value && !isLocked;
               return (
                 <IconButton
                   key={opt.value}
@@ -94,9 +95,9 @@ export const QuestionView: React.FC<Props> = ({ item, activeStep, totalSteps, is
                   icon={opt.icon}
                   size="xl"
                   isRound
-                  colorScheme={opt.color}
+                  colorScheme={isLocked ? 'gray' : opt.color}
                   variant={(isSelected || isDefaultOk) ? 'outline' : 'ghost'}
-                  opacity={(isSelected || isDefaultOk) ? 1 : 0.5}
+                  opacity={isLocked ? 0.3 : (isSelected || isDefaultOk) ? 1 : 0.5}
                   onClick={() => { handleStateChange(opt.value as 'ok' | 'obs' | 'kritisk'); }}
                   isDisabled={isLocked}
                 />

@@ -1,7 +1,8 @@
 // src/components/summary/SummaryView.tsx
 import React, { useMemo, useState } from 'react';
-import { Box, VStack, useDisclosure } from '@chakra-ui/react';
+import { Box, VStack, useDisclosure, Alert, AlertTitle, AlertDescription, Button, HStack } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
+import { Lock } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { db } from '../../db';
 import type { BoatModel, Inspection, InspectionMetadata } from '../../db';
@@ -126,14 +127,18 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
     }
   };
 
+  // Filtrer ut not_assessed fra hovedvisningen
+  const assessedRows = useMemo(() => rows.filter(r => r.state !== 'not_assessed'), [rows]);
+  const notAssessedCount = useMemo(() => rows.filter(r => r.state === 'not_assessed').length, [rows]);
+
   const filtered = useMemo(() => {
-    let list = rows;
+    let list = assessedRows;  // Bruk kun vurderte items
     if (primaryFilter === 'critical') list = list.filter(r => r.state === 'kritisk');
     if (primaryFilter === 'obs') list = list.filter(r => r.state === 'obs');
     if (extraFilter === 'with_images') list = list.filter(r => r.thumb || r.photoFull);
     if (extraFilter === 'with_notes') list = list.filter(r => r.note && String(r.note).trim() !== '');
     return list;
-  }, [rows, primaryFilter, extraFilter]);
+  }, [assessedRows, primaryFilter, extraFilter]);
 
   const groups = useMemo(() => {
     const g: { key: string; label: string; items: Row[] }[] = [];
@@ -210,6 +215,35 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
           {groups.map(g => (
             <FindingsGroup key={g.key} label={g.label} items={g.items} />
           ))}
+
+          {/* Vis info om ikke-vurderte punkter for gratisbrukere */}
+          {notAssessedCount > 0 && !userStatus.isPro && (
+            <Alert 
+              status="info" 
+              variant="subtle" 
+              flexDirection="column" 
+              alignItems="flex-start" 
+              borderRadius="md"
+              p={4}
+            >
+              <HStack mb={2}>
+                <Lock size={18} />
+                <AlertTitle fontSize="md">
+                  {t('summary.not_assessed_count', { count: notAssessedCount })}
+                </AlertTitle>
+              </HStack>
+              <AlertDescription fontSize="sm" mb={3}>
+                {t('summary.not_assessed_hint')}
+              </AlertDescription>
+              <Button 
+                size="sm" 
+                colorScheme="blue"
+                onClick={() => navigate('/upgrade', { state: { from: location.pathname + location.search, backTo: 'summary' } })}
+              >
+                {t('upgrade_page.upgrade_button')}
+              </Button>
+            </Alert>
+          )}
         </VStack>
       </Box>
 
@@ -227,6 +261,8 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
         onStartNew={() =>
           handleStartNewInspection(userStatus, navigate, () => {}, t, location.pathname + location.search)
         }
+        isPro={userStatus.isPro}
+        onUpgrade={() => navigate('/upgrade', { state: { from: location.pathname + location.search, backTo: 'summary' } })}
       />
     </>
   );
