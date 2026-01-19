@@ -43,7 +43,8 @@
       "button_english": "Engelsk"
     },
     "country": {
-      "title": "Velg land",
+      "title": "Hvor ligger båten?",
+      "subtitle": "Vi bruker dette for å finne relevante verksteder i nærheten",
       "placeholder": "Søk etter land...",
       "no_results": "Ingen treff"
     },
@@ -70,6 +71,7 @@
     "upgrade_to_finish": "Oppgrader for å fullføre",
     "toast_report_limit_title": "Rapportgrense nådd",
     "toast_report_limit_desc": "Gratisversjonen gir én rapport. Oppgrader til Pro for ubegrensede rapporter.",
+    "pro_feature_hint": "Dette sjekkpunktet krever Pro-tilgang",
     "cost_banner": {
       "no_findings_yet": "Ingen funn registrert",
       "findings_registered_one": "{{count}} funn registrert",
@@ -110,15 +112,30 @@
 	"note_modal_title": "Notat",
 	"image_modal_title": "Bilde",
     "assessment_text": {
-      "no_findings": "Ingen vesentlige funn ble gjort under inspeksjonen. Båten fremstår i god stand basert på de kontrollerte punktene.",
-      "findings_intro_one": "Inspeksjonen avdekket {{count}} punkt som krever oppmerksomhet.",
-      "findings_intro_other": "Inspeksjonen avdekket {{count}} punkter som krever oppmerksomhet.",
-      "high_crit_one": "Særlig viktig er {{count}} funn med høy kritikalitet. Disse bør undersøkes av fagperson.",
-      "high_crit_other": "Særlig viktige er {{count}} funn med høy kritikalitet. Disse bør undersøkes av fagperson.",
-      "cost_4_one": "{{count}} punkt med potensielt svært høy utbedringskostnad ($$$$) ble identifisert.",
-      "cost_4_other": "{{count}} punkter med potensielt svært høy utbedringskostnad ($$$$) ble identifisert.",
-      "cost_3_one": "{{count}} punkt med potensielt høy utbedringskostnad ($$$) ble identifisert.",
-      "cost_3_other": "{{count}} punkter med potensielt høy utbedringskostnad ($$$) ble identifisert."
+      "partial_note": "Vurderingen er basert kun på de sjekkede punktene."
+    },
+    "assessment_verdict": {
+      "excellent": "Basert på de vurderte punktene fremstår båten i god stand. Ingen vesentlige avvik ble funnet.",
+      "good_one": "Båten er generelt i akseptabel stand. {{count}} mindre punkt bør følges opp, men ingen kritiske forhold ble avdekket.",
+      "good_other": "Båten er generelt i akseptabel stand. {{count}} mindre punkter bør følges opp, men ingen kritiske forhold ble avdekket.",
+      "fair_one": "Det ble funnet {{count}} punkt som krever oppfølging. Vi anbefaler å innhente tilbud på utbedring før eventuelt kjøp.",
+      "fair_other": "Det ble funnet {{count}} punkter som krever oppfølging. Vi anbefaler å innhente tilbud på utbedring før eventuelt kjøp.",
+      "concerning_one": "Inspeksjonen avdekket {{count}} punkt som gir grunn til bekymring. Dette kan medføre betydelige kostnader. Grundig vurdering anbefales.",
+      "concerning_other": "Inspeksjonen avdekket {{count}} punkter som gir grunn til bekymring. Noen av disse kan medføre betydelige kostnader. Grundig vurdering anbefales.",
+      "serious": "Det ble avdekket {{kritisk}} kritiske forhold blant totalt {{total}} funn. Disse må undersøkes av fagperson før eventuelt kjøp vurderes."
+    },
+    "assessment_detail": {
+      "kritisk_one": "{{count}} kritisk funn som må utbedres",
+      "kritisk_other": "{{count}} kritiske funn som må utbedres",
+      "obs_one": "{{count}} observasjon som bør følges opp",
+      "obs_other": "{{count}} observasjoner som bør følges opp",
+      "cost_high_one": "{{count}} punkt med potensielt høy utbedringskostnad",
+      "cost_high_other": "{{count}} punkter med potensielt høy utbedringskostnad"
+    },
+    "upgrade_cta": {
+      "title_one": "{{count}} punkt ikke tilgjengelig for vurdering",
+      "title_other": "{{count}} punkter ikke tilgjengelig for vurdering",
+      "button": "Få full inspeksjon"
     },
     "findings_table": {
       "checkpoint": "Sjekkpunkt",
@@ -146,6 +163,11 @@
     "not_assessed_count": "{{count}} punkter ikke vurdert",
     "not_assessed_label": "Ikke vurdert",
     "not_assessed_hint": "Disse punktene er kun tilgjengelig med Pro",
+    "resume_box": {
+      "title": "Full inspeksjon aktivert!",
+      "description": "Du har nå tilgang til alle sjekkpunkter. {{count}} punkter gjenstår å vurdere. Vil du fullføre inspeksjonen?",
+      "button": "Fortsett inspeksjonen"
+    },
     "no_results": "Ingen funn matcher filtrene.",
     "show_more": "Vis mer",
     "show_less": "Vis mindre",

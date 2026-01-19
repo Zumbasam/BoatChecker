@@ -8,25 +8,14 @@ interface UserStatus {
 }
 
 export const handleStartNewInspection = async (
-  userStatus: UserStatus,
+  _userStatus: UserStatus,
   navigate: NavigateFunction,
-  toast?: (options: any) => void,
-  t?: (key: string) => string,
-  from?: string
+  _toast?: (options: any) => void,
+  _t?: (key: string) => string,
+  _from?: string
 ) => {
-  if (!userStatus.isPro && userStatus.reportsGenerated >= 1) {
-    if (toast && t) {
-      toast({
-        title: t('checklist.toast_report_limit_title'),
-        description: t('checklist.toast_report_limit_desc'),
-        status: 'warning',
-        duration: 5000,
-        isClosable: true,
-      });
-    }
-    navigate('/upgrade', { state: from ? { from } : undefined });
-    return;
-  }
+  // Ny strategi: Ingen begrensning på antall inspeksjoner
+  // Begrensninger er kun på: låste punkter, PDF-eksport, og sending til verksteder
 
   await db.transaction('rw', db.settings, db.items, async () => {
     await db.items.clear();
@@ -36,6 +25,7 @@ export const handleStartNewInspection = async (
       language: s?.language,
       userStatus: s?.userStatus,
       reportsGenerated: s?.reportsGenerated,
+      contributeData: s?.contributeData,
     });
   });
 

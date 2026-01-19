@@ -1,6 +1,6 @@
 // src/components/ChecklistStepper.tsx
 import React, { useCallback, useMemo, useEffect } from "react";
-import { Box, Progress, Text, Flex, Button, VStack, useDisclosure, useToast, Heading } from "@chakra-ui/react";
+import { Box, Progress, Text, Flex, Button, VStack, useDisclosure, Heading } from "@chakra-ui/react";
 import { useSteps } from "@chakra-ui/stepper";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
@@ -10,11 +10,12 @@ import { QuestionView } from "./stepper/QuestionView";
 import { SummaryViewWrapper } from "./stepper/SummaryViewWrapper";
 import { FeedbackDrawer } from "./feedback/FeedbackDrawer";
 import { StatusDrawer } from "./stepper/StatusDrawer";
-import type { BoatModel } from "../db";
+import type { BoatModel, Inspection } from "../db";
 import type { ChecklistItemType, Row } from '../hooks/useChecklistData';
 import { useInspectionData } from '../contexts/InspectionDataProvider';
 import { StatusButtonPortal } from './StatusButtonPortal';
 import AnalyticsService from '../services/AnalyticsService';
+import { getAccessLevel, isItemLocked, type AccessLevel } from '../utils/accessLevel';
 
 export const ChecklistStepper: React.FC = () => {
   const { checklistItems, rows, displayBoatModel, inspection } = useInspectionData();
@@ -33,8 +34,13 @@ const ChecklistStepperContent: React.FC<{
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useTranslation();
-  const toast = useToast();
-  const { isPro, reportsGenerated } = useUserStatus();
+  const { isPro } = useUserStatus();
+  
+  // Beregn tilgangsnivå basert på Pro-status og inspeksjonens unlock-status
+  const accessLevel: AccessLevel = useMemo(() => 
+    getAccessLevel(isPro, inspection as Inspection | null), 
+    [isPro, inspection]
+  );
 
   useEffect(() => {
     console.log('[ChecklistStepper] route', location.pathname);
@@ -63,7 +69,18 @@ const ChecklistStepperContent: React.FC<{
   const persistedKey = inspectionId != null ? `checklist:step:${inspectionId}` : null;
   const persisted = persistedKey ? Number(sessionStorage.getItem(persistedKey) || '0') : 0;
   const restoreTo = (location.state as any)?.restoreTo as string | undefined;
-  const initialIndex = restoreTo === 'summary' ? checklistItems.length : Math.min(persisted, checklistItems.length);
+  const gotoItemId = (location.state as any)?.gotoItemId as string | undefined;
+  
+  // Beregn initialIndex basert på state
+  const initialIndex = useMemo(() => {
+    if (restoreTo === 'summary') return checklistItems.length;
+    if (gotoItemId) {
+      // Finn index til det spesifikke punktet
+      const idx = checklistItems.findIndex(item => item.id === gotoItemId);
+      if (idx !== -1) return idx;
+    }
+    return Math.min(persisted, checklistItems.length);
+  }, [restoreTo, gotoItemId, checklistItems, persisted]);
 
   const { activeStep, setActiveStep } = useSteps({ index: initialIndex, count: checklistItems.length + 1 });
   const isSummary = activeStep === checklistItems.length && checklistItems.length > 0;
@@ -158,39 +175,28 @@ const ChecklistStepperContent: React.FC<{
     markReportConsumed();
   }, [isSummary, inspectionId, isPro]);
 
-  const isFinishLocked = !isPro && reportsGenerated >= 1;
-
+  // Ny strategi: Summary er alltid tilgjengelig, begrensning kun på PDF-eksport og låste punkter
   const handleNextClick = async () => {
-    if (activeStep === checklistItems.length - 1 && isFinishLocked) {
-      toast({
-        title: t('checklist.toast_report_limit_title'),
-        description: t('checklist.toast_report_limit_desc'),
-        status: 'warning',
-        duration: 5000,
-        isClosable: true,
-      });
-    } else {
-      // Auto-sett state hvis brukeren ikke har markert noe
-      const currentItem = checklistItems[activeStep];
-      if (currentItem) {
-        const existingItem = await db.items.get(currentItem.id);
-        if (!existingItem) {
-          // Sjekk om punktet er låst (Pro-only)
-          const isItemLocked = !isPro && (currentItem.criticality ?? 0) > 1;
-          
-          // Låste punkter = "not_assessed", åpne punkter = "ok"
-          await db.items.put({
-            id: currentItem.id,
-            state: isItemLocked ? 'not_assessed' : 'ok',
-          });
-        }
+    // Auto-sett state hvis brukeren ikke har markert noe
+    const currentItem = checklistItems[activeStep];
+    if (currentItem) {
+      const existingItem = await db.items.get(currentItem.id);
+      if (!existingItem) {
+        // Sjekk om punktet er låst basert på tilgangsnivå
+        const itemIsLocked = isItemLocked(accessLevel, currentItem.criticality);
+        
+        // Låste punkter = "not_assessed", åpne punkter = "ok"
+        await db.items.put({
+          id: currentItem.id,
+          state: itemIsLocked ? 'not_assessed' : 'ok',
+        });
       }
-
-      if (activeStep === checklistItems.length - 1 && inspectionId) {
-        await db.inspections.update(inspectionId, { status: 'completed' });
-      }
-      setActiveStep(s => s + 1);
     }
+
+    if (activeStep === checklistItems.length - 1 && inspectionId) {
+      await db.inspections.update(inspectionId, { status: 'completed' });
+    }
+    setActiveStep(s => s + 1);
   };
 
   const submitAnonymousData = useCallback(async () => {
@@ -240,7 +246,7 @@ const ChecklistStepperContent: React.FC<{
             item={checklistItems[activeStep]}
             activeStep={activeStep}
             totalSteps={checklistItems.length + 1}
-            isFinishLocked={isFinishLocked}
+            accessLevel={accessLevel}
             onNext={handleNextClick}
             onBack={() => setActiveStep(s => s - 1)}
             onFeedbackOpen={onFeedbackOpen}

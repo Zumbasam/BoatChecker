@@ -214,12 +214,59 @@ export const HomePage: React.FC = () => {
         {import.meta.env.DEV && (
           <Card variant="outline" bg="yellow.50" _dark={{ bg: 'yellow.900' }}>
             <CardBody>
-              <VStack>
+              <VStack spacing={4}>
                 <Heading size="sm">🛠️ Utviklerverktøy (kun synlig i dev)</Heading>
-                <Text>Nåværende status: <strong>{userStatus.isPro ? 'PRO' : 'GRATIS'}</strong></Text>
-                <Button size="sm" colorScheme="yellow" onClick={toggleProStatus}>
-                  Bytt til {userStatus.isPro ? 'GRATIS' : 'PRO'}
-                </Button>
+                <VStack spacing={2}>
+                  <Text>Nåværende status: <strong>{userStatus.isPro ? 'PRO' : 'GRATIS'}</strong></Text>
+                  <Button size="sm" colorScheme="yellow" onClick={toggleProStatus}>
+                    Bytt til {userStatus.isPro ? 'GRATIS' : 'PRO'}
+                  </Button>
+                </VStack>
+                {lastInspection && !userStatus.isPro && (
+                  <VStack spacing={2} pt={2} borderTopWidth="1px" w="100%">
+                    <Text fontSize="sm">Siste inspeksjon: {lastInspection.name}</Text>
+                    <Text fontSize="xs" color="gray.600">
+                      Unlock: {lastInspection.unlockLevel || 'free'}
+                    </Text>
+                    <HStack>
+                      <Button 
+                        size="sm" 
+                        colorScheme="green" 
+                        onClick={async () => {
+                          if (lastInspection.id) {
+                            await db.inspections.update(lastInspection.id, { unlockLevel: 'single_purchase' });
+                            toast({
+                              title: '🔓 Enkeltkjøp aktivert',
+                              description: `Full inspeksjon unlocked for "${lastInspection.name}"`,
+                              status: 'success',
+                              duration: 3000,
+                            });
+                          }
+                        }}
+                        isDisabled={lastInspection.unlockLevel === 'single_purchase'}
+                      >
+                        Simuler enkeltkjøp
+                      </Button>
+                      <Button 
+                        size="sm" 
+                        colorScheme="gray" 
+                        onClick={async () => {
+                          if (lastInspection.id) {
+                            await db.inspections.update(lastInspection.id, { unlockLevel: 'free' });
+                            toast({
+                              title: '🔒 Tilgang fjernet',
+                              status: 'info',
+                              duration: 2000,
+                            });
+                          }
+                        }}
+                        isDisabled={!lastInspection.unlockLevel || lastInspection.unlockLevel === 'free'}
+                      >
+                        Reset
+                      </Button>
+                    </HStack>
+                  </VStack>
+                )}
               </VStack>
             </CardBody>
           </Card>

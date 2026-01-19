@@ -6,24 +6,23 @@ import { IoCheckmarkCircle, IoAlertCircle, IoCloseCircle } from 'react-icons/io5
 import { ArrowLeft, ArrowRight, ChevronUp, MessageCircle } from 'lucide-react';
 import { ChecklistCard } from '../ChecklistCard';
 import { useChecklistItem } from '../../hooks/useChecklistItem';
-import { useUserStatus } from '../../hooks/useUserStatus';
 import type { ChecklistItemType } from '../../hooks/useChecklistData';
+import { isItemLocked as checkItemLocked, type AccessLevel } from '../../utils/accessLevel';
 
 interface Props {
   item: ChecklistItemType | undefined;
   activeStep: number;
   totalSteps: number;
-  isFinishLocked: boolean;
+  accessLevel: AccessLevel;
   onNext: () => void;
   onBack: () => void;
   onFeedbackOpen: () => void;
 }
 
-export const QuestionView: React.FC<Props> = ({ item, activeStep, totalSteps, isFinishLocked, onNext, onBack, onFeedbackOpen }) => {
+export const QuestionView: React.FC<Props> = ({ item, activeStep, totalSteps, accessLevel, onNext, onBack, onFeedbackOpen }) => {
   const { t } = useTranslation();
   const footerBg = useColorModeValue('whiteAlpha.800', 'gray.800');
   const { itemState, handlers } = useChecklistItem(item?.id);
-  const { isPro } = useUserStatus();
   const { handleStateChange } = handlers;
   const { isOpen: isFeedbackBarOpen, onToggle: onFeedbackBarToggle } = useDisclosure();
   const tabBg = useColorModeValue('gray.200', 'gray.700');
@@ -31,7 +30,7 @@ export const QuestionView: React.FC<Props> = ({ item, activeStep, totalSteps, is
   const value = itemState?.state;
 
   const isLastStep = activeStep === totalSteps - 2;
-  const isLocked = !isPro && (item?.criticality ?? 0) > 1;
+  const isLocked = checkItemLocked(accessLevel, item?.criticality);
 
   const statusOptions = [
     { value: 'ok', icon: <IoCheckmarkCircle size="44px" />, color: 'green' },
@@ -45,7 +44,7 @@ export const QuestionView: React.FC<Props> = ({ item, activeStep, totalSteps, is
 
   return (
     <>
-      <Box p={4} pb="150px"><ChecklistCard item={item} /></Box>
+      <Box p={4} pb="150px"><ChecklistCard item={item} accessLevel={accessLevel} /></Box>
       <Box as="footer" position="fixed" bottom="0" left="0" right="0" bg={footerBg} backdropFilter="blur(10px)" zIndex="sticky" boxShadow="0 -2px 10px rgba(0, 0, 0, 0.1)">
         <Collapse in={isFeedbackBarOpen} animateOpacity>
           <Flex justify="center" p={2}>
@@ -111,7 +110,6 @@ export const QuestionView: React.FC<Props> = ({ item, activeStep, totalSteps, is
             isRound
             colorScheme="blue"
             onClick={onNext}
-            isDisabled={isLastStep && isFinishLocked}
           />
         </Flex>
       </Box>

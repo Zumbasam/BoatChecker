@@ -28,9 +28,10 @@ import type { FindingRow } from './utils';
 type FindingCardProps = {
   item: FindingRow;
   index?: number;
+  onNavigateToItem?: (itemId: string) => void;
 };
 
-export const FindingCard: React.FC<FindingCardProps> = ({ item, index = 0 }) => {
+export const FindingCard: React.FC<FindingCardProps> = ({ item, index = 0, onNavigateToItem }) => {
   const { t } = useTranslation();
   const evenBg = useColorModeValue('#eaf2ff', '#24364d');
   const oddBg = useColorModeValue('#f5f9ff', '#1c2a3e');
@@ -61,11 +62,21 @@ export const FindingCard: React.FC<FindingCardProps> = ({ item, index = 0 }) => 
 
   return (
     <>
-      <Box p={3} bg={bg} borderWidth="1px" borderColor={border} rounded="md">
+      <Box 
+        p={3} 
+        bg={bg} 
+        borderWidth="1px" 
+        borderColor={border} 
+        rounded="md"
+        cursor={onNavigateToItem ? 'pointer' : 'default'}
+        _hover={onNavigateToItem ? { borderColor: 'blue.400', shadow: 'sm' } : {}}
+        onClick={() => onNavigateToItem?.(item.id)}
+        transition="all 0.2s"
+      >
         <HStack spacing={2} align="center" justify="space-between">
           <HStack spacing={2} minW={0}>
             {item.criticality === 1 && <Icon as={AlertTriangle} color="red.500" boxSize={5} />}
-            <Text fontWeight="semibold" noOfLines={2}>{item.label}</Text>
+            <Text fontWeight="semibold" noOfLines={2} color={onNavigateToItem ? 'blue.600' : undefined}>{item.label}</Text>
           </HStack>
         </HStack>
 

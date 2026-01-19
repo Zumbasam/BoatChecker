@@ -7,9 +7,10 @@ import { FindingCard } from './FindingCard';
 type FindingsGroupProps = {
   label: string;
   items: Row[];
+  onNavigateToItem?: (itemId: string) => void;
 };
 
-export const FindingsGroup: React.FC<FindingsGroupProps> = ({ label, items }) => {
+export const FindingsGroup: React.FC<FindingsGroupProps> = ({ label, items, onNavigateToItem }) => {
   const headerBg = useColorModeValue('gray.50', 'gray.700');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
 
@@ -20,7 +21,7 @@ export const FindingsGroup: React.FC<FindingsGroupProps> = ({ label, items }) =>
       </Box>
       <VStack spacing={3} mt={2} align="stretch">
         {items.map((item, index) => (
-          <FindingCard key={item.id} item={item} index={index} />
+          <FindingCard key={item.id} item={item} index={index} onNavigateToItem={onNavigateToItem} />
         ))}
       </VStack>
     </Box>

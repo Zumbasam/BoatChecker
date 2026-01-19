@@ -51,11 +51,14 @@ const UpgradePage: React.FC = () => {
   };
 
   return (
-    <VStack spacing={8} p={6} justify="center" minH="calc(100vh - 4rem)" maxW="lg" mx="auto" textAlign="center">
-      <Image src="/logo.svg" alt="BoatChecker App Logo" boxSize="90px" />
-      <VStack spacing={2}>
-        <Heading as="h1" size="xl">{t('upgrade_page.title')}</Heading>
-        <Text color="gray.500">{t('upgrade_page.subtitle')}</Text>
+    <VStack spacing={6} p={6} pt={4} align="stretch" maxW="lg" mx="auto" textAlign="center">
+      {/* Header - alltid synlig øverst */}
+      <VStack spacing={3}>
+        <Image src="/logo.svg" alt="BoatChecker App Logo" boxSize="70px" />
+        <VStack spacing={1}>
+          <Heading as="h1" size="lg">{t('upgrade_page.title')}</Heading>
+          <Text color="gray.500" fontSize="sm">{t('upgrade_page.subtitle')}</Text>
+        </VStack>
       </VStack>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4} w="100%">
         <Box p={4} borderWidth="1px" rounded="md">

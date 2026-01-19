@@ -6,9 +6,9 @@ import { Camera, X, FileImage, MessageSquarePlus, Paperclip, HelpCircle, Lock } 
 import ReactMarkdown from 'react-markdown';
 import { useTranslation } from 'react-i18next';
 import { useChecklistItem } from '../hooks/useChecklistItem';
-import { useUserStatus } from '../hooks/useUserStatus';
 import { chooseFromLibrary, takePhoto } from '../utils/imageUtils';
 import { useState, useEffect } from 'react';
+import { isItemLocked as checkItemLocked, type AccessLevel } from '../utils/accessLevel';
 
 interface Props {
   item: {
@@ -19,12 +19,12 @@ interface Props {
     tags: string[];
     criticality?: number;
   };
+  accessLevel?: AccessLevel;
 }
 
-export const ChecklistCard: React.FC<Props> = ({ item }) => {
+export const ChecklistCard: React.FC<Props> = ({ item, accessLevel }) => {
   const { t } = useTranslation();
   const { itemState, handlers } = useChecklistItem(item.id);
-  const { isPro } = useUserStatus();
   const { handleNoteSave, handleImageSelection } = handlers;
 
   const [note, setNote] = useState(itemState?.note || '');
@@ -37,7 +37,8 @@ export const ChecklistCard: React.FC<Props> = ({ item }) => {
   const { isOpen: isChoiceOpen, onOpen: onChoiceOpen, onClose: onChoiceClose } = useDisclosure();
   const { isOpen: isNoteOpen, onOpen: onNoteOpen, onClose: onNoteClose } = useDisclosure();
 
-  const isLocked = !isPro && (item.criticality ?? 0) > 1;
+  // Bruk accessLevel hvis tilgjengelig, fallback til 'free' som sikrer at høy-kritikalitet er låst
+  const isLocked = checkItemLocked(accessLevel ?? 'free', item.criticality);
 
   const value = itemState?.state;
   const thumb = itemState?.thumb;
@@ -53,11 +54,31 @@ export const ChecklistCard: React.FC<Props> = ({ item }) => {
   const accordionButtonHoverBg = useColorModeValue('blue.100', 'blue.800');
 
   return (
-    <Box p={4} bg={bg} borderWidth="1px" borderColor={border} rounded="xl" shadow="sm" opacity={isLocked ? 0.6 : 1}>
+    <Box p={4} bg={bg} borderWidth="1px" borderColor={border} rounded="xl" shadow="sm" opacity={isLocked ? 0.7 : 1}>
       <HStack justify="space-between">
-        <Heading size="md" mb={3}>{item.title}</Heading>
+        <Heading size="md" mb={isLocked ? 1 : 3}>{item.title}</Heading>
         {isLocked && <Lock size={20} />}
       </HStack>
+
+      {/* Pro-funksjon banner for låste punkter */}
+      {isLocked && (
+        <Box 
+          bg={useColorModeValue('blue.50', 'blue.900')} 
+          px={3} 
+          py={2} 
+          rounded="md" 
+          mb={3}
+          borderWidth="1px"
+          borderColor={useColorModeValue('blue.200', 'blue.700')}
+        >
+          <HStack spacing={2}>
+            <Lock size={14} />
+            <Text fontSize="sm" fontWeight="medium" color={useColorModeValue('blue.700', 'blue.200')}>
+              {t('checklist.pro_feature_hint', { defaultValue: 'Dette sjekkpunktet krever Pro-tilgang' })}
+            </Text>
+          </HStack>
+        </Box>
+      )}
 
       <Accordion allowToggle index={isLocked ? [-1] : undefined}>
         <AccordionItem border="none">

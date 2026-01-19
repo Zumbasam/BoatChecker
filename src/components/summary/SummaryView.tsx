@@ -1,8 +1,8 @@
 // src/components/summary/SummaryView.tsx
 import React, { useMemo, useState } from 'react';
-import { Box, VStack, useDisclosure, Alert, AlertTitle, AlertDescription, Button, HStack } from '@chakra-ui/react';
+import { Box, VStack, useDisclosure, Alert, AlertTitle, AlertDescription, Button, HStack, Icon, useColorModeValue, Text } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
-import { Lock } from 'lucide-react';
+import { Lock, RefreshCw, Unlock } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { db } from '../../db';
 import type { BoatModel, Inspection, InspectionMetadata } from '../../db';
@@ -16,6 +16,7 @@ import { SummaryFooter } from './SummaryFooter';
 import InspectionMetadataModal from '../InspectionMetadataModal';
 import BoatInsights from '../BoatInsights';
 import type { Row, GroupBy, PrimaryFilter, ExtraFilter } from './utils';
+import { getAccessLevel } from '../../utils/accessLevel';
 
 interface Props {
   rows: Row[];
@@ -29,6 +30,10 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
   const location = useLocation();
   const userStatus = useUserStatus();
   const { isOpen: isMetadataOpen, onOpen: onMetadataOpen, onClose: onMetadataClose } = useDisclosure();
+  
+  // Tilgangsnivå basert på Pro-status og inspeksjonens unlock-status
+  const accessLevel = getAccessLevel(userStatus.isPro, inspection);
+  const hasFullAccess = accessLevel === 'pro' || accessLevel === 'single_purchase';
 
   const [downloading, setDownloading] = useState<null | 'full' | 'fast'>(null);
   const [primaryFilter, setPrimaryFilter] = useState<PrimaryFilter>('all');
@@ -180,6 +185,18 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
   // Create inspection with current metadata for display
   const inspectionWithMetadata = { ...inspection, metadata: currentMetadata };
 
+  // Navigasjon til sjekkpunkt fra summary
+  const handleNavigateToItem = (itemId: string) => {
+    // Pass itemId i state så ChecklistStepper kan hoppe til riktig punkt
+    navigate(`/checklist/${inspection.id}`, { state: { gotoItemId: itemId } });
+  };
+
+  // Finn første ikke-vurderte punkt for "Fortsett"-knappen
+  const firstNotAssessedItemId = useMemo(() => {
+    const notAssessedItem = rows.find(r => r.state === 'not_assessed');
+    return notAssessedItem?.id;
+  }, [rows]);
+
   return (
     <>
       <InspectionMetadataModal
@@ -196,7 +213,76 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
           onEditMetadata={onMetadataOpen}
         />
         <VStack spacing={6} align="stretch">
-          <SummaryAssessment rows={rows} />
+          <SummaryAssessment rows={rows} notAssessedCount={notAssessedCount} />
+          
+          {/* Oppgraderingsboks: Vis rett etter vurdering for gratisbrukere */}
+          {notAssessedCount > 0 && !hasFullAccess && (
+            <Alert 
+              status="info" 
+              variant="left-accent"
+              borderRadius="md"
+              p={4}
+            >
+              <HStack justify="space-between" w="100%" flexWrap="wrap" gap={3}>
+                <HStack>
+                  <Lock size={18} />
+                  <Text fontWeight="medium">
+                    {t('summary.upgrade_cta.title', { 
+                      count: notAssessedCount,
+                      defaultValue: '{{count}} punkter ikke tilgjengelig for vurdering'
+                    })}
+                  </Text>
+                </HStack>
+                <Button 
+                  size="sm" 
+                  colorScheme="blue"
+                  onClick={() => navigate('/upgrade', { state: { from: location.pathname + location.search, backTo: 'summary' } })}
+                >
+                  {t('summary.upgrade_cta.button', { defaultValue: 'Få full inspeksjon' })}
+                </Button>
+              </HStack>
+            </Alert>
+          )}
+          
+          {/* Resume-boks: Vis når bruker har unlocked tilgang og det finnes ikke-vurderte punkter */}
+          {hasFullAccess && notAssessedCount > 0 && (
+            <Alert 
+              status="success" 
+              variant="subtle" 
+              flexDirection="column" 
+              alignItems="flex-start" 
+              borderRadius="md"
+              p={4}
+              bg={useColorModeValue('green.50', 'green.900')}
+              borderWidth="1px"
+              borderColor={useColorModeValue('green.200', 'green.700')}
+            >
+              <HStack mb={2}>
+                <Icon as={Unlock} boxSize={5} color={useColorModeValue('green.600', 'green.300')} />
+                <AlertTitle fontSize="md">
+                  {t('summary.resume_box.title')}
+                </AlertTitle>
+              </HStack>
+              <AlertDescription fontSize="sm" mb={3}>
+                {t('summary.resume_box.description', { count: notAssessedCount })}
+              </AlertDescription>
+              <Button 
+                leftIcon={<RefreshCw size={16} />}
+                size="sm" 
+                colorScheme="green"
+                onClick={() => {
+                  // Naviger til første ikke-vurderte punkt, eller start av sjekklisten
+                  if (firstNotAssessedItemId) {
+                    navigate(`/checklist/${inspection.id}`, { state: { gotoItemId: firstNotAssessedItemId } });
+                  } else {
+                    navigate(`/checklist/${inspection.id}`);
+                  }
+                }}
+              >
+                {t('summary.resume_box.button')}
+              </Button>
+            </Alert>
+          )}
           
           {/* Statistikk-baserte innsikter (vises kun når data er tilgjengelig) */}
           <BoatInsights 
@@ -213,37 +299,8 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
             onGroupByChange={setGroupBy}
           />
           {groups.map(g => (
-            <FindingsGroup key={g.key} label={g.label} items={g.items} />
+            <FindingsGroup key={g.key} label={g.label} items={g.items} onNavigateToItem={handleNavigateToItem} />
           ))}
-
-          {/* Vis info om ikke-vurderte punkter for gratisbrukere */}
-          {notAssessedCount > 0 && !userStatus.isPro && (
-            <Alert 
-              status="info" 
-              variant="subtle" 
-              flexDirection="column" 
-              alignItems="flex-start" 
-              borderRadius="md"
-              p={4}
-            >
-              <HStack mb={2}>
-                <Lock size={18} />
-                <AlertTitle fontSize="md">
-                  {t('summary.not_assessed_count', { count: notAssessedCount })}
-                </AlertTitle>
-              </HStack>
-              <AlertDescription fontSize="sm" mb={3}>
-                {t('summary.not_assessed_hint')}
-              </AlertDescription>
-              <Button 
-                size="sm" 
-                colorScheme="blue"
-                onClick={() => navigate('/upgrade', { state: { from: location.pathname + location.search, backTo: 'summary' } })}
-              >
-                {t('upgrade_page.upgrade_button')}
-              </Button>
-            </Alert>
-          )}
         </VStack>
       </Box>
 

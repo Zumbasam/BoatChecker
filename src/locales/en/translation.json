@@ -43,7 +43,8 @@
       "button_english": "English"
     },
     "country": {
-      "title": "Choose country",
+      "title": "Where is the boat located?",
+      "subtitle": "We use this to find relevant workshops nearby",
       "placeholder": "Search for country...",
       "no_results": "No results"
     },
@@ -70,6 +71,7 @@
     "upgrade_to_finish": "Upgrade to Finish",
     "toast_report_limit_title": "Report Limit Reached",
     "toast_report_limit_desc": "The free version allows one report. Upgrade to Pro for unlimited reports.",
+    "pro_feature_hint": "This checkpoint requires Pro access",
     "cost_banner": {
       "no_findings_yet": "No findings registered",
       "findings_registered_one": "{{count}} finding registered",
@@ -110,15 +112,30 @@
 	"note_modal_title": "Note",
 	"image_modal_title": "Image",
     "assessment_text": {
-      "no_findings": "No significant findings were made during the inspection. The boat appears to be in good condition based on the checked points.",
-      "findings_intro_one": "The inspection revealed {{count}} point requiring attention.",
-      "findings_intro_other": "The inspection revealed {{count}} points requiring attention.",
-      "high_crit_one": "Of particular importance is {{count}} finding with high criticality. These should be examined by a professional.",
-      "high_crit_other": "Of particular importance are {{count}} findings with high criticality. These should be examined by a professional.",
-      "cost_4_one": "{{count}} point with potentially very high repair costs ($$$$) was identified.",
-      "cost_4_other": "{{count}} points with potentially very high repair costs ($$$$) were identified.",
-      "cost_3_one": "{{count}} point with potentially high repair costs ($$$) was identified.",
-      "cost_3_other": "{{count}} points with potentially high repair costs ($$$) were identified."
+      "partial_note": "Assessment is based only on the checked points."
+    },
+    "assessment_verdict": {
+      "excellent": "Based on the assessed points, the boat appears to be in good condition. No significant issues were found.",
+      "good_one": "The boat is generally in acceptable condition. {{count}} minor point should be followed up, but no critical issues were found.",
+      "good_other": "The boat is generally in acceptable condition. {{count}} minor points should be followed up, but no critical issues were found.",
+      "fair_one": "{{count}} point was found that requires follow-up. We recommend obtaining repair quotes before any purchase.",
+      "fair_other": "{{count}} points were found that require follow-up. We recommend obtaining repair quotes before any purchase.",
+      "concerning_one": "The inspection revealed {{count}} point that gives cause for concern. This may involve significant costs. Thorough evaluation is recommended.",
+      "concerning_other": "The inspection revealed {{count}} points that give cause for concern. Some of these may involve significant costs. Thorough evaluation is recommended.",
+      "serious": "{{kritisk}} critical issues were found among a total of {{total}} findings. These must be examined by a professional before any purchase is considered."
+    },
+    "assessment_detail": {
+      "kritisk_one": "{{count}} critical finding that must be addressed",
+      "kritisk_other": "{{count}} critical findings that must be addressed",
+      "obs_one": "{{count}} observation that should be followed up",
+      "obs_other": "{{count}} observations that should be followed up",
+      "cost_high_one": "{{count}} point with potentially high repair costs",
+      "cost_high_other": "{{count}} points with potentially high repair costs"
+    },
+    "upgrade_cta": {
+      "title_one": "{{count}} point not available for assessment",
+      "title_other": "{{count}} points not available for assessment",
+      "button": "Get full inspection"
     },
     "findings_table": {
       "checkpoint": "Checkpoint",
@@ -146,6 +163,11 @@
     "not_assessed_count": "{{count}} items not assessed",
     "not_assessed_label": "Not Assessed",
     "not_assessed_hint": "These items are only available with Pro",
+    "resume_box": {
+      "title": "Full inspection activated!",
+      "description": "You now have access to all checkpoints. {{count}} items remain to be assessed. Would you like to complete the inspection?",
+      "button": "Continue inspection"
+    },
     "no_results": "No findings match the filters.",
     "show_more": "Show more",
     "show_less": "Show less",

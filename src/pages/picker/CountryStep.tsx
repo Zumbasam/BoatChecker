@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import {
   Box,
   Heading,
+  Text,
   Input,
   List,
   ListItem,
@@ -74,9 +75,12 @@ const CountryStep: React.FC = () => {
   return (
     <VStack spacing={6} p={4} justify="center" minH="calc(100vh - 4rem)">
       <Box maxW="md" w="100%">
-        <Heading size="lg" mb={4} textAlign="center">
+        <Heading size="lg" mb={2} textAlign="center">
           {t('picker.country.title')}
         </Heading>
+        <Text color="gray.500" textAlign="center" mb={4} fontSize="sm">
+          {t('picker.country.subtitle')}
+        </Text>
 
         <Box position="relative">
           <InputGroup>

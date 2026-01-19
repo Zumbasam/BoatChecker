@@ -1,8 +1,9 @@
 # Teknisk Plan: Fikse "Låste sjekkpunkter markeres som OK"
 
 **Opprettet:** 2026-01-18  
-**Status:** Planlegging  
+**Status:** ✅ IMPLEMENTERT  
 **Prioritet:** KRITISK - Påvirker faglig integritet  
+**Commit:** `6c39430` - Fix: Locked checklist items now saved as not_assessed instead of ok  
 
 ---
 

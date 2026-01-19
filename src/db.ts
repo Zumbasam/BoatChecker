@@ -69,6 +69,7 @@ export interface Inspection {
   items: InspectionItem[];
   reportDownloaded?: boolean;
   reportCounted?: boolean;
+  unlockLevel?: 'free' | 'single_purchase';  // Per-inspeksjon tilgang (Pro sjekkes globalt)
 }
 
 export interface BoatModel {

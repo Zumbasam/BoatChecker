@@ -51,16 +51,45 @@ class PurchasesService {
       await Purchases.configure({ apiKey });
       console.log("[PurchasesService] RevenueCat initialisert for", platform);
 
-      // Lytt til endringer i kundeinfo
+      // Verifiser entitlements ved oppstart (sikkerhet)
+      await this.verifyEntitlements();
+
+      // Lytt til endringer i kundeinfo (synkroniserer ved kjøp/restore)
       Purchases.addCustomerInfoUpdateListener(async (customerInfo) => {
         const isPro = !!customerInfo.entitlements.active[ENTITLEMENT_ID];
-        await db.settings.update('settings', { userStatus: isPro ? 'pro' : 'free' });
-        console.log("[PurchasesService] Status oppdatert:", isPro ? 'PRO' : 'FREE');
+        await this.updateProStatus(isPro, 'listener');
       });
 
     } catch (error) {
       console.error("[PurchasesService] Feil ved initialisering:", error);
     }
+  }
+
+  /**
+   * Verifiserer entitlements direkte med RevenueCat.
+   * Kalles ved oppstart for å sikre at lokal cache er synkronisert.
+   */
+  private verifyEntitlements = async (): Promise<void> => {
+    if (!this.isNative || !Purchases) return;
+
+    try {
+      const customerInfo = await Purchases.getCustomerInfo();
+      const isPro = !!customerInfo.customerInfo.entitlements.active[ENTITLEMENT_ID];
+      await this.updateProStatus(isPro, 'verification');
+      console.log("[PurchasesService] Entitlements verifisert ved oppstart:", isPro ? 'PRO' : 'FREE');
+    } catch (error) {
+      console.error("[PurchasesService] Kunne ikke verifisere entitlements:", error);
+      // Ved feil: behold eksisterende lokal status (offline-støtte)
+    }
+  }
+
+  /**
+   * Oppdaterer Pro-status i lokal database.
+   * Kun RevenueCat-kilde oppdaterer i produksjon.
+   */
+  private updateProStatus = async (isPro: boolean, source: string): Promise<void> => {
+    await db.settings.update('settings', { userStatus: isPro ? 'pro' : 'free' });
+    console.log(`[PurchasesService] Status oppdatert (${source}):`, isPro ? 'PRO' : 'FREE');
   }
 
   public getOfferings = async (): Promise<PurchasesPackage[]> => {
@@ -102,7 +131,7 @@ class PurchasesService {
       const isPro = !!result.customerInfo.entitlements.active[ENTITLEMENT_ID];
       
       if (isPro) {
-        await db.settings.update('settings', { userStatus: 'pro' });
+        await this.updateProStatus(true, 'purchase');
         console.log("[PurchasesService] Kjøp vellykket - PRO aktivert!");
       }
       
@@ -127,7 +156,7 @@ class PurchasesService {
       const result = await Purchases.restorePurchases();
       const isPro = !!result.customerInfo.entitlements.active[ENTITLEMENT_ID];
       
-      await db.settings.update('settings', { userStatus: isPro ? 'pro' : 'free' });
+      await this.updateProStatus(isPro, 'restore');
       console.log("[PurchasesService] Gjenoppretting:", isPro ? 'PRO funnet' : 'Ingen PRO');
       
       return isPro;
@@ -137,10 +166,17 @@ class PurchasesService {
     }
   }
 
-  // Hjelpemetode for manuell oppgradering (kun for testing/admin)
+  /**
+   * Manuell setting av Pro-status - KUN FOR DEVELOPMENT/TESTING.
+   * I produksjon på native vil dette bli overskrevet av RevenueCat ved neste sync.
+   */
   public setProStatus = async (isPro: boolean): Promise<void> => {
+    if (import.meta.env.PROD && this.isNative) {
+      console.warn("[PurchasesService] setProStatus ignorert i produksjon - bruk RevenueCat");
+      return;
+    }
     await db.settings.update('settings', { userStatus: isPro ? 'pro' : 'free' });
-    console.log(`[PurchasesService] Status manuelt satt til ${isPro ? 'PRO' : 'FREE'}`);
+    console.log(`[PurchasesService] DEV: Status manuelt satt til ${isPro ? 'PRO' : 'FREE'}`);
   }
 
   // Sjekk om vi kjører på native platform
