@@ -19,7 +19,8 @@
     "toggle_dark_mode": "Toggle dark/light mode",
     "delete": "Delete",
     "cancel": "Cancel",
-    "edit_button": "Edit"
+    "edit_button": "Edit",
+    "select": "Select"
   },
   "boat_details": {
     "year": "Year",
@@ -135,7 +136,10 @@
     "upgrade_cta": {
       "title_one": "{{count}} point not available for assessment",
       "title_other": "{{count}} points not available for assessment",
-      "button": "Get full inspection"
+      "subtitle": "These include critical checkpoints that can reveal hidden issues",
+      "button": "See Pro options",
+      "launch_badge": "Launch offer",
+      "launch_hint": "Save 20% on annual subscription"
     },
     "findings_table": {
       "checkpoint": "Checkpoint",
@@ -367,21 +371,35 @@
   },
   "upgrade_page": {
     "title": "Unlock Pro Features",
-    "subtitle": "Get access to all features",
+    "subtitle": "Make your boat purchase safer with a full inspection",
     "feature_1": "Unlimited reports",
-    "feature_1_title": "Unlimited Reports",
-    "feature_1_desc": "Download as many reports as you want without restrictions.",
+    "feature_1_title": "All Checkpoints",
+    "feature_1_desc": "Access 60+ critical controls that can reveal hidden issues.",
     "feature_2": "Access to all checkpoints (including critical ones)",
-    "feature_2_title": "All Checkpoints",
-    "feature_2_desc": "Access critical checkpoints and advanced controls.",
+    "feature_2_title": "PDF Reports",
+    "feature_2_desc": "Download professional reports you can share with seller or workshop.",
     "feature_3": "Request non-binding offers from vendors",
     "feature_3_title": "Workshop Quotes",
-    "feature_3_desc": "Send reports directly to workshops and receive quotes.",
+    "feature_3_desc": "Send reports directly to workshops and receive non-binding quotes.",
     "feature_4": "Support the future development of the app",
     "upgrade_button": "Upgrade to Pro Now",
     "coming_soon": "Payment solution coming soon!",
     "no_products_found": "Purchases are only available in the iOS/Android app. Download from App Store or Google Play.",
-    "web_purchase_info": "To upgrade to Pro, download the BoatChecker app from App Store or Google Play."
+    "web_purchase_info": "To upgrade to Pro, download the BoatChecker app from App Store or Google Play.",
+    "launch_offer": {
+      "badge": "Launch offer",
+      "title": "Save 20% on annual subscription",
+      "description": "Limited offer for early users",
+      "original_price": "Regular price",
+      "offer_price": "Now only",
+      "best_value": "Best value",
+      "per_year": "/year",
+      "per_month": "/month"
+    },
+    "single_report": {
+      "title": "Just this inspection?",
+      "description": "Buy access to all checkpoints for just this boat"
+    }
   },
   "home_page": {
     "title": "My Inspections",

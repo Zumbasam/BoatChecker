@@ -217,31 +217,49 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
           
           {/* Oppgraderingsboks: Vis rett etter vurdering for gratisbrukere */}
           {notAssessedCount > 0 && !hasFullAccess && (
-            <Alert 
-              status="info" 
-              variant="left-accent"
-              borderRadius="md"
-              p={4}
+            <Box
+              borderRadius="lg"
+              overflow="hidden"
+              borderWidth="1px"
+              borderColor={useColorModeValue('blue.200', 'blue.700')}
+              bg={useColorModeValue('blue.50', 'blue.900')}
             >
-              <HStack justify="space-between" w="100%" flexWrap="wrap" gap={3}>
+              {/* Lanseringstilbud badge */}
+              <Box 
+                bg={useColorModeValue('orange.400', 'orange.500')} 
+                color="white" 
+                px={3} 
+                py={1} 
+                fontSize="xs" 
+                fontWeight="bold"
+                textAlign="center"
+              >
+                🎉 {t('summary.upgrade_cta.launch_badge')} — {t('summary.upgrade_cta.launch_hint')}
+              </Box>
+              
+              <VStack p={4} spacing={3} align="stretch">
                 <HStack>
-                  <Lock size={18} />
-                  <Text fontWeight="medium">
-                    {t('summary.upgrade_cta.title', { 
-                      count: notAssessedCount,
-                      defaultValue: '{{count}} punkter ikke tilgjengelig for vurdering'
-                    })}
-                  </Text>
+                  <Icon as={Lock} boxSize={5} color={useColorModeValue('blue.600', 'blue.300')} />
+                  <VStack align="start" spacing={0}>
+                    <Text fontWeight="semibold" fontSize="md">
+                      {t('summary.upgrade_cta.title', { count: notAssessedCount })}
+                    </Text>
+                    <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')}>
+                      {t('summary.upgrade_cta.subtitle')}
+                    </Text>
+                  </VStack>
                 </HStack>
+                
                 <Button 
-                  size="sm" 
                   colorScheme="blue"
+                  size="md"
+                  w="100%"
                   onClick={() => navigate('/upgrade', { state: { from: location.pathname + location.search, backTo: 'summary' } })}
                 >
-                  {t('summary.upgrade_cta.button', { defaultValue: 'Få full inspeksjon' })}
+                  {t('summary.upgrade_cta.button')}
                 </Button>
-              </HStack>
-            </Alert>
+              </VStack>
+            </Box>
           )}
           
           {/* Resume-boks: Vis når bruker har unlocked tilgang og det finnes ikke-vurderte punkter */}

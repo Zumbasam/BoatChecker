@@ -19,7 +19,8 @@
     "toggle_dark_mode": "Bytt lys/mørk modus",
     "delete": "Slett",
     "cancel": "Avbryt",
-    "edit_button": "Rediger"
+    "edit_button": "Rediger",
+    "select": "Velg"
   },
   "boat_details": {
     "year": "Årsmodell",
@@ -135,7 +136,10 @@
     "upgrade_cta": {
       "title_one": "{{count}} punkt ikke tilgjengelig for vurdering",
       "title_other": "{{count}} punkter ikke tilgjengelig for vurdering",
-      "button": "Få full inspeksjon"
+      "subtitle": "Disse inkluderer kritiske sjekkpunkter som kan avdekke skjulte feil",
+      "button": "Se Pro-alternativer",
+      "launch_badge": "Lanseringstilbud",
+      "launch_hint": "Spar 20% på årsabonnement"
     },
     "findings_table": {
       "checkpoint": "Sjekkpunkt",
@@ -367,21 +371,35 @@
   },
   "upgrade_page": {
     "title": "Lås opp Pro-funksjoner",
-    "subtitle": "Få tilgang til alle funksjoner",
+    "subtitle": "Gjør båtkjøpet tryggere med full inspeksjon",
     "feature_1": "Ubegrensede rapporter",
-    "feature_1_title": "Ubegrensede rapporter",
-    "feature_1_desc": "Last ned så mange rapporter du vil uten begrensninger.",
+    "feature_1_title": "Alle sjekkpunkter",
+    "feature_1_desc": "Tilgang til 60+ kritiske kontroller som kan avdekke skjulte feil.",
     "feature_2": "Tilgang til alle sjekkpunkter (inkl. kritiske)",
-    "feature_2_title": "Alle sjekkpunkter",
-    "feature_2_desc": "Tilgang til kritiske sjekkpunkter og avanserte kontroller.",
+    "feature_2_title": "PDF-rapporter",
+    "feature_2_desc": "Last ned profesjonelle rapporter du kan dele med selger eller verksted.",
     "feature_3": "Be om uforpliktende tilbud fra verksteder",
     "feature_3_title": "Verkstedstilbud",
-    "feature_3_desc": "Send rapport direkte til verksteder og motta tilbud.",
+    "feature_3_desc": "Send rapport direkte til verksteder og motta uforpliktende tilbud.",
     "feature_4": "Støtt videre utvikling av appen",
     "upgrade_button": "Oppgrader til Pro nå",
     "coming_soon": "Betalingsløsning kommer snart!",
     "no_products_found": "Kjøp er kun tilgjengelig i iOS/Android-appen. Last ned fra App Store eller Google Play.",
-    "web_purchase_info": "For å oppgradere til Pro, last ned BoatChecker-appen fra App Store eller Google Play."
+    "web_purchase_info": "For å oppgradere til Pro, last ned BoatChecker-appen fra App Store eller Google Play.",
+    "launch_offer": {
+      "badge": "Lanseringstilbud",
+      "title": "Spar 20% på årsabonnement",
+      "description": "Begrenset tilbud for tidlige brukere",
+      "original_price": "Ordinær pris",
+      "offer_price": "Nå kun",
+      "best_value": "Best verdi",
+      "per_year": "/år",
+      "per_month": "/mnd"
+    },
+    "single_report": {
+      "title": "Kun denne inspeksjonen?",
+      "description": "Kjøp tilgang til alle sjekkpunkter for kun denne båten"
+    }
   },
   "home_page": {
     "title": "Mine inspeksjoner",
