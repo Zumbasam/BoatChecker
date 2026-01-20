@@ -44,8 +44,19 @@ export const QuestionView: React.FC<Props> = ({ item, activeStep, totalSteps, ac
 
   return (
     <>
-      <Box p={4} pb="150px"><ChecklistCard item={item} accessLevel={accessLevel} /></Box>
-      <Box as="footer" position="fixed" bottom="0" left="0" right="0" bg={footerBg} backdropFilter="blur(10px)" zIndex="sticky" boxShadow="0 -2px 10px rgba(0, 0, 0, 0.1)">
+      <Box p={4} pb="calc(150px + env(safe-area-inset-bottom, 0px))"><ChecklistCard item={item} accessLevel={accessLevel} /></Box>
+      <Box 
+        as="footer" 
+        position="fixed" 
+        bottom="0" 
+        left="0" 
+        right="0" 
+        bg={footerBg} 
+        backdropFilter="blur(10px)" 
+        zIndex="sticky" 
+        boxShadow="0 -2px 10px rgba(0, 0, 0, 0.1)"
+        pb="env(safe-area-inset-bottom, 0px)"
+      >
         <Collapse in={isFeedbackBarOpen} animateOpacity>
           <Flex justify="center" p={2}>
             <Button

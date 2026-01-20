@@ -60,6 +60,7 @@ export const SummaryFooter: React.FC<Props> = ({
       backdropFilter="blur(8px)"
       borderTop="1px solid"
       borderColor={border}
+      pb="env(safe-area-inset-bottom, 0px)"
     >
       <VStack spacing={3} p={3} maxW="md" mx="auto">
         <HStack w="100%" spacing={3}>

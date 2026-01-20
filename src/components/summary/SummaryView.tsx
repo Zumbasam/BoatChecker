@@ -206,7 +206,7 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
         initialData={currentMetadata}
       />
       
-      <Box p={4} pb="140px">
+      <Box p={4} pb="calc(140px + env(safe-area-inset-bottom, 0px))">
         <SummaryHeader 
           displayBoatModel={displayBoatModel} 
           inspection={inspectionWithMetadata}

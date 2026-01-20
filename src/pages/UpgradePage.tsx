@@ -51,7 +51,16 @@ const UpgradePage: React.FC = () => {
   };
 
   return (
-    <VStack spacing={6} p={6} pt={4} align="stretch" maxW="lg" mx="auto" textAlign="center">
+    <VStack 
+      spacing={6} 
+      p={6} 
+      pt={4} 
+      pb="calc(24px + env(safe-area-inset-bottom, 0px))"
+      align="stretch" 
+      maxW="lg" 
+      mx="auto" 
+      textAlign="center"
+    >
       {/* Header - alltid synlig øverst */}
       <VStack spacing={3}>
         <Image src="/logo.svg" alt="BoatChecker App Logo" boxSize="70px" />
