@@ -25,18 +25,26 @@ export async function fixImageOrientation(file: File): Promise<string> {
     console.warn('[imageUtils] Kunne ikke lese EXIF-orientering, antar default.', error); 
   }
   
-  // Bruk createImageBitmap som IKKE auto-roterer basert på EXIF
-  // Dette sikrer at vi får de faktiske pixel-dimensjonene
+  // Bruk createImageBitmap med imageOrientation: 'none' for å få RAW pixels
+  // uten nettleserens auto-EXIF-korreksjon
   let imgBitmap: ImageBitmap;
   try {
-    imgBitmap = await createImageBitmap(file);
+    // Tving nettleseren til å IKKE auto-rotere basert på EXIF
+    imgBitmap = await createImageBitmap(file, { imageOrientation: 'none' });
+    console.log('[imageUtils] createImageBitmap med imageOrientation: none');
   } catch {
-    // Fallback for eldre nettlesere
-    const url = URL.createObjectURL(file);
-    const img = new Image();
-    await new Promise(resolve => { img.onload = resolve; img.src = url; });
-    URL.revokeObjectURL(url);
-    imgBitmap = await createImageBitmap(img);
+    // Fallback for nettlesere som ikke støtter options
+    console.log('[imageUtils] Fallback til createImageBitmap uten options');
+    try {
+      imgBitmap = await createImageBitmap(file);
+    } catch {
+      // Siste fallback via Image element
+      const url = URL.createObjectURL(file);
+      const img = new Image();
+      await new Promise(resolve => { img.onload = resolve; img.src = url; });
+      URL.revokeObjectURL(url);
+      imgBitmap = await createImageBitmap(img);
+    }
   }
   
   const w = imgBitmap.width;

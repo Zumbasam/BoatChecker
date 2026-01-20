@@ -143,8 +143,16 @@ export const ChecklistCard: React.FC<Props> = ({ item, accessLevel }) => {
           <ModalCloseButton />
           <ModalBody>
             <VStack spacing={4} my={4}>
-              <Button leftIcon={<Camera />} w="100%" onClick={async () => { onChoiceClose(); const file = await takePhoto(); if (file) handleImageSelection(file); }}>{t('checklist.card.take_photo_button')}</Button>
-              <Button leftIcon={<FileImage />} w="100%" onClick={async () => { onChoiceClose(); const file = await chooseFromLibrary(); if (file) handleImageSelection(file); }}>{t('checklist.card.choose_from_library_button')}</Button>
+              <Button leftIcon={<Camera />} w="100%" onClick={async () => { 
+                const file = await takePhoto(); 
+                onChoiceClose(); 
+                if (file) await handleImageSelection(file); 
+              }}>{t('checklist.card.take_photo_button')}</Button>
+              <Button leftIcon={<FileImage />} w="100%" onClick={async () => { 
+                const file = await chooseFromLibrary(); 
+                onChoiceClose(); 
+                if (file) await handleImageSelection(file); 
+              }}>{t('checklist.card.choose_from_library_button')}</Button>
             </VStack>
           </ModalBody>
         </ModalContent>
