@@ -6,6 +6,7 @@
     "finish_button": "Finish",
     "save_button": "Save",
     "cancel_button": "Cancel",
+    "close_button": "Close",
     "save_and_continue_button": "Save and continue",
     "type": "Type",
     "manufacturer": "Manufacturer",
@@ -89,6 +90,8 @@
       "edit_note": "Edit note",
       "add_image": "Add image",
       "change_image": "Change image",
+      "delete_note": "Delete note",
+      "delete_image": "Delete image",
       "status_ok": "OK",
       "status_obs": "Obs",
       "status_critical": "Critical",
@@ -97,6 +100,7 @@
       "take_photo_button": "Take photo with camera",
       "choose_from_library_button": "Choose from library",
       "note_modal_title": "Note for {{title}}",
+      "note_label": "Note",
       "note_placeholder": "Write your observations here...",
       "toast_reminder_title": "Remember status",
       "toast_reminder_desc": "Select OK, Obs, or Critical to get a complete entry in the report."
@@ -113,7 +117,12 @@
 	"note_modal_title": "Note",
 	"image_modal_title": "Image",
     "assessment_text": {
-      "partial_note": "Assessment is based only on the checked points."
+      "partial_note": "Assessment is based only on the checked points.",
+      "no_findings": "No issues were found during the inspection. All checkpoints were assessed as OK.",
+      "findings_intro": "{{count}} issue(s) were found during the inspection.",
+      "high_crit": "{{count}} of these are marked as high criticality and should be prioritized.",
+      "cost_4": "{{count}} item(s) have potentially very high repair cost ($$$$).",
+      "cost_3": "{{count}} item(s) have potentially high repair cost ($$$)."
     },
     "assessment_verdict": {
       "excellent": "Based on the assessed points, the boat appears to be in good condition. No significant issues were found.",
@@ -180,7 +189,7 @@
     "download_button": "Download",
     "download_report_button": "Download report",
     "start_new_inspection_button": "Start New Inspection",
-    "upgrade_for_offers_button": "Upgrade for offers",
+    "upgrade_for_offers_button": "Unlock",
     "get_offers_button": "Get non-binding offers"
   },
   "insights": {

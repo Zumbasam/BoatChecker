@@ -1,0 +1,1756 @@
+[
+  {
+    "id": 0,
+    "name": "Test AS",
+    "services": ["engine_inboard", "hull_steel", "hull_aluminum", "hull_fiberglass"],
+    "regions": ["NO-18", "NO-03", "NO-11", "NO-15", "NO-31", "NO-32", "NO-33", "NO-34", "NO-39", "NO-40", "NO-42", "NO-46", "NO-50", "NO-55", "NO-56"],
+    "website": "https://www.livelight.no/",
+    "email": "post@livelight.no",
+    "phone": "98 48 18 27"
+  },
+  {
+    "id": 1,
+    "name": "Hjellestad Båt og Motor AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical", "heating_cooling"],
+    "regions": ["NO-46"],
+    "website": "https://www.hjellestad.no/",
+    "email": "post@hjellestad.no",
+    "phone": "55 11 60 60"
+  },
+  {
+    "id": 2,
+    "name": "Marina Service AS",
+    "services": ["engine_inboard", "electrical", "plumbing"],
+    "regions": ["NO-03"],
+    "website": "https://marinaservice.no/",
+    "email": "post@marinaservice.no",
+    "phone": "22 83 33 00"
+  },
+  {
+    "id": 3,
+    "name": "Walløe Båtsenter AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-39"],
+    "website": "https://walloe.no/",
+    "email": "post@walloe.no",
+    "phone": "33 35 95 00"
+  },
+  {
+    "id": 4,
+    "name": "Elvstrøm Sails Sør AS",
+    "services": ["sails"],
+    "regions": ["NO-42"],
+    "website": "https://elvstromsails.com/no/",
+    "email": "syd@elvstromsails.com",
+    "phone": "38 02 32 03"
+  },
+  {
+    "id": 5,
+    "name": "Stavanger Båtservice AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "heating_cooling"],
+    "regions": ["NO-11"],
+    "website": "https://www.stavangerbaatservice.no/",
+    "email": "post@stavangerbaatservice.no",
+    "phone": "51 82 80 00"
+  },
+  {
+    "id": 6,
+    "name": "With Marine AS",
+    "services": ["rigging", "sails", "engine_inboard"],
+    "regions": ["NO-31"],
+    "website": "https://www.withmarine.no/",
+    "email": "info@withmarine.no",
+    "phone": "67 10 10 10"
+  },
+  {
+    "id": 7,
+    "name": "Trondheim Båtservice AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-50"],
+    "website": "https://www.trondheimbaatservice.no/",
+    "email": "post@trondheimbaatservice.no",
+    "phone": "73 51 01 09"
+  },
+  {
+    "id": 8,
+    "name": "Risør Trebåtbyggeri",
+    "services": ["hull_wood", "rigging"],
+    "regions": ["NO-42"],
+    "website": "https://www.risor-trebatbyggeri.no/",
+    "email": "post@risor-trebatbyggeri.no",
+    "phone": "37 15 20 30"
+  },
+  {
+    "id": 9,
+    "name": "La-Sa Båt og Motor AS",
+    "services": ["engine_outboard", "hull_fiberglass", "hull_aluminum"],
+    "regions": ["NO-33"],
+    "website": "https://www.la-sa.no/",
+    "email": "post@la-sa.no",
+    "phone": "69 36 14 40"
+  },
+  {
+    "id": 10,
+    "name": "Bodø Båt & Motor AS",
+    "services": ["engine_outboard", "hull_aluminum", "electrical"],
+    "regions": ["NO-18"],
+    "website": "https://www.bodobaat.no/",
+    "email": "post@bodobaat.no",
+    "phone": "75 50 66 60"
+  },
+  {
+    "id": 11,
+    "name": "Termo-Service AS",
+    "services": ["heating_cooling", "plumbing"],
+    "regions": ["NO-46", "NO-11"],
+    "website": "https://www.termo-service.no/",
+    "email": "post@termo-service.no",
+    "phone": "55 15 35 00"
+  },
+  {
+    "id": 12,
+    "name": "Heitmann Marin AS",
+    "services": ["engine_inboard", "engine_outboard", "electrical", "sails", "rigging"],
+    "regions": ["NO-31"],
+    "website": "https://heitmann.no/",
+    "email": "frode@heitmann.no",
+    "phone": "66 77 60 90"
+  },
+  {
+    "id": 13,
+    "name": "Aker-Plast",
+    "services": ["hull_fiberglass"],
+    "regions": ["NO-15"],
+    "website": "https://www.aker-plast.no/",
+    "email": "post@aker-plast.no",
+    "phone": "71 21 51 22"
+  },
+  {
+    "id": 14,
+    "name": "Southern Cross Spars & Rigging",
+    "services": ["rigging"],
+    "regions": ["NO-42"],
+    "website": "https://www.southerncross.no/",
+    "email": "info@southerncross.no",
+    "phone": "90 87 14 22"
+  },
+  {
+    "id": 15,
+    "name": "Tromsø Båtsenter AS",
+    "services": ["engine_outboard", "hull_fiberglass", "hull_aluminum", "electrical"],
+    "regions": ["NO-55"],
+    "website": "https://www.tbsenter.no/",
+    "email": "post@tbsenter.no",
+    "phone": "77 67 17 60"
+  },
+  {
+    "id": 16,
+    "name": "Båtservice Holding AS (Mandal)",
+    "services": ["hull_steel", "hull_aluminum", "engine_inboard", "plumbing"],
+    "regions": ["NO-42"],
+    "website": "https://www.baatservice.net/",
+    "email": "mail@baatservice.net",
+    "phone": "38 27 96 00"
+  },
+  {
+    "id": 17,
+    "name": "Gran Seil AS",
+    "services": ["sails"],
+    "regions": ["NO-03"],
+    "website": "https://granseil.no/",
+    "email": "info@granseil.no",
+    "phone": "22 23 20 30"
+  },
+  {
+    "id": 18,
+    "name": "Herholdt Andersen AS",
+    "services": ["electrical", "heating_cooling"],
+    "regions": ["NO-39", "NO-40"],
+    "website": "https://www.herholdt.no/",
+    "email": "post@herholdt.no",
+    "phone": "33 48 40 00"
+  },
+  {
+    "id": 19,
+    "name": "Volvo Penta Center - Mjøsa Båtservice",
+    "services": ["engine_inboard"],
+    "regions": ["NO-34"],
+    "website": "https://www.mjosabaatservice.no/",
+    "email": "post@mjosabaatservice.no",
+    "phone": "62 35 14 10"
+  },
+  {
+    "id": 20,
+    "name": "Båt-Elektronikk AS",
+    "services": ["electrical"],
+    "regions": ["NO-11"],
+    "website": "https://www.batelektronikk.no/",
+    "email": "post@batelektronikk.no",
+    "phone": "90 58 10 91"
+  },
+  {
+    "id": 21,
+    "name": "Isegran Båtbyggeri",
+    "services": ["hull_wood"],
+    "regions": ["NO-33"],
+    "website": "https://mia.no/isegran/batbyggeri",
+    "email": "isegran@mia.no"
+  },
+  {
+    "id": 22,
+    "name": "Lunde Båt AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-31"],
+    "website": "https://www.lundebaat.no/",
+    "email": "post@lundebaat.no",
+    "phone": "66 76 34 34"
+  },
+  {
+    "id": 23,
+    "name": "North Sails Norge",
+    "services": ["sails"],
+    "regions": ["NO-39"],
+    "website": "https://www.northsails.com/sailing/en/locations/tonsberg-norway",
+    "email": "norge@northsails.com",
+    "phone": "33 31 64 00"
+  },
+  {
+    "id": 24,
+    "name": "Holmen Slipp AS",
+    "services": ["engine_inboard", "hull_fiberglass", "hull_wood", "electrical", "rigging"],
+    "regions": ["NO-31"],
+    "website": "https://www.holmenslipp.no/",
+    "email": "post@holmenslipp.no",
+    "phone": "66 78 69 00"
+  },
+  {
+    "id": 25,
+    "name": "Frydenbø Boats AS",
+    "services": ["engine_outboard", "hull_fiberglass", "hull_aluminum"],
+    "regions": ["NO-46", "NO-31", "NO-18"],
+    "website": "https://www.frydenbo-boats.no/",
+    "email": "post.boats@frydenbo.no",
+    "phone": "66 90 61 90"
+  },
+  {
+    "id": 26,
+    "name": "HK Motorservice AS",
+    "services": ["engine_inboard", "engine_outboard", "electrical"],
+    "regions": ["NO-42"],
+    "website": "https://www.hkmotorservice.no/",
+    "email": "post@hkmotorservice.no",
+    "phone": "38 09 59 10"
+  },
+  {
+    "id": 27,
+    "name": "Kristiansand Båt og Motor AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-42"],
+    "website": "https://www.kbm.no/",
+    "email": "post@kbm.no",
+    "phone": "38 05 81 00"
+  },
+  {
+    "id": 28,
+    "name": "Maritronic & Kristiansand Båtservice AS",
+    "services": ["electrical", "engine_inboard", "engine_outboard"],
+    "regions": ["NO-42"],
+    "website": "https://www.maritronic.no/",
+    "email": "post@maritronic.no",
+    "phone": "94 00 22 99"
+  },
+  {
+    "id": 29,
+    "name": "Grimstad Bådsenter AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-42"],
+    "website": "https://www.grimstadbaadsenter.no/",
+    "email": "info@grimstadbaadsenter.no",
+    "phone": "37 04 13 58"
+  },
+  {
+    "id": 30,
+    "name": "Randesund Båtsenter AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-42"],
+    "website": "https://www.randesund-baatsenter.no/",
+    "email": "post@randesund-baatsenter.no",
+    "phone": "41 68 64 20"
+  },
+  {
+    "id": 31,
+    "name": "Hovland Båt AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-11"],
+    "website": "https://www.hovlandbaat.no/",
+    "email": "post@hovlandbaat.no",
+    "phone": "51 49 23 99"
+  },
+  {
+    "id": 32,
+    "name": "Sørlandet Båt AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-42"],
+    "website": "https://www.sorlandet-bat.no/",
+    "email": "post@sorlandet-bat.no",
+    "phone": "99 44 99 44"
+  },
+  {
+    "id": 33,
+    "name": "Båthuset Arendal AS",
+    "services": ["engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-42"],
+    "website": "https://www.bathuset-arendal.no/",
+    "email": "post@bathuset-arendal.no",
+    "phone": "37 03 30 00"
+  },
+  {
+    "id": 34,
+    "name": "Arendal Bådsenter AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-42"],
+    "website": "https://www.arendalbatsenter.no/",
+    "email": "post@arendalbatsenter.no",
+    "phone": "46 42 50 00"
+  },
+  {
+    "id": 35,
+    "name": "Stranna Maritime AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-40"],
+    "website": "https://www.strannamaritime.no/",
+    "email": "post@strannamaritime.no",
+    "phone": "37 16 10 00"
+  },
+  {
+    "id": 36,
+    "name": "Lindesnes Båtsenter AS",
+    "services": ["engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-42"],
+    "website": "https://www.lindesnesbaatsenter.no/",
+    "email": "post@lindesnesbaatsenter.no",
+    "phone": "38 60 15 40"
+  },
+  {
+    "id": 37,
+    "name": "Sandøy Båtdekk AS",
+    "services": ["hull_wood", "hull_fiberglass"],
+    "regions": ["NO-42"],
+    "website": "https://www.sandoybatdekk.no/",
+    "email": "post@sandoybatdekk.no",
+    "phone": "91 31 34 86"
+  },
+  {
+    "id": 38,
+    "name": "Komposittservice AS",
+    "services": ["hull_fiberglass"],
+    "regions": ["NO-42"],
+    "website": "https://www.komposittservice.no/",
+    "email": "post@komposittservice.no",
+    "phone": "915 74 700"
+  },
+  {
+    "id": 39,
+    "name": "Norsk Båtservice AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-31"],
+    "website": "https://www.norsk-baatservice.no/",
+    "email": "post@norsk-baatservice.no",
+    "phone": "63 90 08 00"
+  },
+  {
+    "id": 40,
+    "name": "Marineservice Oslo AS",
+    "services": ["engine_outboard"],
+    "regions": ["NO-31"],
+    "website": "https://www.marineservice-oslo.no/",
+    "email": "post@marineservice-oslo.no",
+    "phone": "22 25 60 70"
+  },
+  {
+    "id": 41,
+    "name": "Steve's Båtverksted",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-31"],
+    "website": "https://www.steves.no/",
+    "email": "steve@steves.no",
+    "phone": "93 63 52 38"
+  },
+  {
+    "id": 42,
+    "name": "Monic Yachting AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical", "heating_cooling"],
+    "regions": ["NO-31"],
+    "website": "https://www.monic.no/",
+    "email": "post@monic.no",
+    "phone": "63 83 67 00"
+  },
+  {
+    "id": 43,
+    "name": "Asker Marine Service AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-31"],
+    "website": "https://www.askermarineservice.no/",
+    "email": "post@askermarineservice.no",
+    "phone": "41 51 10 00"
+  },
+  {
+    "id": 44,
+    "name": "Lindøya Slipp AS",
+    "services": ["hull_wood", "hull_fiberglass", "engine_inboard"],
+    "regions": ["NO-03"],
+    "website": "https://www.lindoya-slipp.no/",
+    "email": "post@lindoya-slipp.no",
+    "phone": "22 11 04 81"
+  },
+  {
+    "id": 45,
+    "name": "Båt og Motor AS (LASA)",
+    "services": ["engine_inboard", "engine_outboard", "electrical"],
+    "regions": ["NO-03"],
+    "website": "https://www.bms-lsa.no/",
+    "email": "post@bms-lsa.no",
+    "phone": "24 12 68 80"
+  },
+  {
+    "id": 46,
+    "name": "Blommenholm Motorverksted AS",
+    "services": ["engine_inboard", "engine_outboard"],
+    "regions": ["NO-31"],
+    "website": "https://www.blommenholmmotor.no/",
+    "email": "post@blommenholmmotor.no",
+    "phone": "67 54 20 15"
+  },
+  {
+    "id": 47,
+    "name": "Killingen Båtservice AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-03"],
+    "website": "https://www.killingen-baatservice.no/",
+    "email": "post@killingen-baatservice.no",
+    "phone": "23 23 98 78"
+  },
+  {
+    "id": 48,
+    "name": "Finset Outboard AS",
+    "services": ["engine_outboard"],
+    "regions": ["NO-31"],
+    "website": "https://www.finsetoutboard.no/",
+    "email": "post@finsetoutboard.no",
+    "phone": "94 87 02 02"
+  },
+  {
+    "id": 49,
+    "name": "Oksenøya Marina Service",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-31"],
+    "website": "https://www.oksenoyamarina.no/",
+    "email": "service@oksenoyamarina.no",
+    "phone": "90 09 54 44"
+  },
+  {
+    "id": 50,
+    "name": "Holmen Brygge Motor",
+    "services": ["engine_inboard", "engine_outboard"],
+    "regions": ["NO-31"],
+    "website": "https://www.holmenbryggemotor.no/",
+    "email": "post@holmenbryggemotor.no",
+    "phone": "66 84 50 04"
+  },
+  {
+    "id": 51,
+    "name": "Son Marina AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-31"],
+    "website": "https://www.son-marina.no/",
+    "email": "post@son-marina.no",
+    "phone": "46 48 66 47"
+  },
+  {
+    "id": 52,
+    "name": "Promhavn Slipp AS",
+    "services": ["engine_inboard", "hull_fiberglass", "hull_wood"],
+    "regions": ["NO-32"],
+    "website": "https://www.promhavn.no/",
+    "email": "post@promhavn.no",
+    "phone": "31 28 16 14"
+  },
+  {
+    "id": 53,
+    "name": "Vollen Marinesenter AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-31"],
+    "website": "https://www.vollen-marinesenter.no/",
+    "email": "post@vollen-marinesenter.no",
+    "phone": "92 43 64 09"
+  },
+  {
+    "id": 54,
+    "name": "Boatparts.no AS",
+    "services": ["engine_inboard", "engine_outboard", "electrical", "plumbing"],
+    "regions": ["NO-31"],
+    "website": "https://www.boatparts.no/",
+    "email": "post@boatparts.no",
+    "phone": "63 83 60 00"
+  },
+  {
+    "id": 55,
+    "name": "Kompass Marine Services AS",
+    "services": ["engine_inboard", "engine_outboard", "electrical", "heating_cooling"],
+    "regions": ["NO-31"],
+    "website": "https://www.kompassmarine.no/",
+    "email": "post@kompassmarine.no",
+    "phone": "90 21 15 29"
+  },
+  {
+    "id": 56,
+    "name": "Bakken Motor AS",
+    "services": ["engine_inboard", "engine_outboard"],
+    "regions": ["NO-32"],
+    "website": "https://www.bakken-motor.no/",
+    "email": "post@bakken-motor.no",
+    "phone": "32 26 01 80"
+  },
+  {
+    "id": 57,
+    "name": "Moss Båtservice AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-33"],
+    "website": "https://www.mossbaatservice.no/",
+    "email": "post@mossbaatservice.no",
+    "phone": "69 91 22 00"
+  },
+  {
+    "id": 58,
+    "name": "Seilbåtservice AS",
+    "services": ["rigging", "sails", "engine_inboard", "hull_fiberglass"],
+    "regions": ["NO-33"],
+    "website": "https://www.seilbaatservice.no/",
+    "email": "post@seilbaatservice.no",
+    "phone": "69 31 00 60"
+  },
+  {
+    "id": 59,
+    "name": "Sollerud Båtbyggeri & Slipp AS",
+    "services": ["hull_wood", "hull_fiberglass", "engine_inboard"],
+    "regions": ["NO-03"],
+    "website": "https://www.sollerud-baatbyggeri.no/",
+    "email": "post@sollerud-baatbyggeri.no",
+    "phone": "47 15 22 72"
+  },
+  {
+    "id": 60,
+    "name": "Sjøsenteret Killingen AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical", "rigging"],
+    "regions": ["NO-03"],
+    "website": "https://www.sjosenteret.no/",
+    "email": "post@sjosenteret.no",
+    "phone": "23 08 53 30"
+  },
+  {
+    "id": 61,
+    "name": "Holmen Yachtværft A/S",
+    "services": ["hull_wood", "hull_fiberglass", "rigging"],
+    "regions": ["NO-31"],
+    "website": "https://www.holmenyacht.no/",
+    "email": "post@holmenyacht.no",
+    "phone": "66 77 59 50"
+  },
+  {
+    "id": 62,
+    "name": "Framnes Marine AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-39"],
+    "website": "https://www.framnes-marine.no/",
+    "email": "post@framnes-marine.no",
+    "phone": "33 42 84 00"
+  },
+  {
+    "id": 63,
+    "name": "Stavanger Båtverksted AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-11"],
+    "website": "https://www.stavanger-batverksted.no/",
+    "email": "post@stavanger-batverksted.no",
+    "phone": "91 74 70 90"
+  },
+  {
+    "id": 64,
+    "name": "Tveit AS",
+    "services": ["engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-11"],
+    "website": "https://www.tveit.as/",
+    "email": "post@tveit.as",
+    "phone": "51 81 21 80"
+  },
+  {
+    "id": 65,
+    "name": "Aqua Båtservice",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-11"],
+    "website": "https://www.aquabaatservice.no/",
+    "email": "post@aquabaatservice.no",
+    "phone": "91 54 90 48"
+  },
+  {
+    "id": 66,
+    "name": "Marina AS (Haugesund)",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-11"],
+    "website": "https://www.marina.as/",
+    "email": "post@marina.as",
+    "phone": "52 72 66 66"
+  },
+  {
+    "id": 67,
+    "name": "Garstad AS",
+    "services": ["engine_inboard", "engine_outboard", "electrical", "heating_cooling"],
+    "regions": ["NO-11"],
+    "website": "https://www.garstad.no/",
+    "email": "post@garstad.no",
+    "phone": "51 72 05 50"
+  },
+  {
+    "id": 68,
+    "name": "Båtskadesenteret AS",
+    "services": ["hull_fiberglass"],
+    "regions": ["NO-11"],
+    "website": "https://www.baatskadesenteret.no/",
+    "email": "post@baatskadesenteret.no",
+    "phone": "48 88 88 15"
+  },
+  {
+    "id": 69,
+    "name": "Åmøy Havn Marina AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "rigging", "electrical"],
+    "regions": ["NO-11"],
+    "website": "https://www.aamoyhavn.no/",
+    "email": "post@aamoyhavn.no",
+    "phone": "51 72 06 50"
+  },
+  {
+    "id": 70,
+    "name": "BÅTTEKNIKK AS",
+    "services": ["engine_inboard", "engine_outboard"],
+    "regions": ["NO-11"],
+    "website": "https://www.baatteknikk.no/",
+    "email": "post@baatteknikk.no",
+    "phone": "40 69 66 46"
+  },
+  {
+    "id": 71,
+    "name": "Smart Marine AS",
+    "services": ["engine_outboard", "hull_fiberglass", "hull_aluminum"],
+    "regions": ["NO-11"],
+    "website": "https://www.smartmarine.no/",
+    "email": "post@smartmarine.no",
+    "phone": "52 81 81 61"
+  },
+  {
+    "id": 72,
+    "name": "Aasheim Slipp AS",
+    "services": ["hull_fiberglass", "hull_wood", "engine_inboard"],
+    "regions": ["NO-46"],
+    "website": "https://www.aasheimslipp.no/",
+    "email": "post@aasheimslipp.no",
+    "phone": "91 75 07 93"
+  },
+  {
+    "id": 73,
+    "name": "Rogaland Marine AS",
+    "services": ["engine_inboard", "engine_outboard"],
+    "regions": ["NO-11"],
+    "website": "https://www.rogalandmarine.no/",
+    "email": "post@rogalandmarine.no",
+    "phone": "41 66 50 15"
+  },
+  {
+    "id": 74,
+    "name": "Ship-Shape Båtverksted",
+    "services": ["hull_fiberglass", "hull_wood", "sails"],
+    "regions": ["NO-11"],
+    "website": "https://www.ship-shape.no/",
+    "email": "post@ship-shape.no",
+    "phone": "91 13 86 90"
+  },
+  {
+    "id": 75,
+    "name": "Wave Haugesund AS",
+    "services": ["engine_outboard", "hull_fiberglass", "hull_aluminum"],
+    "regions": ["NO-11"],
+    "website": "https://www.wave-haugesund.no/",
+    "email": "post@wave-haugesund.no",
+    "phone": "52 71 75 20"
+  },
+  {
+    "id": 76,
+    "name": "BK Marine AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-46"],
+    "website": "https://www.bkmarine.no/",
+    "email": "post@bkmarine.no",
+    "phone": "53 49 49 04"
+  },
+  {
+    "id": 77,
+    "name": "Os Marineservice AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-46"],
+    "website": "https://www.osmarineservice.no/",
+    "email": "post@osmarineservice.no",
+    "phone": "56 30 97 97"
+  },
+  {
+    "id": 78,
+    "name": "W-Yacht AS",
+    "services": ["engine_inboard", "electrical", "rigging", "sails"],
+    "regions": ["NO-11"],
+    "website": "https://www.w-yacht.no/",
+    "email": "post@w-yacht.no",
+    "phone": "40 00 49 33"
+  },
+  {
+    "id": 79,
+    "name": "Bergen Marine AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-46"],
+    "website": "https://bergenmarine.no/",
+    "email": "post@bergenmarine.no",
+    "phone": "55 12 00 00"
+  },
+  {
+    "id": 80,
+    "name": "Askøy Båt & Motorservice AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-46"],
+    "website": "https://www.askoybms.no/",
+    "email": "post@askoybms.no",
+    "phone": "92 48 89 98"
+  },
+  {
+    "id": 81,
+    "name": "Båt og Motor Service Bergen AS",
+    "services": ["engine_inboard", "engine_outboard", "electrical"],
+    "regions": ["NO-46"],
+    "website": "https://www.bmsb.no/",
+    "email": "post@bmsb.no",
+    "phone": "55 31 16 68"
+  },
+  {
+    "id": 82,
+    "name": "Bergen Maritim",
+    "services": ["engine_inboard", "engine_outboard", "electrical"],
+    "regions": ["NO-46"],
+    "website": "https://www.bergenmaritim.no/",
+    "email": "service@bergenmaritim.no",
+    "phone": "56 32 98 00"
+  },
+  {
+    "id": 83,
+    "name": "Bjordal & Madsen AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-46"],
+    "website": "https://www.bjordal-madsen.no/",
+    "email": "post@bjordal-madsen.no",
+    "phone": "55 98 70 70"
+  },
+  {
+    "id": 84,
+    "name": "Austevoll Båtservice AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-46"],
+    "website": "https://www.austevollbatservice.no/",
+    "email": "post@austevollbatservice.no",
+    "phone": "56 18 51 50"
+  },
+  {
+    "id": 85,
+    "name": "Alvøen Marina AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-46"],
+    "website": "https://www.alvoenmarina.no/",
+    "email": "post@alvoenmarina.no",
+    "phone": "55 50 64 50"
+  },
+  {
+    "id": 86,
+    "name": "Pats Garage AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-46"],
+    "website": "https://www.patsgarage.no/",
+    "email": "post@patsgarage.no",
+    "phone": "98 69 63 62"
+  },
+  {
+    "id": 87,
+    "name": "Nordic Boats",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-46"],
+    "website": "https://www.nordicboats.no/",
+    "email": "post@nordicboats.no",
+    "phone": "90 70 32 36"
+  },
+  {
+    "id": 88,
+    "name": "Nautic Norway Service AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-46"],
+    "website": "https://www.nauticnorway.no/service",
+    "email": "service@nauticnorway.no",
+    "phone": "48 05 62 29"
+  },
+  {
+    "id": 89,
+    "name": "Viknes Båt og Service AS",
+    "services": ["engine_inboard", "hull_fiberglass", "electrical", "plumbing"],
+    "regions": ["NO-46"],
+    "website": "https://viknes.no/service/",
+    "email": "service@viknes.no",
+    "phone": "56 15 22 20"
+  },
+  {
+    "id": 90,
+    "name": "Dolvik Båtbyggeri AS",
+    "services": ["hull_wood", "hull_fiberglass"],
+    "regions": ["NO-46"],
+    "website": "https://www.dolvik.com/",
+    "email": "post@dolvik.com",
+    "phone": "56 14 43 14"
+  },
+  {
+    "id": 91,
+    "name": "Vest Båtservice AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-46"],
+    "website": "https://www.vestbaatservice.no/",
+    "email": "post@vestbaatservice.no",
+    "phone": "56 13 70 10"
+  },
+  {
+    "id": 92,
+    "name": "Båtens Beste",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-46"],
+    "website": "https://www.batensbeste.no/",
+    "email": "post@batensbeste.no",
+    "phone": "56 30 34 20"
+  },
+  {
+    "id": 93,
+    "name": "Fitjar Småbåt AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-46"],
+    "website": "https://www.fitjar-sjoliv.no/",
+    "email": "post@fitjar-sjoliv.no",
+    "phone": "94 43 05 00"
+  },
+  {
+    "id": 94,
+    "name": "Motor-Drange AS",
+    "services": ["engine_inboard", "engine_outboard"],
+    "regions": ["NO-46"],
+    "website": "https://www.motor-drange.no/",
+    "email": "post@motor-drange.no",
+    "phone": "55 23 44 03"
+  },
+  {
+    "id": 95,
+    "name": "Seilmaker Iversen AS",
+    "services": ["sails"],
+    "regions": ["NO-46"],
+    "website": "https://www.seilmaker-iversen.no/",
+    "email": "post@seilmaker-iversen.no",
+    "phone": "55 55 74 50"
+  },
+  {
+    "id": 96,
+    "name": "WeldTech AS",
+    "services": ["hull_aluminum", "hull_steel"],
+    "regions": ["NO-46"],
+    "website": "https://www.weldtech.no/",
+    "email": "post@weldtech.no",
+    "phone": "92 07 79 39"
+  },
+  {
+    "id": 97,
+    "name": "Asgeir Solheim AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-46"],
+    "website": "https://www.asgeirsolheim.no/",
+    "email": "post@asgeirsolheim.no",
+    "phone": "90 54 37 13"
+  },
+  {
+    "id": 98,
+    "name": "Stene Båtservice",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-50"],
+    "website": "https://www.stenebaatservice.no/",
+    "email": "post@stenebaatservice.no",
+    "phone": "97 59 52 60"
+  },
+  {
+    "id": 99,
+    "name": "Aktiv Marine AS",
+    "services": ["engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-15"],
+    "website": "https://www.aktivmarine.no/",
+    "email": "post@aktivmarine.no",
+    "phone": "47 47 28 00"
+  },
+  {
+    "id": 100,
+    "name": "Seljestokken Båtverkstad AS",
+    "services": ["hull_wood", "hull_fiberglass", "engine_inboard"],
+    "regions": ["NO-46"],
+    "website": "https://www.seljestokken.no/",
+    "email": "post@seljestokken.no",
+    "phone": "57 74 78 60"
+  },
+  {
+    "id": 101,
+    "name": "Solheim Diesel AS",
+    "services": ["engine_inboard", "engine_outboard", "electrical"],
+    "regions": ["NO-46"],
+    "website": "https://www.solheimdiesel.no/",
+    "email": "post@solheimdiesel.no",
+    "phone": "57 75 14 80"
+  },
+  {
+    "id": 102,
+    "name": "Aspevågen Marina AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-15"],
+    "website": "https://www.aspevagenmarina.no/",
+    "email": "post@aspevagenmarina.no",
+    "phone": "70 10 10 22"
+  },
+  {
+    "id": 103,
+    "name": "Verlo AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-46"],
+    "website": "https://www.verlo.no/",
+    "email": "post@verlo.no",
+    "phone": "57 85 11 77"
+  },
+  {
+    "id": 104,
+    "name": "Vestnes Båtservice AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-15"],
+    "website": "https://www.vestnesbaatservice.no/",
+    "email": "post@vestnesbaatservice.no",
+    "phone": "45 95 38 98"
+  },
+  {
+    "id": 105,
+    "name": "DØSKELAND MARINE AS",
+    "services": ["engine_outboard", "hull_fiberglass", "hull_aluminum"],
+    "regions": ["NO-46"],
+    "website": "https://www.doskeland.no/",
+    "email": "post@doskeland.no",
+    "phone": "57 82 28 08"
+  },
+  {
+    "id": 106,
+    "name": "Farvan AS",
+    "services": ["engine_outboard", "electrical"],
+    "regions": ["NO-15"],
+    "website": "https://www.farvan.no/",
+    "email": "post@farvan.no",
+    "phone": "70 16 09 10"
+  },
+  {
+    "id": 107,
+    "name": "Kinn Marina AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "hull_steel"],
+    "regions": ["NO-46"],
+    "website": "https://www.kinnmarina.no/",
+    "email": "post@kinnmarina.no",
+    "phone": "48 50 60 00"
+  },
+  {
+    "id": 108,
+    "name": "Hatløy Maritime AS",
+    "services": ["engine_inboard", "electrical", "plumbing"],
+    "regions": ["NO-15"],
+    "website": "https://www.hatloy.no/",
+    "email": "post@hatloy.no",
+    "phone": "70 01 99 20"
+  },
+  {
+    "id": 109,
+    "name": "Westplast AS",
+    "services": ["hull_fiberglass"],
+    "regions": ["NO-15"],
+    "website": "https://www.westplast.no/",
+    "email": "post@westplast.no",
+    "phone": "70 08 04 00"
+  },
+  {
+    "id": 110,
+    "name": "Molde Marine og Motor Service AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-15"],
+    "website": "https://www.mmms.no/",
+    "email": "post@mmms.no",
+    "phone": "48 45 55 55"
+  },
+  {
+    "id": 111,
+    "name": "Møre Båtservice AS",
+    "services": ["engine_outboard", "hull_fiberglass", "hull_aluminum"],
+    "regions": ["NO-15"],
+    "website": "https://www.morebaat.no/",
+    "email": "post@morebaat.no",
+    "phone": "71 58 77 30"
+  },
+  {
+    "id": 112,
+    "name": "Hamar Båtsenter AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-34"],
+    "website": "https://www.hamarbaatsenter.no/",
+    "email": "post@hamarbaatsenter.no",
+    "phone": "62 52 32 90"
+  },
+  {
+    "id": 113,
+    "name": "Båt og Plastservice AS",
+    "services": ["hull_fiberglass", "engine_inboard", "engine_outboard"],
+    "regions": ["NO-15"],
+    "website": "https://www.baatogplast.no/",
+    "email": "post@baatogplast.no",
+    "phone": "71 67 60 00"
+  },
+  {
+    "id": 114,
+    "name": "Gridsvåg Båt & Motor AS",
+    "services": ["engine_outboard", "hull_fiberglass", "hull_aluminum"],
+    "regions": ["NO-15"],
+    "website": "https://www.gridsvaag.no/",
+    "email": "post@gridsvaag.no",
+    "phone": "71 64 56 20"
+  },
+  {
+    "id": 115,
+    "name": "Nordmøre Maritime Service",
+    "services": ["engine_inboard", "engine_outboard", "electrical", "plumbing"],
+    "regions": ["NO-15"],
+    "website": "https://www.n-maritim.no/",
+    "email": "post@n-maritim.no",
+    "phone": "93 81 23 36"
+  },
+  {
+    "id": 116,
+    "name": "Promek AS",
+    "services": ["hull_aluminum", "hull_steel", "engine_inboard"],
+    "regions": ["NO-15"],
+    "website": "https://www.promek.no/",
+    "email": "post@promek.no",
+    "phone": "71 54 44 44"
+  },
+  {
+    "id": 117,
+    "name": "Edøen AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "hull_steel"],
+    "regions": ["NO-15"],
+    "website": "https://www.edoen.no/",
+    "email": "post@edoen.no",
+    "phone": "90 28 26 66"
+  },
+  {
+    "id": 118,
+    "name": "Aug Faxvaag AS",
+    "services": ["engine_inboard", "engine_outboard", "electrical"],
+    "regions": ["NO-50"],
+    "website": "https://www.faxvaag.no/",
+    "email": "post@faxvaag.no",
+    "phone": "72 44 46 00"
+  },
+  {
+    "id": 119,
+    "name": "Uthaug MarineService AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-50"],
+    "website": "https://www.uthaug-marineservice.no/",
+    "email": "post@uthaug-marineservice.no",
+    "phone": "96 01 86 61"
+  },
+  {
+    "id": 120,
+    "name": "MarineTeam AS",
+    "services": ["engine_outboard", "hull_fiberglass", "hull_aluminum"],
+    "regions": ["NO-50"],
+    "website": "https://www.marineteam.no/",
+    "email": "post@marineteam.no",
+    "phone": "45 27 27 00"
+  },
+  {
+    "id": 113,
+    "name": "Båt og Plastservice AS",
+    "services": ["hull_fiberglass", "engine_inboard", "engine_outboard"],
+    "regions": ["NO-15"],
+    "website": "https://www.baatogplast.no/",
+    "email": "post@baatogplast.no",
+    "phone": "71 67 60 00"
+  },
+  {
+    "id": 114,
+    "name": "Sørnes Marine AS",
+    "services": ["engine_inboard", "engine_outboard", "electrical"],
+    "regions": ["NO-50"],
+    "website": "https://www.sorness-marine.no/",
+    "email": "post@sorness-marine.no",
+    "phone": "47 64 43 83"
+  },
+  {
+    "id": 115,
+    "name": "Gridsvåg Båt & Motor AS",
+    "services": ["engine_outboard", "hull_fiberglass", "hull_aluminum"],
+    "regions": ["NO-15"],
+    "website": "https://www.gridsvaag.no/",
+    "email": "post@gridsvaag.no",
+    "phone": "71 64 56 20"
+  },
+  {
+    "id": 116,
+    "name": "Nordmøre Maritime Service",
+    "services": ["engine_inboard", "engine_outboard", "electrical", "plumbing"],
+    "regions": ["NO-15"],
+    "website": "https://www.n-maritim.no/",
+    "email": "post@n-maritim.no",
+    "phone": "93 81 23 36"
+  },
+  {
+    "id": 117,
+    "name": "Rauma motor AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-15"],
+    "website": "https://www.raumamotor.no/",
+    "email": "post@raumamotor.no",
+    "phone": "45 90 09 87"
+  },
+  {
+    "id": 118,
+    "name": "Giske Servicebase AS",
+    "services": ["engine_inboard", "engine_outboard", "electrical"],
+    "regions": ["NO-15"],
+    "website": "https://www.giskeservicebase.no/",
+    "email": "post@giskeservicebase.no",
+    "phone": "95 94 42 97"
+  },
+  {
+    "id": 119,
+    "name": "Atlanticparts AS",
+    "services": ["engine_inboard", "engine_outboard"],
+    "regions": ["NO-15"],
+    "website": "https://www.atlanticparts.no/",
+    "email": "post@atlanticparts.no",
+    "phone": "40 85 19 12"
+  },
+  {
+    "id": 120,
+    "name": "Bv Service AS",
+    "services": ["engine_inboard", "engine_outboard", "electrical"],
+    "regions": ["NO-15"],
+    "website": "https://www.bvservice.no/",
+    "email": "post@bvservice.no",
+    "phone": "95 23 80 91"
+  },
+  {
+    "id": 121,
+    "name": "Promek AS",
+    "services": ["hull_aluminum", "hull_steel", "engine_inboard"],
+    "regions": ["NO-15"],
+    "website": "https://www.promek.no/",
+    "email": "post@promek.no",
+    "phone": "71 54 44 44"
+  },
+  {
+    "id": 122,
+    "name": "Edøen AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "hull_steel"],
+    "regions": ["NO-15"],
+    "website": "https://www.edoen.no/",
+    "email": "post@edoen.no",
+    "phone": "90 28 26 66"
+  },
+  {
+    "id": 123,
+    "name": "Fjørtoft Mekaniske AS",
+    "services": ["hull_steel", "hull_aluminum", "engine_inboard"],
+    "regions": ["NO-15"],
+    "website": "https://www.fjortoftmek.no/",
+    "email": "post@fjortoftmek.no",
+    "phone": "90 52 66 52"
+  },
+  {
+    "id": 124,
+    "name": "Aure Bil og Fritid AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-15"],
+    "website": "https://www.aurebil.no/",
+    "email": "post@aurebil.no",
+    "phone": "48 48 83 48"
+  },
+  {
+    "id": 125,
+    "name": "J Weiberg Gulliksen AS",
+    "services": ["engine_inboard"],
+    "regions": ["NO-15"],
+    "website": "https://www.jwgg.no/",
+    "email": "post@jwgg.no",
+    "phone": "70 11 85 00"
+  },
+  {
+    "id": 126,
+    "name": "Selfa Arctic AS",
+    "services": ["hull_fiberglass", "engine_inboard"],
+    "regions": ["NO-55"],
+    "website": "https://www.selfa.no/",
+    "email": "post@selfa.no",
+    "phone": "46 97 33 00"
+  },
+  {
+    "id": 127,
+    "name": "Kjerringvåg Båt & Motor Service",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-50"],
+    "website": "https://www.kjerringvaag.no/",
+    "email": "post@kjerringvaag.no",
+    "phone": "99 22 78 77"
+  },
+  {
+    "id": 128,
+    "name": "Stadsbygd Båtsenter",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-50"],
+    "website": "https://www.stadsbygd-baatsenter.no/",
+    "email": "post@stadsbygd-baatsenter.no",
+    "phone": "99 25 55 50"
+  },
+  {
+    "id": 129,
+    "name": "Midtnorsk Trebåtverksted AS",
+    "services": ["hull_wood"],
+    "regions": ["NO-50"],
+    "website": "https://www.mn-trebat.net/",
+    "email": "post@mn-trebat.net",
+    "phone": "41 91 52 20"
+  },
+  {
+    "id": 130,
+    "name": "Bessaker Marineservice AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-50"],
+    "website": "https://www.bessakermarineservice.no/",
+    "email": "post@bessakermarineservice.no",
+    "phone": "97 72 61 55"
+  },
+  {
+    "id": 131,
+    "name": "HITRA MARINE",
+    "services": ["engine_inboard", "engine_outboard"],
+    "regions": ["NO-50"],
+    "website": "https://www.hitramarine.no/",
+    "email": "post@hitramarine.no",
+    "phone": "45 61 71 89"
+  },
+  {
+    "id": 132,
+    "name": "Verdal Båt Scooter & MC AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-50"],
+    "website": "https://www.verdalbat.no/",
+    "email": "post@verdalbat.no",
+    "phone": "74 07 22 88"
+  },
+  {
+    "id": 133,
+    "name": "Alf Hansen AS",
+    "services": ["sails", "rigging"],
+    "regions": ["NO-50"],
+    "website": "https://www.alfhansen.no/",
+    "email": "post@alfhansen.no",
+    "phone": "72 59 60 90"
+  },
+  {
+    "id": 134,
+    "name": "Hanmo AS",
+    "services": ["engine_inboard", "electrical"],
+    "regions": ["NO-50"],
+    "website": "https://www.hanmo.no/",
+    "email": "post@hanmo.no",
+    "phone": "73 52 73 03"
+  },
+  {
+    "id": 135,
+    "name": "Rørvik Marina AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-50"],
+    "website": "https://www.rorvikmarina.no/",
+    "email": "post@rorvikmarina.no",
+    "phone": "74 36 05 20"
+  },
+  {
+    "id": 136,
+    "name": "Namsos Marina AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-50"],
+    "website": "https://www.namsosmarina.no/",
+    "email": "post@namsosmarina.no",
+    "phone": "99 10 78 00"
+  },
+  {
+    "id": 137,
+    "name": "Brygga Båt",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-50"],
+    "website": "https://www.bryggabaat.no/",
+    "email": "post@bryggabaat.no",
+    "phone": "74 22 61 60"
+  },
+  {
+    "id": 138,
+    "name": "Nærøysund Aquaservice AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_steel", "hull_aluminum"],
+    "regions": ["NO-50"],
+    "website": "https://www.naq.no/",
+    "email": "post@naq.no",
+    "phone": "74 39 46 22"
+  },
+  {
+    "id": 139,
+    "name": "Namdal Maritime AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-50"],
+    "website": "https://www.namdalmaritime.no/",
+    "email": "post@namdalmaritime.no",
+    "phone": "74 39 17 80"
+  },
+  {
+    "id": 140,
+    "name": "Folla Maritime Service AS",
+    "services": ["hull_steel", "hull_aluminum", "engine_inboard"],
+    "regions": ["NO-50"],
+    "website": "https://www.follamaritime.no/",
+    "email": "post@follamaritime.no",
+    "phone": "74 22 19 80"
+  },
+  {
+    "id": 141,
+    "name": "Toft Marina Verksted",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-18"],
+    "website": "https://www.toftmarina.no/",
+    "email": "post@toftmarina.no",
+    "phone": "75 02 05 33"
+  },
+  {
+    "id": 142,
+    "name": "Trøndelag Jetski",
+    "services": ["engine_outboard"],
+    "regions": ["NO-50"],
+    "website": "https://www.trondelagjetski.no/",
+    "email": "post@trondelagjetski.no",
+    "phone": "93 25 30 58"
+  },
+  {
+    "id": 143,
+    "name": "TOR BÅTSERVICE AS",
+    "services": ["engine_inboard", "engine_outboard"],
+    "regions": ["NO-50"],
+    "website": "https://www.torbaatservice.no/",
+    "email": "post@torbaatservice.no",
+    "phone": "97 79 09 32"
+  },
+  {
+    "id": 144,
+    "name": "Riggmaster AS",
+    "services": ["rigging", "sails"],
+    "regions": ["NO-50"],
+    "website": "https://www.riggmaster.no/",
+    "email": "post@riggmaster.no",
+    "phone": "73 02 22 90"
+  },
+  {
+    "id": 145,
+    "name": "HELGELAND BÅTSERVICE AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "hull_steel", "hull_aluminum"],
+    "regions": ["NO-18"],
+    "website": "https://www.helgelandbaatservice.no/",
+    "email": "post@helgelandbaatservice.no",
+    "phone": "75 09 22 50"
+  },
+  {
+    "id": 146,
+    "name": "Motorservice Helgeland",
+    "services": ["engine_inboard", "engine_outboard", "electrical"],
+    "regions": ["NO-18"],
+    "website": "https://www.motorservice-helgeland.no/",
+    "email": "post@motorservice-helgeland.no",
+    "phone": "92 11 98 90"
+  },
+  {
+    "id": 147,
+    "name": "TTS Bil og Dekksenter AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-18"],
+    "website": "https://www.tts.as/",
+    "email": "post@tts.as",
+    "phone": "75 01 81 70"
+  },
+  {
+    "id": 148,
+    "name": "PW Plastservice AS",
+    "services": ["hull_fiberglass"],
+    "regions": ["NO-18"],
+    "website": "https://www.pwplast.no/",
+    "email": "post@pwplast.no",
+    "phone": "91 61 99 88"
+  },
+  {
+    "id": 149,
+    "name": "Nordnorsk Marinesenter AS",
+    "services": ["engine_inboard", "engine_outboard", "electrical"],
+    "regions": ["NO-18"],
+    "website": "https://www.nnms.no/",
+    "email": "post@nnms.no",
+    "phone": "48 50 90 99"
+  },
+  {
+    "id": 150,
+    "name": "SinkabergHansen Verksted",
+    "services": ["engine_inboard", "hull_steel", "hull_aluminum", "electrical", "plumbing"],
+    "regions": ["NO-50"],
+    "website": "https://sinkaberghansen.no/baat-og-verkstedtjenester/",
+    "email": "verksted@sinkaberg-hansen.no",
+    "phone": "74 38 82 00"
+  },
+  {
+    "id": 151,
+    "name": "Nygårdsjøen Marina",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-18"],
+    "website": "https://www.nygardsjoen.no/",
+    "email": "post@nygardsjoen.no",
+    "phone": "99 00 08 52"
+  },
+  {
+    "id": 152,
+    "name": "Arnulf Hansen & Co AS",
+    "services": ["engine_outboard", "hull_fiberglass", "hull_aluminum", "electrical"],
+    "regions": ["NO-18"],
+    "website": "https://www.ahansen.no/bat",
+    "email": "bat@ahansen.no",
+    "phone": "75 09 89 00"
+  },
+  {
+    "id": 153,
+    "name": "Båt & Motorservice AS",
+    "services": ["engine_inboard", "engine_outboard", "electrical"],
+    "regions": ["NO-18"],
+    "website": "https://www.bmsas.no/",
+    "email": "post@bmsas.no",
+    "phone": "91 90 93 57"
+  },
+  {
+    "id": 154,
+    "name": "Buholmen Båt AS",
+    "services": ["engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-18"],
+    "website": "https://www.buholmen.no/",
+    "email": "post@buholmen.no",
+    "phone": "45 66 71 58"
+  },
+  {
+    "id": 155,
+    "name": "Bodø Rigg og Seil AS",
+    "services": ["rigging", "sails"],
+    "regions": ["NO-18"],
+    "website": "https://www.brs.as/",
+    "email": "post@brs.as",
+    "phone": "90 89 27 16"
+  },
+  {
+    "id": 156,
+    "name": "Selfa Arctic AS avd Rødskjær",
+    "services": ["hull_fiberglass", "engine_inboard"],
+    "regions": ["NO-55"],
+    "website": "https://www.selfa.no/",
+    "email": "post@selfa.no",
+    "phone": "46 97 33 00"
+  },
+  {
+    "id": 157,
+    "name": "Båt & Fritid AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-18"],
+    "website": "https://batogfritid.no/",
+    "email": "post@batogfritid.no",
+    "phone": "75 64 79 00"
+  },
+  {
+    "id": 158,
+    "name": "Skarvik AS",
+    "services": ["hull_steel", "hull_aluminum", "engine_inboard", "electrical", "plumbing"],
+    "regions": ["NO-18"],
+    "website": "https://www.skarvik.no/",
+    "email": "post@skarvik.no",
+    "phone": "76 07 70 00"
+  },
+  {
+    "id": 159,
+    "name": "Hokland Marina Svolvær",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-18"],
+    "website": "https://hoklandmarina.no/",
+    "email": "post@hoklandmarina.no",
+    "phone": "47 48 52 73"
+  },
+  {
+    "id": 160,
+    "name": "Nordsalten Sentralverksted AS",
+    "services": ["engine_inboard", "engine_outboard"],
+    "regions": ["NO-18"],
+    "website": "https://www.nordsalten.no/",
+    "email": "post@nordsalten.no",
+    "phone": "48 50 48 55"
+  },
+  {
+    "id": 161,
+    "name": "Hovde Maritim AS",
+    "services": ["engine_inboard", "engine_outboard"],
+    "regions": ["NO-18"],
+    "website": "https://www.hovdemaritim.no/",
+    "email": "post@hovdemaritim.no",
+    "phone": "76 07 31 00"
+  },
+  {
+    "id": 162,
+    "name": "Nogva Svolvær AS",
+    "services": ["engine_inboard"],
+    "regions": ["NO-18"],
+    "website": "https://www.nogva.no/",
+    "email": "firmapost@nogva.no",
+    "phone": "70 20 84 40"
+  },
+  {
+    "id": 163,
+    "name": "Sortland Skipselektronikk AS",
+    "services": ["electrical"],
+    "regions": ["NO-18"],
+    "website": "https://www.sortland-skipselektronikk.no/",
+    "email": "post@sortland-skipselektronikk.no",
+    "phone": "76 12 60 90"
+  },
+  {
+    "id": 164,
+    "name": "Ballangen Bil og Båt AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-18"],
+    "website": "https://www.ballangenbilogbat.no/",
+    "email": "post@ballangenbilogbat.no",
+    "phone": "76 92 80 00"
+  },
+  {
+    "id": 165,
+    "name": "Brækkens Elektro AS",
+    "services": ["electrical"],
+    "regions": ["NO-18"],
+    "website": "https://www.braekken.no/",
+    "email": "post@braekken.no",
+    "phone": "76 08 81 26"
+  },
+  {
+    "id": 166,
+    "name": "Harstad Marina AS",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-55"],
+    "website": "https://harstadmarina.no/",
+    "email": "post@harstadmarina.no",
+    "phone": "77 00 25 30"
+  },
+  {
+    "id": 167,
+    "name": "Hokland Marina Harstad",
+    "services": ["engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-55"],
+    "website": "https://hoklandmarina.no/",
+    "email": "post@hoklandmarina.no",
+    "phone": "77 00 05 80"
+  },
+  {
+    "id": 168,
+    "name": "Nordmek AS",
+    "services": ["engine_inboard", "engine_outboard"],
+    "regions": ["NO-18"],
+    "website": "https://www.nordmek.no/",
+    "email": "post@nordmek.no",
+    "phone": "76 13 85 50"
+  },
+  {
+    "id": 169,
+    "name": "SI Motor AS",
+    "services": ["engine_outboard"],
+    "regions": ["NO-55"],
+    "website": "https://www.simotor.no/",
+    "email": "post@simotor.no",
+    "phone": "40 24 73 45"
+  },
+  {
+    "id": 170,
+    "name": "Motor og båtservice AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-55"],
+    "website": "https://www.motorogbaatservice.no/",
+    "email": "post@motorogbaatservice.no",
+    "phone": "97 06 31 38"
+  },
+  {
+    "id": 171,
+    "name": "Marinaen Båt og Fritid AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-55"],
+    "website": "https://www.marinaen.as/",
+    "email": "post@marinaen.as",
+    "phone": "99 45 05 00"
+  },
+  {
+    "id": 172,
+    "name": "Andenes Båtservice AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_steel", "hull_aluminum"],
+    "regions": ["NO-18"],
+    "website": "https://www.andenesbaatservice.no/",
+    "email": "post@andenesbaatservice.no",
+    "phone": "47 02 56 13"
+  },
+  {
+    "id": 173,
+    "name": "Nordplast AS",
+    "services": ["hull_fiberglass"],
+    "regions": ["NO-55"],
+    "website": "https://www.nordplast.no/",
+    "email": "post@nordplast.no",
+    "phone": "91 33 76 94"
+  },
+  {
+    "id": 174,
+    "name": "Grovfjord Båtbyggeri AS",
+    "services": ["hull_aluminum", "hull_steel", "engine_inboard"],
+    "regions": ["NO-55"],
+    "website": "https://www.grovfjord.no/",
+    "email": "post@grovfjord.no",
+    "phone": "77 08 82 10"
+  },
+  {
+    "id": 175,
+    "name": "Steinly Marin Service AS",
+    "services": ["engine_inboard", "engine_outboard", "electrical"],
+    "regions": ["NO-55"],
+    "website": "https://www.steinly.no/",
+    "email": "post@steinly.no",
+    "phone": "40 00 72 06"
+  },
+  {
+    "id": 176,
+    "name": "Båt- og industriservice AS",
+    "services": ["engine_inboard", "hull_steel", "hull_aluminum", "plumbing"],
+    "regions": ["NO-55"],
+    "website": "https://www.bo-is.no/",
+    "email": "post@bo-is.no",
+    "phone": "91 65 70 00"
+  },
+  {
+    "id": 177,
+    "name": "Maritim Center Tromsø",
+    "services": ["engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-55"],
+    "website": "https://maritim-center.no/",
+    "email": "post@maritim-center.no",
+    "phone": "77 66 20 00"
+  },
+  {
+    "id": 178,
+    "name": "Tschudi Marine Services AS",
+    "services": ["engine_inboard", "hull_steel", "hull_aluminum", "electrical", "plumbing"],
+    "regions": ["NO-56"],
+    "website": "https://www.tschudimarineservices.com/",
+    "email": "contact@tschudigroup.com",
+    "phone": "47 51 20 41"
+  },
+  {
+    "id": 179,
+    "name": "Olsens Verft AS",
+    "services": ["hull_steel", "hull_aluminum", "engine_inboard"],
+    "regions": ["NO-55"],
+    "website": "https://www.olsens-verft.no/",
+    "email": "post@olsens-verft.no",
+    "phone": "77 76 41 46"
+  },
+  {
+    "id": 180,
+    "name": "Skattøra Marina AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass", "electrical"],
+    "regions": ["NO-55"],
+    "website": "https://www.skattoramarina.no/",
+    "email": "post@skattoramarina.no",
+    "phone": "48 04 49 09"
+  },
+  {
+    "id": 181,
+    "name": "Robertsen og Slotnes Marina",
+    "services": ["engine_inboard", "engine_outboard", "hull_fiberglass"],
+    "regions": ["NO-55"],
+    "website": "https://www.rsmarina.no/",
+    "email": "post@rsmarina.no",
+    "phone": "90 53 43 16"
+  },
+  {
+    "id": 182,
+    "name": "Botnhamn Sveis AS",
+    "services": ["hull_steel", "hull_aluminum"],
+    "regions": ["NO-55"],
+    "website": "https://www.botnhamnsveis.no/",
+    "email": "post@botnhamnsveis.no",
+    "phone": "77 84 86 00"
+  },
+  {
+    "id": 183,
+    "name": "Motonor AS",
+    "services": ["engine_inboard", "engine_outboard"],
+    "regions": ["NO-18"],
+    "website": "https://www.motonor.no/",
+    "email": "post@motonor.no",
+    "phone": "76 94 00 90"
+  },
+  {
+    "id": 184,
+    "name": "Manndalen Bil og Karosseri AS",
+    "services": ["hull_fiberglass", "engine_outboard"],
+    "regions": ["NO-55"],
+    "website": "https://www.manndalen-bil.no/",
+    "email": "post@manndalen-bil.no",
+    "phone": "77 71 63 89"
+  },
+  {
+    "id": 185,
+    "name": "Rep & Vedlikehold AS",
+    "services": ["engine_inboard", "engine_outboard", "hull_steel", "hull_aluminum", "hull_fiberglass", "electrical"],
+    "regions": ["NO-56"],
+    "website": "https://www.rep-vedlikehold.no/",
+    "email": "post@rep-vedlikehold.no",
+    "phone": "92 42 87 45"
+  },
+  {
+    "id": 186,
+    "name": "Bodø Maritime AS",
+    "services": ["engine_inboard", "hull_steel", "hull_aluminum", "hull_fiberglass"],
+    "regions": ["NO-18"],
+    "website": "https://www.bodomaritime.no/",
+    "email": "post@bodomaritime.no",
+    "phone": "900 45 755"
+  }
+]

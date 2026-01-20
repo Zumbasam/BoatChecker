@@ -17,7 +17,7 @@ import {
   ModalContent,
   ModalHeader,
   ModalBody,
-  ModalCloseButton,
+  ModalFooter,
   useDisclosure,
 } from '@chakra-ui/react';
 import { AlertTriangle } from 'lucide-react';
@@ -155,9 +155,8 @@ export const FindingCard: React.FC<FindingCardProps> = ({ item, index = 0, onNav
       <Modal isOpen={isNoteOpen} onClose={onNoteClose} isCentered size="lg">
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader pr={10}>{t('summary.note_modal_title')}</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody pb={6}>
+          <ModalHeader>{t('summary.note_modal_title')}</ModalHeader>
+          <ModalBody pb={4}>
             <Text
               fontSize="md"
               sx={{ wordBreak: 'break-word', whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}
@@ -165,14 +164,16 @@ export const FindingCard: React.FC<FindingCardProps> = ({ item, index = 0, onNav
               {note}
             </Text>
           </ModalBody>
+          <ModalFooter>
+            <Button colorScheme="blue" onClick={onNoteClose}>{t('common.close_button')}</Button>
+          </ModalFooter>
         </ModalContent>
       </Modal>
 
       <Modal isOpen={isImageOpen} onClose={onImageClose} isCentered size="xl">
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader pr={10}>{t('summary.image_modal_title')}</ModalHeader>
-          <ModalCloseButton />
+          <ModalHeader>{t('summary.image_modal_title')}</ModalHeader>
           <ModalBody pb={4}>
             {item.photoFull ? (
               <ChakraImage src={item.photoFull} w="100%" maxH="70vh" objectFit="contain" />
@@ -180,6 +181,9 @@ export const FindingCard: React.FC<FindingCardProps> = ({ item, index = 0, onNav
               <ChakraImage src={item.thumb ?? ''} w="100%" maxH="70vh" objectFit="contain" />
             )}
           </ModalBody>
+          <ModalFooter>
+            <Button colorScheme="blue" onClick={onImageClose}>{t('common.close_button')}</Button>
+          </ModalFooter>
         </ModalContent>
       </Modal>
     </>

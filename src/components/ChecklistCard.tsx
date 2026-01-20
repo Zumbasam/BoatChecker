@@ -1,8 +1,8 @@
 // src/components/ChecklistCard.tsx
 import {
-  Box, Heading, Text, HStack, IconButton, Textarea, useColorModeValue, Image as ChakraImage, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, Button, VStack, Menu, MenuButton, MenuList, MenuItem, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon,
+  Box, Heading, Text, HStack, IconButton, Textarea, useColorModeValue, Image as ChakraImage, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, VStack, Menu, MenuButton, MenuList, MenuItem, MenuDivider, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon,
 } from '@chakra-ui/react';
-import { Camera, X, FileImage, MessageSquarePlus, Paperclip, HelpCircle, Lock } from 'lucide-react';
+import { Camera, X, FileImage, MessageSquarePlus, Paperclip, HelpCircle, Lock, Trash2 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import { useTranslation } from 'react-i18next';
 import { useChecklistItem } from '../hooks/useChecklistItem';
@@ -25,7 +25,7 @@ interface Props {
 export const ChecklistCard: React.FC<Props> = ({ item, accessLevel }) => {
   const { t } = useTranslation();
   const { itemState, handlers } = useChecklistItem(item.id);
-  const { handleNoteSave, handleImageSelection } = handlers;
+  const { handleNoteSave, handleImageSelection, handleImageDelete } = handlers;
 
   const [note, setNote] = useState(itemState?.note || '');
 
@@ -114,8 +114,29 @@ export const ChecklistCard: React.FC<Props> = ({ item, accessLevel }) => {
         <Menu placement="top-start">
           <MenuButton as={IconButton} aria-label={t('checklist.card.attachments_label')} icon={<Paperclip size={18} />} size="sm" variant="outline" colorScheme={note || thumb ? 'blue' : 'gray'} isDisabled={isLocked} />
           <MenuList>
-            <MenuItem icon={<MessageSquarePlus size={16} />} onClick={onNoteOpen}>{note ? t('checklist.card.edit_note') : t('checklist.card.add_note')}</MenuItem>
-            <MenuItem icon={<Camera size={16} />} onClick={onChoiceOpen}>{thumb ? t('checklist.card.change_image') : t('checklist.card.add_image')}</MenuItem>
+            <MenuItem icon={<MessageSquarePlus size={16} />} onClick={onNoteOpen}>
+              {note ? t('checklist.card.edit_note') : t('checklist.card.add_note')}
+            </MenuItem>
+            <MenuItem icon={<Camera size={16} />} onClick={onChoiceOpen}>
+              {thumb ? t('checklist.card.change_image') : t('checklist.card.add_image')}
+            </MenuItem>
+            {(note || thumb) && <MenuDivider />}
+            {note && (
+              <MenuItem 
+                icon={<Trash2 size={16} />} 
+                onClick={() => handleNoteSave('')}
+              >
+                {t('checklist.card.delete_note')}
+              </MenuItem>
+            )}
+            {thumb && (
+              <MenuItem 
+                icon={<Trash2 size={16} />} 
+                onClick={() => handleImageDelete()}
+              >
+                {t('checklist.card.delete_image')}
+              </MenuItem>
+            )}
           </MenuList>
         </Menu>
 
@@ -140,9 +161,8 @@ export const ChecklistCard: React.FC<Props> = ({ item, accessLevel }) => {
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>{t('checklist.card.add_image_modal_title')}</ModalHeader>
-          <ModalCloseButton />
           <ModalBody>
-            <VStack spacing={4} my={4}>
+            <VStack spacing={4} my={2}>
               <Button leftIcon={<Camera />} w="100%" onClick={async () => { 
                 const file = await takePhoto(); 
                 onChoiceClose(); 
@@ -155,15 +175,45 @@ export const ChecklistCard: React.FC<Props> = ({ item, accessLevel }) => {
               }}>{t('checklist.card.choose_from_library_button')}</Button>
             </VStack>
           </ModalBody>
+          <ModalFooter>
+            <Button variant="outline" w="100%" onClick={onChoiceClose}>{t('common.cancel_button')}</Button>
+          </ModalFooter>
         </ModalContent>
       </Modal>
-      <Modal isOpen={isNoteOpen} onClose={() => { handleNoteSave(note); onNoteClose(); }} isCentered size="full">
+      <Modal isOpen={isNoteOpen} onClose={() => { handleNoteSave(note); onNoteClose(); }} size="full">
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>{t('checklist.card.note_modal_title', { title: item.title })}</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody pb={6}>
-            <Textarea placeholder={t('checklist.card.note_placeholder')} value={note} onChange={(e) => setNote(e.target.value)} autoFocus h="80vh"/>
+        <ModalContent 
+          m={0} 
+          borderRadius={0}
+          pt="env(safe-area-inset-top, 8px)"
+          pb="env(safe-area-inset-bottom, 0px)"
+        >
+          <ModalHeader pt={3} pb={2}>
+            <HStack justify="space-between" align="flex-start" w="100%">
+              <Box>
+                <Heading size="md">{t('checklist.card.note_label', { defaultValue: 'Notat' })}</Heading>
+                <Text fontSize="sm" color="gray.500" fontWeight="normal" noOfLines={2}>
+                  {item.title}
+                </Text>
+              </Box>
+              <Button 
+                colorScheme="blue" 
+                size="sm"
+                onClick={() => { handleNoteSave(note); onNoteClose(); }}
+              >
+                {t('common.save_button')}
+              </Button>
+            </HStack>
+          </ModalHeader>
+          <ModalBody py={2}>
+            <Textarea 
+              placeholder={t('checklist.card.note_placeholder')} 
+              value={note} 
+              onChange={(e) => setNote(e.target.value)} 
+              autoFocus 
+              h="calc(100vh - 160px)"
+              resize="none"
+            />
           </ModalBody>
         </ModalContent>
       </Modal>

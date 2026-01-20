@@ -256,8 +256,10 @@ const UpgradePage: React.FC = () => {
       )}
         
       <Button 
-        variant="ghost" 
-        size="sm"
+        variant="outline"
+        colorScheme="gray"
+        size="md"
+        w="100%"
         onClick={handleBackClick} 
         isDisabled={isPurchasing}
       >

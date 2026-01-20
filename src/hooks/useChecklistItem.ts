@@ -80,12 +80,17 @@ export const useChecklistItem = (itemId: string | undefined) => {
     saveRec({ photoThumb: newThumb, photoFull: oriented });
   };
 
+  const handleImageDelete = () => {
+    saveRec({ photoThumb: undefined, photoFull: undefined });
+  };
+
   return {
     itemState,
     handlers: {
       handleStateChange,
       handleNoteSave,
       handleImageSelection,
+      handleImageDelete,
     },
   };
 };

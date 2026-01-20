@@ -6,6 +6,7 @@
     "finish_button": "Fullfør",
     "save_button": "Lagre",
     "cancel_button": "Avbryt",
+    "close_button": "Lukk",
     "save_and_continue_button": "Lagre og fortsett",
     "type": "Type",
     "manufacturer": "Produsent",
@@ -89,6 +90,8 @@
       "edit_note": "Rediger notat",
       "add_image": "Legg til bilde",
       "change_image": "Bytt bilde",
+      "delete_note": "Slett notat",
+      "delete_image": "Slett bilde",
       "status_ok": "OK",
       "status_obs": "Obs",
       "status_critical": "Kritisk",
@@ -97,6 +100,7 @@
       "take_photo_button": "Ta bilde med kamera",
       "choose_from_library_button": "Velg fra bibliotek",
       "note_modal_title": "Notat for {{title}}",
+      "note_label": "Notat",
       "note_placeholder": "Skriv observasjonene dine her...",
       "toast_reminder_title": "Husk status",
       "toast_reminder_desc": "Velg OK, Obs eller Kritisk for å få en komplett oppføring i rapporten."
@@ -113,7 +117,12 @@
 	"note_modal_title": "Notat",
 	"image_modal_title": "Bilde",
     "assessment_text": {
-      "partial_note": "Vurderingen er basert kun på de sjekkede punktene."
+      "partial_note": "Vurderingen er basert kun på de sjekkede punktene.",
+      "no_findings": "Ingen avvik ble funnet under inspeksjonen. Alle sjekkpunkter ble vurdert som OK.",
+      "findings_intro": "Det ble funnet {{count}} avvik under inspeksjonen.",
+      "high_crit": "{{count}} av disse er merket med høy kritikalitet og bør prioriteres.",
+      "cost_4": "{{count}} punkt(er) har potensielt svært høy utbedringskostnad ($$$$).",
+      "cost_3": "{{count}} punkt(er) har potensielt høy utbedringskostnad ($$$)."
     },
     "assessment_verdict": {
       "excellent": "Basert på de vurderte punktene fremstår båten i god stand. Ingen vesentlige avvik ble funnet.",
@@ -180,7 +189,7 @@
     "download_button": "Last ned",
     "download_report_button": "Last ned rapport",
     "start_new_inspection_button": "Start ny inspeksjon",
-    "upgrade_for_offers_button": "Oppgrader for tilbud",
+    "upgrade_for_offers_button": "Lås opp",
     "get_offers_button": "Få uforpliktende tilbud"
   },
   "insights": {
@@ -359,8 +368,8 @@
     "user_info_message_placeholder": "Beskriv gjerne jobben mer detaljert her...",
     "send_button": "Send forespørsel",
     "sending_button": "Sender...",
-    "toast_success_title": "Forespørsel sendt!",
-    "toast_success_desc": "Valgte verksteder tar kontakt.",
+    "toast_success_title": "Rapport sendt!",
+    "toast_success_desc": "Rapporten er sendt til valgte verksteder.",
     "toast_error_title": "Noe gikk galt",
     "toast_error_desc": "Kunne ikke sende forespørselen. Prøv igjen senere.",
     "toast_error_invalid_payload": "Dataene som ble sendt var korrupte. Prøv å laste siden på nytt.",

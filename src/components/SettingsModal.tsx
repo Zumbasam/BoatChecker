@@ -1,8 +1,8 @@
 // src/components/SettingsModal.tsx
 import {
-  Modal, ModalBody, ModalContent, ModalFooter,
+  Modal, ModalBody, ModalContent,
   ModalHeader, ModalOverlay, Button, useDisclosure,
-  VStack, Text, Divider, ButtonGroup, ModalCloseButton, MenuItem,
+  VStack, Text, Divider, ButtonGroup, MenuItem,
   Switch, HStack, Box, Icon
 } from '@chakra-ui/react';
 import { Settings as Gear, Heart } from 'lucide-react';
@@ -73,8 +73,12 @@ export const SettingsModal = () => {
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>{t('modals.settings.title')}</ModalHeader>
-          <ModalCloseButton />
+          <ModalHeader>
+            <HStack justify="space-between" align="center">
+              <Text>{t('modals.settings.title')}</Text>
+              <Button size="sm" colorScheme="blue" onClick={onClose}>{t('common.close_button')}</Button>
+            </HStack>
+          </ModalHeader>
           <ModalBody>
             <VStack spacing={4} align="stretch">
               <Text fontWeight="bold">{t('common.language')}</Text>
@@ -121,9 +125,6 @@ export const SettingsModal = () => {
               </Button>
             </VStack>
           </ModalBody>
-          <ModalFooter>
-            <Button variant="ghost" onClick={onClose}>{t('common.cancel_button')}</Button>
-          </ModalFooter>
         </ModalContent>
       </Modal>
     </>

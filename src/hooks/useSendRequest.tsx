@@ -9,6 +9,9 @@ import type { NewVendor } from '../components/AddVendorModal';
 import allVendors from '../data/vendors.json';
 import regionsData from '../data/regions.json';
 
+// API URL - bruker miljøvariabel eller standard URL
+const API_BASE_URL = import.meta.env.VITE_ANALYTICS_API_URL || 'https://boatchecker.no/api';
+
 export const useSendRequest = () => {
   const { t, i18n } = useTranslation(['translation', 'regions']);
   const navigate = useNavigate();
@@ -17,6 +20,12 @@ export const useSendRequest = () => {
 
   const numericInspectionId = inspectionId ? parseInt(inspectionId, 10) : undefined;
   const { isLoading, rows, settings, displayBoatModel } = useChecklistData(numericInspectionId);
+
+  // Kun funn (obs/kritisk) for oppsummering - ikke ok eller not_assessed
+  const findingsRows = useMemo(() => 
+    rows.filter(r => r.state === 'obs' || r.state === 'kritisk'), 
+    [rows]
+  );
 
   const [regionCode, setRegionCode] = useState('');
   const [selectedVendorIds, setSelectedVendorIds] = useState<number[]>([]);
@@ -57,11 +66,18 @@ export const useSendRequest = () => {
         import('../components/Report')
       ]);
 
-      const reportRows = rows.filter(r => r.state !== 'ok');
+      // Sorter alle vurderte items etter alvorlighetsgrad (kritisk først, obs, så ok)
+      const assessedRows = rows.filter(r => r.state !== 'not_assessed');
+      const sortedReportRows = [...assessedRows].sort((a, b) => {
+        const stateOrder: Record<string, number> = { 'kritisk': 0, 'obs': 1, 'ok': 2 };
+        return (stateOrder[a.state] ?? 3) - (stateOrder[b.state] ?? 3);
+      });
+      // Kun funn (obs/kritisk) telles i intro-teksten
+      const findingsForStats = sortedReportRows.filter(r => r.state === 'obs' || r.state === 'kritisk');
       const reportComponent = (
         <Report
           boatModel={displayBoatModel}
-          rows={reportRows}
+          rows={sortedReportRows}
           fullImages={true}
           hideCosts={true}
           t_summary_of_inspection={t('pdf_report.title_full')}
@@ -71,17 +87,17 @@ export const useSendRequest = () => {
           t_cost={t('summary.findings_table.cost_estimate')}
           t_appendix_title={t('pdf_report.appendix_title')}
           t_summary_text_no_findings={t('summary.assessment_text.no_findings')}
-          t_summary_text_findings_intro={t('summary.assessment_text.findings_intro', { count: reportRows.length })}
-          t_summary_text_high_crit={t('summary.assessment_text.high_crit', { count: reportRows.filter(r => r.criticality === 1).length })}
-          t_summary_text_cost_4={t('summary.assessment_text.cost_4', { count: reportRows.filter(r => r.costIndicator === 4).length })}
-          t_summary_text_cost_3={t('summary.assessment_text.cost_3', { count: reportRows.filter(r => r.costIndicator === 3).length })}
+          t_summary_text_findings_intro={t('summary.assessment_text.findings_intro', { count: findingsForStats.length })}
+          t_summary_text_high_crit={t('summary.assessment_text.high_crit', { count: findingsForStats.filter(r => r.criticality === 1).length })}
+          t_summary_text_cost_4={t('summary.assessment_text.cost_4', { count: findingsForStats.filter(r => r.costIndicator === 4).length })}
+          t_summary_text_cost_3={t('summary.assessment_text.cost_3', { count: findingsForStats.filter(r => r.costIndicator === 3).length })}
         />
       );
       const pdfBlob = await pdf(reportComponent).toBlob();
       const pdfBase64 = await blobToBase64(pdfBlob);
 
       const payload = { userInfo, selectedVendorIds, newVendors, pdfBase64, submittedInRegion: regionCode };
-      const response = await fetch('/api/send-request.php', {
+      const response = await fetch(`${API_BASE_URL}/send-request.php`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -120,6 +136,7 @@ export const useSendRequest = () => {
   return {
     isLoading,
     rows,
+    findingsRows,  // Kun obs/kritisk for oppsummering
     regionCode,
     setRegionCode,
     regionCodes,

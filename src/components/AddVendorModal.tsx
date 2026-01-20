@@ -1,7 +1,7 @@
 // src/components/AddVendorModal.tsx
 import React, { useState } from 'react';
 import {
-  Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton,
+  Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody,
   Button, FormControl, FormLabel, Input, VStack, useToast
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
@@ -43,7 +43,6 @@ const AddVendorModal: React.FC<Props> = ({ isOpen, onClose, onSave }) => {
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>{t('modals.add_vendor.title')}</ModalHeader>
-        <ModalCloseButton />
         <ModalBody>
           <VStack spacing={4}>
             <FormControl isRequired>

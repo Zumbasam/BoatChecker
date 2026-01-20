@@ -1,7 +1,7 @@
 // src/components/AddManualBoatModal.tsx
 import React, { useState, useEffect } from 'react';
 import {
-  Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton,
+  Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody,
   Button, FormControl, FormLabel, Input, VStack, Select, useToast, HStack, 
   InputGroup, InputRightAddon, InputRightElement, Divider, Text, Collapse, useDisclosure,
   Badge, Tooltip, Alert, AlertIcon, Box
@@ -197,7 +197,6 @@ const AddManualBoatModal: React.FC<Props> = ({ isOpen, onClose, onSave, typePrim
       <ModalOverlay />
       <ModalContent maxH="90vh">
         <ModalHeader>{t('modals.add_manual_boat.title')}</ModalHeader>
-        <ModalCloseButton />
         <ModalBody>
           <VStack spacing={4} align="stretch">
             {/* Annonsereferanse - øverst for enkel tilgang */}

@@ -4,7 +4,7 @@ import { Box, Heading, VStack, Button, Text, Spinner, Flex, HStack, Tag, useToas
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { PlusCircle, Ship, Zap, Activity, X, Heart } from 'lucide-react';
+import { PlusCircle, Ship, Zap, Activity, Trash2, Heart } from 'lucide-react';
 import { db } from '../db';
 import type { Inspection } from '../db';
 import { useUserStatus } from '../hooks/useUserStatus';
@@ -16,7 +16,7 @@ const InspectionListItem: React.FC<{ inspection: Inspection; onDelete: (insp: In
   const isInProgress = inspection.status === 'in_progress';
   return (
     <Card as="li" variant="outline" size="md" w="100%" position="relative">
-      <IconButton aria-label={t('home_page.delete_button_label')} icon={<X size={16} />} size="sm" variant="ghost" position="absolute" top="6px" right="6px" onClick={() => onDelete(inspection)} />
+      <IconButton aria-label={t('home_page.delete_button_label')} icon={<Trash2 size={16} />} size="sm" variant="ghost" position="absolute" top="6px" right="6px" onClick={() => onDelete(inspection)} />
       <CardBody>
         <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={4}>
           <Icon as={Ship} boxSize={8} color="gray.400" />

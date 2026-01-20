@@ -46,12 +46,16 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
     await db.inspections.update(inspection.id!, { metadata });
   };
 
+  // Kun telle statistikk fra faktiske funn (obs/kritisk), ikke OK
   const summaryStats = useMemo(
-    () => ({
-      criticality1: rows.filter(r => r.criticality === 1).length,
-      cost4: rows.filter(r => r.costIndicator === 4).length,
-      cost3: rows.filter(r => r.costIndicator === 3).length
-    }),
+    () => {
+      const findings = rows.filter(r => r.state === 'obs' || r.state === 'kritisk');
+      return {
+        criticality1: findings.filter(r => r.criticality === 1).length,
+        cost4: findings.filter(r => r.costIndicator === 4).length,
+        cost3: findings.filter(r => r.costIndicator === 3).length
+      };
+    },
     [rows]
   );
 
@@ -63,8 +67,14 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
         import('../Report')
       ]);
 
-      // Filtrer ut OK og not_assessed fra hovedtabellen
-      const reportRows = rows.filter(r => r.state !== 'ok' && r.state !== 'not_assessed');
+      // Sorter alle vurderte items etter alvorlighetsgrad for PDF (kritisk først, obs, så ok)
+      const assessedForPdf = rows.filter(r => r.state !== 'not_assessed');
+      const sortedReportRows = [...assessedForPdf].sort((a, b) => {
+        const stateOrder: Record<string, number> = { 'kritisk': 0, 'obs': 1, 'ok': 2 };
+        return (stateOrder[a.state] ?? 3) - (stateOrder[b.state] ?? 3);
+      });
+      // Kun funn (obs/kritisk) telles i intro-teksten
+      const findingsForStats = sortedReportRows.filter(r => r.state === 'obs' || r.state === 'kritisk');
       // Samle ikke-vurderte punkter for egen seksjon
       const notAssessedRows = rows.filter(r => r.state === 'not_assessed');
       await savePdfStream({
@@ -74,7 +84,7 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
             customBoatDetails={inspection.boatDetails.customBoatDetails}
             inspectionMetadata={currentMetadata}
             inspectionDate={inspection.createdAt}
-            rows={reportRows}
+            rows={sortedReportRows}
             notAssessedRows={notAssessedRows}
             fullImages={variant === 'full'}
             hideCosts={false}
@@ -85,7 +95,7 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
             t_cost={t('summary.findings_table.cost_estimate')}
             t_appendix_title={t('pdf_report.appendix_title')}
             t_summary_text_no_findings={t('summary.assessment_text.no_findings')}
-            t_summary_text_findings_intro={t('summary.assessment_text.findings_intro', { count: reportRows.length })}
+            t_summary_text_findings_intro={t('summary.assessment_text.findings_intro', { count: findingsForStats.length })}
             t_summary_text_high_crit={t('summary.assessment_text.high_crit', { count: summaryStats.criticality1 })}
             t_summary_text_cost_4={t('summary.assessment_text.cost_4', { count: summaryStats.cost4 })}
             t_summary_text_cost_3={t('summary.assessment_text.cost_3', { count: summaryStats.cost3 })}
@@ -132,18 +142,19 @@ export const SummaryView: React.FC<Props> = ({ rows, displayBoatModel, inspectio
     }
   };
 
-  // Filtrer ut not_assessed fra hovedvisningen
-  const assessedRows = useMemo(() => rows.filter(r => r.state !== 'not_assessed'), [rows]);
+  // Filtrer ut 'ok' og 'not_assessed' fra hovedvisningen - kun vis funn (obs/kritisk)
+  const findingsRows = useMemo(() => rows.filter(r => r.state === 'obs' || r.state === 'kritisk'), [rows]);
   const notAssessedCount = useMemo(() => rows.filter(r => r.state === 'not_assessed').length, [rows]);
+  const okCount = useMemo(() => rows.filter(r => r.state === 'ok').length, [rows]);
 
   const filtered = useMemo(() => {
-    let list = assessedRows;  // Bruk kun vurderte items
+    let list = findingsRows;  // Bruk kun funn (obs/kritisk) - ikke ok
     if (primaryFilter === 'critical') list = list.filter(r => r.state === 'kritisk');
     if (primaryFilter === 'obs') list = list.filter(r => r.state === 'obs');
     if (extraFilter === 'with_images') list = list.filter(r => r.thumb || r.photoFull);
     if (extraFilter === 'with_notes') list = list.filter(r => r.note && String(r.note).trim() !== '');
     return list;
-  }, [assessedRows, primaryFilter, extraFilter]);
+  }, [findingsRows, primaryFilter, extraFilter]);
 
   const groups = useMemo(() => {
     const g: { key: string; label: string; items: Row[] }[] = [];

@@ -1,7 +1,7 @@
 // src/components/InspectionMetadataModal.tsx
 import React, { useState, useEffect } from 'react';
 import {
-  Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton,
+  Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody,
   Button, FormControl, FormLabel, Input, VStack, Textarea, HStack, Text,
   Stack, Divider, Box
 } from '@chakra-ui/react';
@@ -54,7 +54,6 @@ const InspectionMetadataModal: React.FC<Props> = ({ isOpen, onClose, onSave, ini
       <ModalOverlay />
       <ModalContent maxH="90vh">
         <ModalHeader>{t('modals.inspection_metadata.title')}</ModalHeader>
-        <ModalCloseButton />
         <ModalBody>
           <VStack spacing={5} align="stretch">
             {/* Inspeksjonsinformasjon */}

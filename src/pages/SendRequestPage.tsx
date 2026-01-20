@@ -10,7 +10,7 @@ import { UserInfoForm } from '../components/send-request/UserInfoForm';
 
 const SendRequestPage: React.FC = () => {
   const {
-    isLoading, rows, regionCode, setRegionCode, regionCodes, tRegions,
+    isLoading, findingsRows, regionCode, setRegionCode, regionCodes, tRegions,
     filteredVendors, selectedVendorIds, handleVendorToggle, newVendors,
     handleAddVendor, userInfo, handleUserInfoChange, isSubmitting,
     isFormValid, handleSubmit, t
@@ -25,7 +25,7 @@ const SendRequestPage: React.FC = () => {
       <VStack spacing={8} align="stretch">
         <Heading textAlign="center">{t('send_request_page.title')}</Heading>
 
-        <FindingsSummary rows={rows} />
+        <FindingsSummary rows={findingsRows} />
         <Divider />
 
         <VendorSelection

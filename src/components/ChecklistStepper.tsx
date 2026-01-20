@@ -1,5 +1,5 @@
 // src/components/ChecklistStepper.tsx
-import React, { useCallback, useMemo, useEffect } from "react";
+import React, { useCallback, useMemo, useEffect, useRef } from "react";
 import { Box, Progress, Text, Flex, Button, VStack, useDisclosure, Heading } from "@chakra-ui/react";
 import { useSteps } from "@chakra-ui/stepper";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
@@ -84,6 +84,19 @@ const ChecklistStepperContent: React.FC<{
 
   const { activeStep, setActiveStep } = useSteps({ index: initialIndex, count: checklistItems.length + 1 });
   const isSummary = activeStep === checklistItems.length && checklistItems.length > 0;
+
+  // Oppdater activeStep når gotoItemId endres (f.eks. ved navigasjon fra summary)
+  // Bruker ref for å kun kjøre én gang per gotoItemId
+  const lastGotoItemIdRef = useRef<string | undefined>(undefined);
+  useEffect(() => {
+    if (gotoItemId && gotoItemId !== lastGotoItemIdRef.current) {
+      const idx = checklistItems.findIndex(item => item.id === gotoItemId);
+      if (idx !== -1) {
+        setActiveStep(idx);
+        lastGotoItemIdRef.current = gotoItemId;
+      }
+    }
+  }, [gotoItemId, checklistItems, setActiveStep]);
 
   const { isOpen: isFeedbackOpen, onOpen: onFeedbackOpen, onClose: onFeedbackClose } = useDisclosure();
   const { isOpen: isStatusOpen, onOpen: onStatusOpen, onClose: onStatusClose } = useDisclosure();

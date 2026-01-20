@@ -72,14 +72,31 @@ Font.register({
 });
 
 const styles = StyleSheet.create({
-  page: { padding: 24, fontSize: 10, fontFamily: 'Helvetica' },
+  page: { paddingTop: 24, paddingLeft: 24, paddingRight: 24, paddingBottom: 50, fontSize: 10, fontFamily: 'Helvetica' },
+  pageWithHeader: { paddingTop: 50, paddingLeft: 24, paddingRight: 24, paddingBottom: 50, fontSize: 10, fontFamily: 'Helvetica' },
   coverTitle: { fontSize: 20, fontFamily: 'Helvetica-Bold', marginBottom: 16 },
-  sectionTitle: { fontSize: 14, fontFamily: 'Helvetica-Bold', marginTop: 16, marginBottom: 8 },
-  subTitle: { fontSize: 12, fontFamily: 'Helvetica-Bold', marginBottom: 6 },
+  sectionTitle: { fontSize: 14, fontFamily: 'Helvetica-Bold', marginTop: 20, marginBottom: 10 },
+  subTitle: { fontSize: 12, fontFamily: 'Helvetica-Bold', marginBottom: 8, marginTop: 16 },
   infoRow: { marginBottom: 4 },
   infoLabel: { fontFamily: 'Helvetica-Bold', width: 100 },
-  box: { backgroundColor: '#F7FAFC', padding: 10, borderRadius: 4 },
-  footer: { position: 'absolute', left: 24, right: 24, bottom: 12, fontSize: 8, color: '#4A5568' },
+  box: { backgroundColor: '#F7FAFC', padding: 10, borderRadius: 4, marginBottom: 12 },
+  // Kompakt header for side 2+
+  headerCompact: { 
+    position: 'absolute', 
+    top: 12, 
+    left: 24, 
+    right: 24, 
+    flexDirection: 'row', 
+    justifyContent: 'space-between',
+    borderBottom: 1,
+    borderColor: '#E2E8F0',
+    paddingBottom: 6,
+    fontSize: 9,
+    color: '#4A5568'
+  },
+  // Footer med sidetall
+  footer: { position: 'absolute', left: 24, right: 24, bottom: 12, fontSize: 8, color: '#4A5568', flexDirection: 'row', justifyContent: 'space-between' },
+  pageNumber: { fontSize: 9, color: '#718096' },
   tableHead: { flexDirection: 'row', backgroundColor: '#F7FAFC', borderBottom: 1, borderColor: '#E2E8F0' },
   tableRow: { flexDirection: 'row', borderBottom: 1, borderColor: '#E2E8F0' },
   cell: { padding: 6, flexGrow: 1, flexBasis: 0 }, 
@@ -90,6 +107,7 @@ const styles = StyleSheet.create({
   badge: { fontSize: 8, padding: 2, borderRadius: 3 },
   kritisk: { backgroundColor: '#FED7D7', color: '#822727' },
   obs: { backgroundColor: '#FEFCBF', color: '#744210' },
+  ok: { backgroundColor: '#C6F6D5', color: '#22543D' },
   highCrit: { color: '#E53E3E', fontFamily: 'Helvetica-Bold', marginRight: 4 },
   noteWrap: { backgroundColor: '#F7FAFC' },
   noteInner: { flexDirection: 'row', padding: 8 },
@@ -160,18 +178,22 @@ export const Report: React.FC<Props> = ({
 }) => {
   const isWorkshop = !!(user && (user.name || user.email || user.phone));
 
-  const criticality1 = rows.filter((r) => r.criticality === 1).length;
-  const cost4 = rows.filter((r) => r.costIndicator === 4).length;
-  const cost3 = rows.filter((r) => r.costIndicator === 3).length;
-  const countCritical = rows.filter((r) => r.state === 'kritisk').length;
-  const countObs = rows.filter((r) => r.state === 'obs').length;
+  // Separer funn fra OK-punkter
+  const findingsRows = rows.filter((r) => r.state === 'obs' || r.state === 'kritisk');
+  const okRows = rows.filter((r) => r.state === 'ok');
+  
+  const criticality1 = findingsRows.filter((r) => r.criticality === 1).length;
+  const cost4 = findingsRows.filter((r) => r.costIndicator === 4).length;
+  const cost3 = findingsRows.filter((r) => r.costIndicator === 3).length;
+  const countCritical = findingsRows.filter((r) => r.state === 'kritisk').length;
+  const countObs = findingsRows.filter((r) => r.state === 'obs').length;
 
   const summaryText = (() => {
-    if (rows.length === 0) return t_summary_text_no_findings;
-    let text = `${t_summary_text_findings_intro} `;
-    if (criticality1 > 0) text += `${t_summary_text_high_crit} `;
-    if (cost4 > 0) text += t_summary_text_cost_4;
-    else if (cost3 > 0) text += t_summary_text_cost_3;
+    if (findingsRows.length === 0) return t_summary_text_no_findings;
+    let text = t_summary_text_findings_intro;
+    if (criticality1 > 0) text += ` ${t_summary_text_high_crit}`;
+    if (cost4 > 0) text += ` ${t_summary_text_cost_4}`;
+    else if (cost3 > 0) text += ` ${t_summary_text_cost_3}`;
     return text;
   })();
 
@@ -203,20 +225,21 @@ export const Report: React.FC<Props> = ({
     }
   };
 
-  const groupsMap = new Map<string, Row[]>();
+  // Grupper kun funn (obs/kritisk) - OK vises separat
+  const findingsGroupsMap = new Map<string, Row[]>();
   if (getAreaLabel) {
-    rows.forEach((r) => {
+    findingsRows.forEach((r) => {
       const label = getAreaLabel(r) || 'Andre';
-      const arr = groupsMap.get(label) || [];
+      const arr = findingsGroupsMap.get(label) || [];
       arr.push(r);
-      groupsMap.set(label, arr);
+      findingsGroupsMap.set(label, arr);
     });
   } else {
-    groupsMap.set('Andre', rows);
+    findingsGroupsMap.set('Andre', findingsRows);
   }
 
-  const groups = Array.from(groupsMap.entries()).map(([label, items]) => ({ label, items }));
-  const isSingleFlat = groups.length === 1 && groups[0].label === 'Andre';
+  const findingsGroups = Array.from(findingsGroupsMap.entries()).map(([label, items]) => ({ label, items }));
+  const isSingleFlat = findingsGroups.length === 1 && findingsGroups[0].label === 'Andre';
 
   const appendixImages = rows
     .filter((r) => !!r.photoFull)
@@ -224,9 +247,29 @@ export const Report: React.FC<Props> = ({
   const appendixPages: typeof appendixImages[] = [];
   for (let i = 0; i < appendixImages.length; i += 2) appendixPages.push(appendixImages.slice(i, i + 2));
 
+  // Kompakt header-tekst for side 2+
+  const compactHeaderText = `${boatModel.manufacturer} ${boatModel.name}${customBoatDetails?.year ? ` (${customBoatDetails.year})` : ''}`;
+  const inspectionDateText = formatDate(inspectionDate);
+
   return (
     <Document>
-      <Page size="A4" style={styles.page}>
+      <Page size="A4" style={styles.page} wrap>
+        {/* Kompakt header som vises på side 2+ */}
+        <View style={styles.headerCompact} fixed render={({ pageNumber }) => (
+          pageNumber > 1 ? (
+            <>
+              <Text style={{ fontFamily: 'Helvetica-Bold' }}>{compactHeaderText}</Text>
+              <Text>Inspeksjon: {inspectionDateText}</Text>
+            </>
+          ) : null
+        )} />
+        
+        {/* Footer med sidetall på alle sider */}
+        <View style={styles.footer} fixed>
+          <Text>BoatChecker — Rapporten er et utgangspunkt for dialog, ikke en profesjonell takst.</Text>
+          <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`} />
+        </View>
+        
         <Text style={styles.coverTitle}>
           {isWorkshop ? 'Anbudsforespørsel via BoatChecker' : t_summary_of_inspection}
         </Text>
@@ -375,51 +418,133 @@ export const Report: React.FC<Props> = ({
         <View style={{ marginBottom: 12 }}>
           <Text style={styles.subTitle}>Oppsummering av funn</Text>
           <View style={styles.box}>
-            <Text>Totalt antall funn: {rows.length} ({countCritical} Kritiske, {countObs} Obs)</Text>
-            <Text style={{ marginTop: 6 }}>{summaryText}</Text>
+            {findingsRows.length === 0 ? (
+              <Text>{t_summary_text_no_findings}</Text>
+            ) : (
+              <>
+                <Text>Totalt antall funn: {findingsRows.length} ({countCritical} Kritiske, {countObs} Obs)</Text>
+                <Text style={{ marginTop: 6 }}>{summaryText}</Text>
+              </>
+            )}
+            {okRows.length > 0 && (
+              <Text style={{ marginTop: 6, color: '#22543D' }}>
+                {okRows.length} punkt{okRows.length > 1 ? 'er' : ''} ble vurdert som OK
+              </Text>
+            )}
           </View>
         </View>
 
         {isWorkshop && (
-          <View style={{ marginTop: 12 }}>
+          <View style={{ marginTop: 12, marginBottom: 16 }}>
             <Text>
               Denne rapporten er sendt på vegne av {safeText(user?.name)}. Vennligst gjennomgå de dokumenterte funnene og returner et uforpliktende prisoverslag for utbedring til {safeText(user?.email)}.
             </Text>
           </View>
         )}
 
-        <Text style={styles.footer} fixed>
-          Rapporten er generert av en bruker via BoatChecker-appen og er et utgangspunkt for dialog, ikke en profesjonell takst. BoatChecker er kun en formidler.
-        </Text>
-      </Page>
+        {/* SEKSJON 1: Funn (kritisk og obs) - starter rett etter oppsummering */}
+        {findingsRows.length > 0 && (
+          <>
+            <Text style={[styles.sectionTitle, { marginTop: 8 }]}>Funn som krever oppfølging</Text>
+            {isSingleFlat ? (
+              <View>
+                <View style={styles.tableHead}>
+                  <Text style={[styles.cellWide, styles.headBold]}>{t_checkpoint}</Text>
+                  <Text style={[styles.cellMid, styles.headBold]}>{t_status}</Text>
+                  {!hideCosts && <Text style={[styles.cellCost, styles.headBold]}>{t_cost}</Text>}
+                </View>
+                {findingsGroups[0].items.map((r) => (
+                  <React.Fragment key={r.id}>
+                    <View style={styles.tableRow}>
+                      <View style={[styles.cellWide, { flexDirection: 'row', alignItems: 'center' }]}>
+                        {r.criticality === 1 && <Text style={styles.highCrit}>[!]&nbsp;</Text>}
+                        <Text>{r.label}</Text>
+                      </View>
+                      <View style={[styles.cellMid, { alignItems: 'center' }]}>
+                        <Text style={[styles.badge, r.state === 'kritisk' ? styles.kritisk : styles.obs]}>
+                          {r.state.toUpperCase()}
+                        </Text>
+                      </View>
+                      {!hideCosts && (
+                        <View style={[styles.cellCost, { alignItems: 'flex-end' }]}>
+                          <Text>{costIndicatorToDollar(r.costIndicator)}</Text>
+                        </View>
+                      )}
+                    </View>
+                    {(hasText(r.note) || r.thumb) && (
+                      <View style={[styles.noteWrap]} wrap={false}>
+                        <View style={styles.noteInner}>
+                          {r.thumb && <Image src={r.thumb} style={styles.thumb} />} 
+                          {hasText(r.note) && <Text style={styles.noteText}>{safeText(r.note)}</Text>}
+                        </View>
+                      </View>
+                    )}
+                  </React.Fragment>
+                ))}
+              </View>
+            ) : (
+              findingsGroups.map((g) => (
+                <View key={g.label}>
+                  <Text style={styles.sectionTitle}>{g.label}</Text>
+                  <View style={styles.tableHead}>
+                    <Text style={[styles.cellWide, styles.headBold]}>{t_checkpoint}</Text>
+                    <Text style={[styles.cellMid, styles.headBold]}>{t_status}</Text>
+                    {!hideCosts && <Text style={[styles.cellCost, styles.headBold]}>{t_cost}</Text>}
+                  </View>
+                  {g.items.map((r) => (
+                    <React.Fragment key={r.id}>
+                      <View style={styles.tableRow}>
+                        <View style={[styles.cellWide, { flexDirection: 'row', alignItems: 'center' }]}>
+                          {r.criticality === 1 && <Text style={styles.highCrit}>[!]&nbsp;</Text>}
+                          <Text>{r.label}</Text>
+                        </View>
+                        <View style={[styles.cellMid, { alignItems: 'center' }]}>
+                          <Text style={[styles.badge, r.state === 'kritisk' ? styles.kritisk : styles.obs]}>
+                            {r.state.toUpperCase()}
+                          </Text>
+                        </View>
+                        {!hideCosts && (
+                          <View style={[styles.cellCost, { alignItems: 'flex-end' }]}>
+                            <Text>{costIndicatorToDollar(r.costIndicator)}</Text>
+                          </View>
+                        )}
+                      </View>
+                      {(hasText(r.note) || r.thumb) && (
+                        <View style={[styles.noteWrap]} wrap={false}>
+                          <View style={styles.noteInner}>
+                            {r.thumb && <Image src={r.thumb} style={styles.thumb} />} 
+                            {hasText(r.note) && <Text style={styles.noteText}>{safeText(r.note)}</Text>}
+                          </View>
+                        </View>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </View>
+              ))
+            )}
+          </>
+        )}
 
-      <Page size="A4" style={styles.page} wrap>
-        <Text style={styles.subTitle}>{hideCosts ? t_summary_for_tender : t_summary_of_inspection}</Text>
-
-        {isSingleFlat ? (
-          <View>
+        {/* SEKSJON 2: Godkjente punkter (OK) */}
+        {okRows.length > 0 && (
+          <View style={{ marginTop: 20 }}>
+            <Text style={styles.sectionTitle}>Godkjente punkter ({okRows.length})</Text>
+            <Text style={{ fontSize: 9, fontStyle: 'italic', color: '#4A5568', marginBottom: 8 }}>
+              Følgende punkter ble vurdert og funnet i orden under inspeksjonen.
+            </Text>
             <View style={styles.tableHead}>
               <Text style={[styles.cellWide, styles.headBold]}>{t_checkpoint}</Text>
               <Text style={[styles.cellMid, styles.headBold]}>{t_status}</Text>
-              {!hideCosts && <Text style={[styles.cellCost, styles.headBold]}>{t_cost}</Text>}
             </View>
-            {groups[0].items.map((r) => (
+            {okRows.map((r) => (
               <React.Fragment key={r.id}>
                 <View style={styles.tableRow}>
-                  <View style={[styles.cellWide, { flexDirection: 'row', alignItems: 'center' }]}>
-                    {r.criticality === 1 && <Text style={styles.highCrit}>[!]&nbsp;</Text>}
+                  <View style={[styles.cellWide]}>
                     <Text>{r.label}</Text>
                   </View>
                   <View style={[styles.cellMid, { alignItems: 'center' }]}>
-                    <Text style={[styles.badge, r.state === 'kritisk' ? styles.kritisk : styles.obs]}>
-                      {r.state.toUpperCase()}
-                    </Text>
+                    <Text style={[styles.badge, styles.ok]}>OK</Text>
                   </View>
-                  {!hideCosts && (
-                    <View style={[styles.cellCost, { alignItems: 'flex-end' }]}>
-                      <Text>{costIndicatorToDollar(r.costIndicator)}</Text>
-                    </View>
-                  )}
                 </View>
                 {(hasText(r.note) || r.thumb) && (
                   <View style={[styles.noteWrap]} wrap={false}>
@@ -432,51 +557,12 @@ export const Report: React.FC<Props> = ({
               </React.Fragment>
             ))}
           </View>
-        ) : (
-          groups.map((g) => (
-            <View key={g.label}>
-              <Text style={styles.sectionTitle}>{g.label}</Text>
-              <View style={styles.tableHead}>
-                <Text style={[styles.cellWide, styles.headBold]}>{t_checkpoint}</Text>
-                <Text style={[styles.cellMid, styles.headBold]}>{t_status}</Text>
-                {!hideCosts && <Text style={[styles.cellCost, styles.headBold]}>{t_cost}</Text>}
-              </View>
-              {g.items.map((r) => (
-                <React.Fragment key={r.id}>
-                  <View style={styles.tableRow}>
-                    <View style={[styles.cellWide, { flexDirection: 'row', alignItems: 'center' }]}>
-                      {r.criticality === 1 && <Text style={styles.highCrit}>[!]&nbsp;</Text>}
-                      <Text>{r.label}</Text>
-                    </View>
-                    <View style={[styles.cellMid, { alignItems: 'center' }]}>
-                      <Text style={[styles.badge, r.state === 'kritisk' ? styles.kritisk : styles.obs]}>
-                        {r.state.toUpperCase()}
-                      </Text>
-                    </View>
-                    {!hideCosts && (
-                      <View style={[styles.cellCost, { alignItems: 'flex-end' }]}>
-                        <Text>{costIndicatorToDollar(r.costIndicator)}</Text>
-                      </View>
-                    )}
-                  </View>
-                  {(hasText(r.note) || r.thumb) && (
-                    <View style={[styles.noteWrap]} wrap={false}>
-                      <View style={styles.noteInner}>
-                        {r.thumb && <Image src={r.thumb} style={styles.thumb} />} 
-                        {hasText(r.note) && <Text style={styles.noteText}>{safeText(r.note)}</Text>}
-                      </View>
-                    </View>
-                  )}
-                </React.Fragment>
-              ))}
-            </View>
-          ))
         )}
 
         {/* Ikke vurderte punkter - ny seksjon */}
         {notAssessedRows && notAssessedRows.length > 0 && (
-          <View style={{ marginTop: 16 }}>
-            <Text style={styles.subTitle}>
+          <View style={{ marginTop: 20 }}>
+            <Text style={styles.sectionTitle}>
               {t_not_assessed?.section_title || 'Ikke vurderte punkter'}
             </Text>
             <View style={styles.box}>
@@ -490,14 +576,21 @@ export const Report: React.FC<Props> = ({
             </View>
           </View>
         )}
-
-        <Text style={styles.footer} fixed>
-          Rapporten er generert av en bruker via BoatChecker-appen og er et utgangspunkt for dialog, ikke en profesjonell takst. BoatChecker er kun en formidler.
-        </Text>
       </Page>
 
       {fullImages && appendixPages.map((page, idx) => (
-        <Page key={`app-${idx}`} size="A4" style={styles.page}>
+        <Page key={`app-${idx}`} size="A4" style={styles.pageWithHeader}>
+          {/* Kompakt header */}
+          <View style={styles.headerCompact} fixed>
+            <Text style={{ fontFamily: 'Helvetica-Bold' }}>{compactHeaderText}</Text>
+            <Text>Inspeksjon: {inspectionDateText}</Text>
+          </View>
+          {/* Footer med sidetall */}
+          <View style={styles.footer} fixed>
+            <Text>BoatChecker — Vedlegg</Text>
+            <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`} />
+          </View>
+          
           <Text style={styles.appendixTitle}>
             {t_appendix_title.replace('{{currentPage}}', String(idx + 1)).replace('{{totalPages}}', String(appendixPages.length))}
           </Text>
@@ -508,13 +601,21 @@ export const Report: React.FC<Props> = ({
               {hasText(img.note) && <Text style={styles.appendixNote}>{safeText(img.note)}</Text>}
             </View>
           ))}
-          <Text style={styles.footer} fixed>
-            Rapporten er generert av en bruker via BoatChecker-appen og er et utgangspunkt for dialog, ikke en profesjonell takst. BoatChecker er kun en formidler.
-          </Text>
         </Page>
       ))}
 
-      <Page size="A4" style={styles.page}>
+      <Page size="A4" style={styles.pageWithHeader}>
+        {/* Kompakt header */}
+        <View style={styles.headerCompact} fixed>
+          <Text style={{ fontFamily: 'Helvetica-Bold' }}>{compactHeaderText}</Text>
+          <Text>Inspeksjon: {inspectionDateText}</Text>
+        </View>
+        {/* Footer med sidetall */}
+        <View style={styles.footer} fixed>
+          <Text>BoatChecker — Juridisk informasjon</Text>
+          <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`} />
+        </View>
+        
         <Text style={styles.disclaimerH1}>Viktig Informasjon om Denne Rapporten</Text>
         <Text style={styles.disclaimerH2}>BoatChecker er kun en formidler</Text>
         <Text>
@@ -532,9 +633,6 @@ export const Report: React.FC<Props> = ({
         <Text>
           Verkstedet er selv ansvarlig for å foreta en egen, uavhengig vurdering og diagnose av båten før et bindende tilbud gis.
           Verkstedet må selv innhente ytterligere informasjon direkte fra brukeren ved behov.
-        </Text>
-        <Text style={styles.footer} fixed>
-          Rapporten er generert av en bruker via BoatChecker-appen og er et utgangspunkt for dialog, ikke en profesjonell takst. BoatChecker er kun en formidler.
         </Text>
       </Page>
     </Document>
