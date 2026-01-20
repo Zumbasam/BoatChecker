@@ -94,8 +94,31 @@ class PurchasesService {
 
   public getOfferings = async (): Promise<PurchasesPackage[]> => {
     if (!this.isNative || !Purchases) {
-      console.log("[PurchasesService] getOfferings - web stub (tom liste)");
-      return [];
+      console.log("[PurchasesService] getOfferings - web/dev modus, returnerer mock-produkter");
+      // Mock-produkter for testing i dev/web-modus
+      return [
+        {
+          identifier: 'boatchecker_pro_yearly',
+          product: {
+            title: 'Pro Årsabonnement',
+            priceString: 'kr 399,00',
+          },
+        },
+        {
+          identifier: 'boatchecker_pro_monthly',
+          product: {
+            title: 'Pro Månedlig',
+            priceString: 'kr 59,00',
+          },
+        },
+        {
+          identifier: 'boatchecker_single_report',
+          product: {
+            title: 'Enkeltrapport',
+            priceString: 'kr 89,00',
+          },
+        },
+      ];
     }
 
     try {
@@ -121,8 +144,25 @@ class PurchasesService {
   }
 
   public purchasePackage = async (pack: PurchasesPackage): Promise<boolean> => {
-    if (!this.isNative || !Purchases || !pack.rcPackage) {
-      console.log("[PurchasesService] purchasePackage - kan ikke kjøpe på web");
+    // DEV/Web modus - simuler kjøp
+    if (!this.isNative || !Purchases) {
+      console.log("[PurchasesService] DEV: Simulerer kjøp av", pack.identifier);
+      
+      // Simuler enkeltkjøp vs abonnement
+      if (pack.identifier.includes('single')) {
+        // Enkeltrapport - sett ikke Pro, men returner true for å trigge callback
+        console.log("[PurchasesService] DEV: Enkeltrapport kjøpt (krever inspeksjons-unlock)");
+        return true;
+      } else {
+        // Abonnement - sett Pro-status
+        await db.settings.update('settings', { userStatus: 'pro' });
+        console.log("[PurchasesService] DEV: Pro-abonnement aktivert!");
+        return true;
+      }
+    }
+
+    if (!pack.rcPackage) {
+      console.log("[PurchasesService] purchasePackage - mangler rcPackage");
       return false;
     }
 

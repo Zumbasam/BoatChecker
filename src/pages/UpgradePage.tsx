@@ -55,11 +55,26 @@ const UpgradePage: React.FC = () => {
     else navigate(-1);
   };
 
-  // Identifiser årlig pakke for "best value" markering
+  // Kategoriser pakker
   const isYearlyPackage = (pack: PurchasesPackage) => 
     pack.identifier.toLowerCase().includes('yearly') || 
     pack.identifier.toLowerCase().includes('annual') ||
     pack.identifier.toLowerCase().includes('year');
+
+  const isSinglePackage = (pack: PurchasesPackage) => 
+    pack.identifier.toLowerCase().includes('single') || 
+    pack.identifier.toLowerCase().includes('report');
+
+  // Sorter pakker: Årlig først, deretter månedlig, enkeltrapport til slutt
+  const subscriptionPackages = packages
+    .filter(p => !isSinglePackage(p))
+    .sort((a, b) => {
+      if (isYearlyPackage(a)) return -1;
+      if (isYearlyPackage(b)) return 1;
+      return 0;
+    });
+  
+  const singlePackage = packages.find(p => isSinglePackage(p));
 
   return (
     <VStack 
@@ -117,13 +132,13 @@ const UpgradePage: React.FC = () => {
         </VStack>
       </SimpleGrid>
 
-      {/* Priser */}
+      {/* Abonnementer */}
       <VStack w="100%" spacing={3}>
         {isLoading ? (
           <Spinner size="lg" />
-        ) : packages.length > 0 ? (
+        ) : subscriptionPackages.length > 0 ? (
           <>
-            {packages.map(pack => {
+            {subscriptionPackages.map(pack => {
               const isYearly = isYearlyPackage(pack);
               return (
                 <Box 
@@ -163,7 +178,7 @@ const UpgradePage: React.FC = () => {
                       {pack.product.title}
                     </Text>
                     
-                    {/* Pris med eventuell gjennomstreking for årlig */}
+                    {/* Pris med gjennomstreking for årlig */}
                     <HStack spacing={2} justify="center" align="baseline">
                       {isYearly && (
                         <Text 
@@ -208,16 +223,46 @@ const UpgradePage: React.FC = () => {
             <Text fontSize="sm">{t('upgrade_page.no_products_found')}</Text>
           </Alert>
         )}
-        
-        <Button 
-          variant="ghost" 
-          size="sm"
-          onClick={handleBackClick} 
-          isDisabled={isPurchasing}
-        >
-          {t('common.back_button')}
-        </Button>
       </VStack>
+
+      {/* Enkeltrapport - egen seksjon */}
+      {singlePackage && (
+        <Box 
+          w="100%" 
+          p={4} 
+          borderRadius="md" 
+          borderWidth="1px" 
+          borderColor={cardBorder}
+          bg={useColorModeValue('gray.50', 'gray.900')}
+        >
+          <VStack spacing={2}>
+            <Text fontSize="sm" fontWeight="medium" color="gray.600">
+              {t('upgrade_page.single_report.title')}
+            </Text>
+            <Text fontSize="xs" color="gray.500">
+              {t('upgrade_page.single_report.description')}
+            </Text>
+            <Button 
+              variant="outline"
+              size="md"
+              w="100%"
+              onClick={() => handleUpgradeClick(singlePackage)}
+              isLoading={isPurchasing}
+            >
+              {singlePackage.product.title} — {singlePackage.product.priceString}
+            </Button>
+          </VStack>
+        </Box>
+      )}
+        
+      <Button 
+        variant="ghost" 
+        size="sm"
+        onClick={handleBackClick} 
+        isDisabled={isPurchasing}
+      >
+        {t('common.back_button')}
+      </Button>
     </VStack>
   );
 };
